@@ -4,13 +4,15 @@
     ini_set('display_errors', 1);
     //require 'database.php'; //File to connect to database
 
-    $host = 'localhost';
-    $db = 'financial_app';
-    $user = 'root';
-    $pass = '';
-
+    $host = getenv('DB_HOST');
+    $db = getenv('DB_NAME');
+    $user = getenv('DB_USER');
+    $pass = getenv('DB_PASS');
+    $pass = getenv('DB_PORT');
+    
+    $dsn = "pgsql:host=$host;port=$port;dbname=$db";
     try {
-        $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+        $pdo = new PDO($dsn, $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $username = strtolower(trim($_POST['username']));

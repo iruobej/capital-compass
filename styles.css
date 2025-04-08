@@ -1,0 +1,248 @@
+:root{
+    --header-blue: #116285;
+    --normal-blue: #5cdbea;
+    --darker-blue: #1ca0dd;
+    --background-white: #f4f4f4;
+    --white: #fff;
+}
+.outfit {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f4f4f4;
+    color: black;
+}
+h2, h3 {
+    color: var(--header-blue);
+}
+.login-title{
+    font-size: 3em; 
+    top: 0; 
+    left: 0; 
+    margin: 20px;
+    color: var(--white)
+}
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, var(--normal-blue), green);
+  }  
+/* Login Form */
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+.login-container button:hover {
+    background-color: var(--darker-blue);
+}
+/* ------Home page -------------------*/
+/* Horizontal Navbar */
+.navbar {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, var(--normal-blue), var(--header-blue));
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar li {
+    float: left;
+}
+
+/* Using Flexbox for the list */
+.navbar ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Removing bullet points */
+  }
+
+.navbar li a {
+    position: relative; /* Needed for the absolute positioning of the pseudo-element */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Making the underline appear on hover */
+.navbar li a:hover::after {
+    width: 100%;
+}
+#header {
+    font-size: 35px;  
+    top: 45px; 
+    left: 0; 
+    margin: 80px 20px 20px;
+    color: var(--header-blue)
+}
+
+.box {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/*Finance School buttons*/
+.box1 {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    background: linear-gradient(to bottom right, var(--normal-blue), green);
+
+}
+
+.page-container {
+    max-width: 150rem;
+    margin: 0 auto;
+    padding: 20px;
+}
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Top row */
+  .grid-layout > div:nth-child(1) {
+    grid-column: span 3;  /* Takes up 3 of 4 columns (75%) */
+  }
+  .grid-layout > div:nth-child(2) {
+    grid-column: span 1;  /* Takes up 1 of 4 columns (25%) */
+  }
+  
+  /* Bottom row */
+  .grid-layout > div:nth-child(3) {
+    grid-column: span 2;  /* Takes up half the row (50%) */
+  }
+  .grid-layout > div:nth-child(4) {
+    grid-column: span 2;  /* Takes up the other half (50%) */
+  }
+  /* 4 by 2 grid */
+  .grid-layout1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: repeat(2, auto); /*  2 rows  */
+    gap: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #f4f4f4;
+  }
+
+  /* Making the first link ("Capital Compass") stand out */
+.navbar li:first-child a {
+    font-size: 1.5em; 
+    font-weight: bold;
+    padding: 14px 30px;
+    margin-right: auto; 
+}
+
+/*Formatting options in the finance school opening page*/
+.option {
+  justify-content: center;
+  align-items: center;
+  
+  color: white;
+}
+
+  /*Notifications*/
+.notifications{
+  margin: 30px;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+.notification{
+  padding: 20px;
+  margin: 20px 0;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.edit-btn{
+  background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--header-blue); /* Matches the theme */
+    font-size: 16px;
+    padding-left: 10px; 
+    padding-left: 10px; 
+    display: inline-flex; 
+    align-items: center; 
+}
+
+.edit-btn i {
+  font-size: 14px;
+}
+
+.logout {
+  background-color: red;
+}

@@ -1,0 +1,44 @@
+<?php
+session_start();
+
+$firstname = $_SESSION['firstname'];
+$email = $_SESSION['email'];
+$lastname = $_SESSION['lastname'];
+$username = $_SESSION['username'];
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        </style>
+</head>
+<body>
+    <?php include 'navbar.php'; ?>
+    <h1 id="header" style="text-align: center;">Profile</h1>
+    <div class="notifications" style="text-align: center;">
+        <div class="box">
+            <h2>User Information</h2>
+            <p>Full Name: <?php echo htmlspecialchars($firstname . ' ' . $lastname); ?><button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> 
+            <p>User Name: <?php echo htmlspecialchars($username); ?><button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> 
+            <p>Email: <?php echo htmlspecialchars($email); ?><button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> 
+        </div>
+        <div class="box">
+            <h2>Budgeting</h2>
+            <p>I want an alert set if my balance falls below: £100 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> </p> 
+        </div>
+        <div class="box">
+            <h2>Badges and Achievments</h2>
+            <p>Current Badge: Beginner Saver</p>
+        </div>
+        <div class="box">
+            <h2>Connect Banks</h2>
+            <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
+            <button style="background-color: var(--normal-blue);" onclick="\">Connect Bank</button>
+        </div>
+        <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>
+    </div>
+</body>

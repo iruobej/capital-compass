@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 # Enabling Apache mod_rewrite for routing
 RUN a2enmod rewrite

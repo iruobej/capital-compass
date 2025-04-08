@@ -8,7 +8,7 @@
     $db = getenv('DB_NAME');
     $user = getenv('DB_USER');
     $pass = getenv('DB_PASS');
-    $pass = getenv('DB_PORT');
+    $port = getenv('DB_PORT');
     
     $dsn = "pgsql:host=$host;port=$port;dbname=$db";
     try {

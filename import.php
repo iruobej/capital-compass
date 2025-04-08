@@ -13,7 +13,7 @@ try {
 
    
 
-    $sql = <<<SQL
+    $sql = <<<'SQL'
     INSERT INTO users (id, username, password, email, firstname, lastname) VALUES
     (1, '@j.iruobe', '$2y$12$g77enCFF3SNDi0kGkZjaKOru0qn.I4oIAWVsBQnVIn0F4iodKWbhy', 'joshuairuobe@gmail.com', 'Joshua', 'Iruobe'),
 (2, 'johndoe', '$2y$12$ctdPvRGKONO.tMfyR56ys.Ksct3lIdSlyjCeILmJ0OjgwAyglFiwa', 'johndoe@gmail.com', 'John', 'Doe'),

@@ -248,7 +248,7 @@ button {
 }
 
 /*Container styling*/
-.box .dropdown-box {
+.dropdown-box {
   max-width: 200px; 
   width: 100%; /*For shrinking to smaller screens*/
   margin: 0 auto; /*To center it inside its container*/

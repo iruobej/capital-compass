@@ -15,13 +15,13 @@
     <div class="page-container">
         <div class="grid-layout1">
             <button class="school-option" onclick="location.href='budgeting.php';"><h2 class="option-text">Budgeting</h2></button>
-            <button class="school-option"><h2 class="option-text">Retirement</h2></button>
-            <button class="school-option"><h2 class="option-text">Investing</h2></button>
-            <button class="school-option"><h2 class="option-text">Saving</h2></button>
-            <button class="school-option"><h2 class="option-text">ISAs</h2></button>
-            <button class="school-option"><h2 class="option-text">Cryptocurrency</h2></button>
-            <button class="school-option"><h2 class="option-text">Mortgages</h2></button>
-            <button class="school-option"><h2 class="option-text">Loans</h2></button>
+            <button class="school-option" onclick="location.href='retirement.php';"><h2 class="option-text">Retirement</h2></button>
+            <button class="school-option" onclick="location.href='investing.php';"><h2 class="option-text">Investing</h2></button>
+            <button class="school-option" onclick="location.href='saving.php';"><h2 class="option-text">Saving</h2></button>
+            <button class="school-option" onclick="location.href='isas.php';"><h2 class="option-text">ISAs</h2></button>
+            <button class="school-option" onclick="location.href='crypto.php';"><h2 class="option-text">Cryptocurrency</h2></button>
+            <button class="school-option" onclick="location.href='mortgages.php';"><h2 class="option-text">Mortgages</h2></button>
+            <button class="school-option" onclick="location.href='loans.php';"><h2 class="option-text">Loans</h2></button>
         </div>
     </div>  
     <footer>

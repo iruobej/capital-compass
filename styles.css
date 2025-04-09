@@ -249,7 +249,6 @@ button {
 
 /*Container styling*/
 .dropdown-box {
-  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #fff;
@@ -260,7 +259,6 @@ button {
   display: block;
   cursor: pointer;
   padding: 20px;
-  margin: 0;
   list-style: none;
   outline: none;
 }

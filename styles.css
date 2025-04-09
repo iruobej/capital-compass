@@ -63,6 +63,7 @@ button {
     border: none;
     border-radius: 4px;
     color: #fff;
+    background-color: var(--normal-blue);
     font-size: 16px;
     cursor: pointer;
     text-align: center;
@@ -271,8 +272,16 @@ button {
   max-height: 200px;
   overflow-y: auto;
   margin-top: 10px;
+  list-style: none;
 }
 
 .dropdown-content li{
-  text-decoration: none;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--darker-blue);
+  margin-bottom: 15px;
+}
+
+.dropdown-content li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }

@@ -246,3 +246,28 @@ button {
 .logout {
   background-color: red;
 }
+
+/*Container styling*/
+.dropdown-box {
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.dropdown-box summary {
+  display: block;
+  cursor: pointer;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  outline: none;
+}
+
+/*Content area for each dropdown*/
+.dropdown-content {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+}

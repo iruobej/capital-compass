@@ -10,18 +10,20 @@
 <body>
     <?php include 'navbar.php'; ?>
     <h1 id="header" style="text-align: center;">Budgeting Resources</h1>
-    <div class="notifications" style="text-align: center;">
-        <div class="notification">
-            <h3>Beginner</h3>
-            <p>Get comfortable with the basics.</p>
+    <details class="dropdown-box">
+        <summary>
+            <div class="summary-content">
+                <h3>Beginner</h3>
+                <p>Get comfortable with the basics.</p>
+            </div>
+        </summary>
+
+        <div class="dropdown-content"> 
+            <ul>
+                <li><a href="/">Intro to Budgeting Video</a></li>
+                <li><a href="/">Basic Budgeting Article</a></li>
+                <li><a href="/">Budgeting for Beginners</a></li>
+            </ul>
         </div>
-        <div class="notification">
-            <h3>Intermediate</h3>
-            <p>Enhance your knowledge.</p>
-        </div>
-        <div class="notification">
-            <h3>Advanced</h3>
-            <p>For the experts.</p>
-        </div>
-    </div>
+    </details>
 </body>

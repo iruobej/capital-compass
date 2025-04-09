@@ -156,6 +156,14 @@ button {
 
 }
 
+/*Formatting options in the finance school opening page*/
+.option-text {
+  justify-content: center;
+  align-items: center;
+  
+  color: white;
+}
+
 .page-container {
     max-width: 150rem;
     margin: 0 auto;
@@ -202,14 +210,6 @@ button {
     font-weight: bold;
     padding: 14px 30px;
     margin-right: auto; 
-}
-
-/*Formatting options in the finance school opening page*/
-.option-text {
-  justify-content: center;
-  align-items: center;
-  
-  color: white;
 }
 
   /*Notifications*/

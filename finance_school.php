@@ -14,14 +14,14 @@
     <h1 id="header" style="text-align: center;">Finance School</h1>
     <div class="page-container">
         <div class="grid-layout1">
-            <div class="box1"><h2 class="option">Budgeting</h2></div>
-            <div class="box1"><h2 class="option">Retirement</h2></div>
-            <div class="box1"><h2 class="option">Investing</h2></div>
-            <div class="box1"><h2 class="option">Saving</h2></div>
-            <div class="box1"><h2 class="option">ISAs</h2></div>
-            <div class="box1"><h2 class="option">Cryptocurrency</h2></div>
-            <div class="box1"><h2 class="option">Mortgages</h2></div>
-            <div class="box1"><h2 class="option">Loans</h2></div>
+            <button class="school-option"><h2 class="option-text">Budgeting</h2></button>
+            <button class="school-option"><h2 class="option-text">Retirement</h2></button>
+            <button class="school-option"><h2 class="option-text">Investing</h2></button>
+            <button class="school-option"><h2 class="option-text">Saving</h2></button>
+            <button class="school-option"><h2 class="option-text">ISAs</h2></button>
+            <button class="school-option"><h2 class="option-text">Cryptocurrency</h2></button>
+            <button class="school-option"><h2 class="option-text">Mortgages</h2></button>
+            <button class="school-option"><h2 class="option-text">Loans</h2></button>
         </div>
     </div>  
     <footer>

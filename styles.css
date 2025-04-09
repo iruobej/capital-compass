@@ -145,7 +145,7 @@ button {
 }
 
 /*Finance School buttons*/
-.box1 {
+.page-container .school-option {
     padding: 20px;
     margin: 20px 0;
     background-color: var(--white);
@@ -205,7 +205,7 @@ button {
 }
 
 /*Formatting options in the finance school opening page*/
-.option {
+.option-text {
   justify-content: center;
   align-items: center;
   

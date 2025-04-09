@@ -16,7 +16,7 @@ body {
     background-color: #f4f4f4;
     color: black;
 }
-h2, h3 {
+h2, h3, h4 {
     color: var(--header-blue);
 }
 .login-title{

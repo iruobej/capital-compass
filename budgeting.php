@@ -20,9 +20,21 @@
 
         <div class="dropdown-content"> 
             <ul>
-                <li><a href="/">Intro to Budgeting Video</a></li>
-                <li><a href="/">Basic Budgeting Article</a></li>
-                <li><a href="/">Budgeting for Beginners</a></li>
+                <li>
+                    <h4>Intro to Budgeting Video</h4>
+                    <p>This video provides an overview of the basics of budgeting, ideal for beginners.</p>
+                    <button>Intro to Budgeting Video</button>
+                </li>
+                <li>
+                    <h4>Basic Budgeting Article</h4>
+                    <p>Read a step-by-step guide on how to set up your first budget effectively.</p>
+                    <button>Read Article</button>
+                </li>
+                <li>
+                    <h4>Budgeting for Beginners</h4>
+                    <p>An eBooks that covers all the fundamentals to get you started on budgeting.</p>
+                    <button>Purchase eBook</button>
+                </li>
             </ul>
         </div>
     </details>

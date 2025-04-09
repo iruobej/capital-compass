@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php include 'navbar.php'; ?>
-    <h1 id="header" style="text-align: center;">Budgeting Resources x </h1>
+    <h1 id="header" style="text-align: center;">Budgeting Resources</h1>
     <details class="dropdown-box">
         <summary>
             <div class="summary-content">

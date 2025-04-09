@@ -250,7 +250,7 @@ button {
 
 /*Container styling*/
 .dropdown-box {
-  max-width: 800px; 
+  max-width: 1000px; 
   width: 100%; /*For shrinking to smaller screens*/
   margin: 0 auto; /*To center it inside its container*/
   border: 1px solid #ccc;
@@ -260,11 +260,13 @@ button {
 }
 
 .dropdown-box summary {
+  text-align: center;
   display: block;
   cursor: pointer;
   padding: 20px;
   list-style: none;
   outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /*Content area for each dropdown*/

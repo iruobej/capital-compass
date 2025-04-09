@@ -5,6 +5,7 @@ if(!isset($_SESSION['username'])){
     exit();
 }
 require_once 'config.php';
+require_once 'db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -10,7 +10,7 @@
 <body>
     <?php include 'navbar.php'; ?>
     <h1 id="header" style="text-align: center;">Budgeting Resources</h1>
-    <details class="box1">
+    <details class="box">
         <summary>
             <div class="summary-content">
                 <h3>Beginner</h3>

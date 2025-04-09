@@ -14,7 +14,7 @@
     <h1 id="header" style="text-align: center;">Finance School</h1>
     <div class="page-container">
         <div class="grid-layout1">
-            <button class="school-option"><h2 class="option-text">Budgeting</h2></button>
+            <button class="school-option" onclick="location.href='budgeting.php';"><h2 class="option-text">Budgeting</h2></button>
             <button class="school-option"><h2 class="option-text">Retirement</h2></button>
             <button class="school-option"><h2 class="option-text">Investing</h2></button>
             <button class="school-option"><h2 class="option-text">Saving</h2></button>

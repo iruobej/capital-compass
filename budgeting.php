@@ -22,19 +22,19 @@
         <div class="dropdown-content"> 
             <ul>
                 <li>
-                    <h4>Intro to Budgeting Video</h4>
-                    <p>This video provides an overview of the basics of budgeting, ideal for beginners.</p>
-                    <button>Intro to Budgeting Video</button>
+                    <h4>Budgeting Basics!</h4>
+                    <p>See budgeting through the lens of an army general!</p>
+                    <a href="https://www.youtube.com/watch?v=sVKQn2I4HDM" target="_blank">Watch Video</a>
                 </li>
                 <li>
-                    <h4>Basic Budgeting Article</h4>
+                    <h4>Your guide to creating a budget plan</h4>
                     <p>Read a step-by-step guide on how to set up your first budget effectively.</p>
-                    <button>Read Article</button>
+                    <a href="https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/creating-a-budget" target="_blank">Read Article</a>
                 </li>
                 <li>
-                    <h4>Budgeting for Beginners</h4>
-                    <p>An eBook that covers all the fundamentals to get you started on budgeting.</p>
-                    <button>Purchase eBook</button>
+                    <h4>Book: The Budget Book for Young Adults</h4>
+                    <p>Are you a young adult who is starting out in life and want to get the most from your financial situation? </p>
+                    <a href="https://www.amazon.co.uk/Budget-Book-Young-Adults-Budgeting/dp/1387886045/ref=sr_1_5?crid=2E0V19VQDEROL&dib=eyJ2IjoiMSJ9.e9iIixNpmD5ifRmKC8qSJogdHeyrsnkAmPf604A1Wxaka2OdNEE891oAJlov4mSzEtUkB_vY6LW9Orj5NT-_oNzQUVUcEJpw5EqSSOgfpyet_bHcsbuqWgesTRW9lerrkKr2PxKkBytqVV9m_absygPkMxPGJ9zs_tdOxKUXWcxvfVEf2X9OcMv3gUaKh6-Gh2pakaa0atTZnRaD9N41Okuz4TBZXrGpAreD0gOwgW4.XDAktuiqVzhYsZJdek9zogf8yNIBk24dkzUctv7VtZg&dib_tag=se&keywords=budgeting+basics&qid=1744235716&sprefix=budgeting+basics%2Caps%2C102&sr=8-5" target="_blank">Purchase Book</a>
                 </li>
             </ul>
         </div>
@@ -51,12 +51,12 @@
         <div class="dropdown-content"> 
             <ul>
                 <li>
-                    <h4>Intro to Budgeting Video</h4>
-                    <p>This video provides an overview of the basics of budgeting, ideal for beginners.</p>
-                    <button>Intro to Budgeting Video</button>
+                    <h4>Book: The Only Budgeting Book You'll Ever Need: How to Save Money and Manage Your Finances with a Personal Budget Plan That Works for You</h4>
+                    <p>Filled with only the most essential information on budgeting, this book shows you how to build a financial plan that not only meets your needs, but helps you stay on track.</p>
+                    <a href="https://www.amazon.com/Only-Budgeting-Book-Youll-Ever/dp/1440550107?asc_source=01J3NF8C5MVTHVNEQMAHFDJRJP&tag=snxgb449-21" target="_blank"></a>
                 </li>
                 <li>
-                    <h4>Basic Budgeting Article</h4>
+                    <h4>Financial Literacy Part 02 - Budgeting</h4>
                     <p>Read a step-by-step guide on how to set up your first budget effectively.</p>
                     <button>Read Article</button>
                 </li>
@@ -80,19 +80,19 @@
         <div class="dropdown-content"> 
             <ul>
                 <li>
-                    <h4>Intro to Budgeting Video</h4>
-                    <p>This video provides an overview of the basics of budgeting, ideal for beginners.</p>
-                    <button>Intro to Budgeting Video</button>
+                    <h4>Budgeting Basics!</h4>
+                    <p>See budgeting through the lens of an army general!</p>
+                    <a href="https://www.youtube.com/watch?v=sVKQn2I4HDM">Watch Video</a>
                 </li>
                 <li>
-                    <h4>Basic Budgeting Article</h4>
+                    <h4>Your guide to creating a budget plan</h4>
                     <p>Read a step-by-step guide on how to set up your first budget effectively.</p>
-                    <button>Read Article</button>
+                    <a href="https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/creating-a-budget">Read Article</a>
                 </li>
                 <li>
-                    <h4>Budgeting for Beginners</h4>
-                    <p>An eBook that covers all the fundamentals to get you started on budgeting.</p>
-                    <button>Purchase eBook</button>
+                    <h4>Book: The Budget Book for Young Adults</h4>
+                    <p>Are you a young adult who is starting out in life and want to get the most from your financial situation? </p>
+                    <a href="https://www.amazon.co.uk/Budget-Book-Young-Adults-Budgeting/dp/1387886045/ref=sr_1_5?crid=2E0V19VQDEROL&dib=eyJ2IjoiMSJ9.e9iIixNpmD5ifRmKC8qSJogdHeyrsnkAmPf604A1Wxaka2OdNEE891oAJlov4mSzEtUkB_vY6LW9Orj5NT-_oNzQUVUcEJpw5EqSSOgfpyet_bHcsbuqWgesTRW9lerrkKr2PxKkBytqVV9m_absygPkMxPGJ9zs_tdOxKUXWcxvfVEf2X9OcMv3gUaKh6-Gh2pakaa0atTZnRaD9N41Okuz4TBZXrGpAreD0gOwgW4.XDAktuiqVzhYsZJdek9zogf8yNIBk24dkzUctv7VtZg&dib_tag=se&keywords=budgeting+basics&qid=1744235716&sprefix=budgeting+basics%2Caps%2C102&sr=8-5">Purchase Book</a>
                 </li>
             </ul>
         </div>

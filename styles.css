@@ -283,11 +283,10 @@ button {
 
 .dropdown-content li{
   padding: 15px 0;
-  border-bottom: 1px solid var(--darker-blue);
+  border-top: 1px solid var(--darker-blue);
   margin-bottom: 15px;
 }
 
 .dropdown-content li:last-child {
-  border-bottom: none;
   margin-bottom: 0;
 }

@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <h4>Budgeting for Beginners</h4>
-                    <p>An eBooks that covers all the fundamentals to get you started on budgeting.</p>
+                    <p>An eBook that covers all the fundamentals to get you started on budgeting.</p>
                     <button>Purchase eBook</button>
                 </li>
             </ul>

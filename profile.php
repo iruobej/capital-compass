@@ -52,7 +52,7 @@ $username = $_SESSION['username'];
             'state' => $state,
             'nonce' => $nonce
         ]);
-        //echo $auth_url;
+        echo $auth_url;
         ?>
         <div class="box">
             <h2>Connect Banks</h2>

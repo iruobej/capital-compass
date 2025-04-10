@@ -42,7 +42,7 @@ $username = $_SESSION['username'];
             'response_type' => 'code',
             'client_id' => TL_CLIENT_ID,
             'redirect_uri' => TL_REDIRECT_URI,
-            'scope' => 'info',
+            'scope' => 'info accounts',
             'state' => $state,
             'nonce' => $nonce
         ]);

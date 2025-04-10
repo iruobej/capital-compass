@@ -9,10 +9,6 @@ define('TL_CLIENT_SECRET', getenv('TL_CLIENT_SECRET'));
 define('TL_REDIRECT_URI', getenv('TL_REDIRECT_URI'));
 define('TL_ENVIRONMENT', 'sandbox');
 
-echo 'CLIENT_ID: ' . TL_CLIENT_ID . '<br>';
-echo 'CLIENT_SECRET: ' . TL_CLIENT_SECRET . '<br>';
-echo 'REDIRECT_URI: ' . TL_REDIRECT_URI . '<br>';
-
 //DB Setup
 $host = getenv('DB_HOST');
 $db   = getenv('DB_NAME');

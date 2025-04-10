@@ -20,8 +20,12 @@ $username = $_SESSION['username'];
         </style>
 </head>
 <body>
-    <?php include 'navbar.php'; include 'config.php'; ?>
+    <?php include 'navbar.php'; include 'config.php'; 
+    echo 'CLIENT_ID: ' . TL_CLIENT_ID . '<br>';
+    echo 'CLIENT_SECRET: ' . TL_CLIENT_SECRET . '<br>';
+    echo 'REDIRECT_URI: ' . TL_REDIRECT_URI . '<br>';?>
     <h1 id="header" style="text-align: center;">Profile</h1>
+    
     <div class="notifications" style="text-align: center;">
         <div class="box">
             <h2>User Information</h2>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
 $firstname = $_SESSION['firstname'];
 $email = $_SESSION['email'];
@@ -46,7 +49,7 @@ $username = $_SESSION['username'];
             'state' => $state,
             'nonce' => $nonce
         ]);
-        echo $auth_url;
+        //echo $auth_url;
         ?>
         <div class="box">
             <h2>Connect Banks</h2>

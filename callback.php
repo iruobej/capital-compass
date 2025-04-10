@@ -5,6 +5,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 require_once 'config.php';
 
+if (!isset($_GET['code'])) {
+    die("Authorization code not provided in the callback.");
+}
+
 $code = $_GET['code'];
 
 $data = http_build_query([
@@ -24,7 +28,16 @@ $context = stream_context_create([
 ]);
 
 $response = file_get_contents("https://auth.truelayer.com/connect/token", false, $context);
+
+if ($response === false) {
+    die("Failed to retrieve access token. Check your request or credentials.");
+}
+
 $tokens = json_decode($response, true);
+
+if (!isset($tokens['access_token'])) {
+    die("Access token not found in response. Full response: " . $response);
+}
 
 $accessToken = $tokens['access_token'];
 

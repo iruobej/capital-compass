@@ -1,5 +1,5 @@
 // BEFORE
 $plaidData = getPlaidBalances($accessToken);
 
-// AFTER (generic)
+// AFTER 
 $balances = getUserBankBalances($userId);

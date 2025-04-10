@@ -89,7 +89,7 @@
                     <p>
                         This comprehensive article discusses the Beyond Budgeting approach as a means to achieve business agility in uncertain times.
                     </p>
-                    <a href="https://www.agile-academy.com/en/organizational-development/beyond-budgeting/"></a>
+                    <a href="https://www.agile-academy.com/en/organizational-development/beyond-budgeting/">View Course</a>
                 </li>
             </ul>
         </div>

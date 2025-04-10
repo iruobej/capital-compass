@@ -1,11 +1,10 @@
 //Setup for the website
 <?php
 //API Keys
-$plaidClientId = getenv('PLAID_CLIENT_ID');
-$plaidSecret = getenv('PLAID_SECRET');
-
-define('PLAID_CLIENT_ID', $plaidClientId);
-define('PLAID_SECRET', $plaidSecret);
+define('TL_CLIENT_ID', getenv('TL_CLIENT_ID'));
+define('TL_CLIENT_SECRET', getenv('TL_CLIENT_SECRET'));
+define('TL_REDIRECT_URI', getenv('TL_REDIRECT_URI'));
+define('TL_ENVIRONMENT', 'sandbox');
 
 //DB Setup
 $host = getenv('DB_HOST');

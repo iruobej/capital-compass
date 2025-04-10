@@ -17,7 +17,7 @@ $username = $_SESSION['username'];
         </style>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar.php'; include 'config.php'; ?>
     <h1 id="header" style="text-align: center;">Profile</h1>
     <div class="notifications" style="text-align: center;">
         <div class="box">
@@ -34,10 +34,23 @@ $username = $_SESSION['username'];
             <h2>Badges and Achievments</h2>
             <p>Current Badge: Beginner Saver</p>
         </div>
+        <?php
+        $state = bin2hex(random_bytes(8));
+        $nonce = bin2hex(random_bytes(8));
+
+        $auth_url = "https://auth.truelayer.com/?" . http_build_query ([
+            'response_type' => 'code',
+            'client_id' => TL_CLIENT_ID,
+            'redirect_uri' => TL_REDIRECT_URI,
+            'scope' => 'info accounts balance transactions identity',
+            'state' => $state,
+            'nonce' => $nonce
+        ]);
+        ?>
         <div class="box">
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
-            <button style="background-color: var(--normal-blue);" onclick="\">Connect Bank</button>
+            <a href="<?php echo $auth_url; ?>">Connect Bank</a>
         </div>
         <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>
     </div>

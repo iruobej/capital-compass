@@ -6,6 +6,7 @@ ini_set('display_startup_errors', 1);
 require_once 'config.php';
 
 if (!isset($_GET['code'])) {
+    var_dump($_GET);
     die("Authorization code not provided in the callback.");
 }
 

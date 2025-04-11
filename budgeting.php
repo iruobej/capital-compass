@@ -22,7 +22,7 @@
         <div class="dropdown-content"> 
             <ul>
                 <li>
-                    <h4>Budgeting Basics!</h4>
+                    <h4>Video: Budgeting Basics!</h4>
                     <p>See budgeting through the lens of an army general!</p>
                     <a href="https://www.youtube.com/watch?v=sVKQn2I4HDM" target="_blank">Watch Video</a>
                 </li>

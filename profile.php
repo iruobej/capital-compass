@@ -22,9 +22,9 @@ $username = $_SESSION['username'];
 <body>
     <?php include 'navbar.php'; include 'config.php'; ?>
     <h1 id="header" style="text-align: center;">Profile</h1>
-    <?php echo 'CLIENT_ID: ' . TL_CLIENT_ID . '<br>';
+    <!-- <?php echo 'CLIENT_ID: ' . TL_CLIENT_ID . '<br>';
     echo 'CLIENT_SECRET: ' . TL_CLIENT_SECRET . '<br>';
-    echo 'REDIRECT_URI: ' . TL_REDIRECT_URI . '<br>';?>
+    echo 'REDIRECT_URI: ' . TL_REDIRECT_URI . '<br>';?> -->
     <div class="notifications" style="text-align: center;">
         <div class="box">
             <h2>User Information</h2>
@@ -40,26 +40,29 @@ $username = $_SESSION['username'];
             <h2>Badges and Achievments</h2>
             <p>Current Badge: Beginner Saver</p>
         </div>
+
         <?php
         $state = bin2hex(random_bytes(8));
         $nonce = bin2hex(random_bytes(8));
 
-        // $auth_url = "https://auth.truelayer.com/?" . http_build_query ([
-        //     'response_type' => 'code',
-        //     'client_id' => TL_CLIENT_ID,
-        //     'redirect_uri' => 'https://console.truelayer.com/redirect-page',
-        //     'scope' => 'info accounts balance transactions offline_access',
-        //     'providers' => 'uk-cs-mock uk-ob-all',
-        //     'state' => $state,
-        //     'nonce' => $nonce
-        // ]);
-        $auth_url = 'https://auth.truelayer-sandbox.com/?response_type=code&client_id=sandbox-capitalcompass-9d49f5&scope=info%20accounts%20balance%20cards%20transactions%20direct_debits%20standing_orders%20offline_access&redirect_uri=https://console.truelayer.com/redirect-page&providers=uk-cs-mock%20uk-ob-all%20uk-oauth-all';
-        //echo $auth_url;
+        $auth_url = "https://auth.truelayer.com/?" . http_build_query([
+            'response_type' => 'code',
+            'client_id' => TL_CLIENT_ID,
+            'redirect_uri' => TL_REDIRECT_URI,
+            'scope' => 'info accounts balance cards transactions direct_debits standing_orders offline_access',
+            'providers' => 'uk-cs-mock uk-ob-all uk-oauth-all',
+            'state' => $state,
+            'nonce' => $nonce
+        ]);
+        echo '<pre>';
+        var_dump(TL_CLIENT_ID);
+        echo '</pre>';
         ?>
         <div class="box">
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
-            <a href="<?php echo $auth_url; ?>">Connect Bank</a>
+            <?php echo '<pre>' . htmlspecialchars($auth_url) . '</pre>'; ?>
+            <a href="<?= $auth_url ?>">Connect Bank</a>
         </div>
         <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>
     </div>

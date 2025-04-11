@@ -52,10 +52,9 @@
             <label><input type="radio" name="q7" value="correct">To cover unexpected expenses</label><br>
             <label><input type="radio" name="q7" value="wrong">To pay for luxury items</label><br>
         </div>
+        <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
         <button type="submit">Submit Quiz</button>
     </form>
-
-    <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
 
     <script src="quiz.js"></script>
 </body>

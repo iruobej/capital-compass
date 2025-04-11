@@ -5,12 +5,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 require_once 'config.php';
 
+$code = $_GET['code'];
+
 if (!isset($_GET['code'])) {
     var_dump($_GET);
     die("Authorization code not provided in the callback.");
 }
-
-$code = $_GET['code'];
 
 $data = http_build_query([
     'grant_type' => 'authorization_code',

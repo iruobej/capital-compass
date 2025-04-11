@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <h1 style="text-align:center;">Retirement Quiz</h1>
+    <h1 id="header" style="text-align:center;">Retirement Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
             <div class="question">

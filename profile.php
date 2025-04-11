@@ -48,7 +48,8 @@ $username = $_SESSION['username'];
             'response_type' => 'code',
             'client_id' => TL_CLIENT_ID,
             'redirect_uri' => TL_REDIRECT_URI,
-            'scope' => 'info accounts',
+            'scope' => 'info accounts balance transactions offline_access',
+            'providers' => 'uk-cs-mock uk-ob-all',
             'state' => $state,
             'nonce' => $nonce
         ]);

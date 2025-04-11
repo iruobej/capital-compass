@@ -12,16 +12,30 @@
 <body>
     <?php include 'navbar.php'; ?>
     <h1 id="header" style="text-align: center;">Finance School</h1>
+    <h2 style="text-align: center;">Learning</h2>
     <div class="page-container">
         <div class="grid-layout1">
-            <button class="school-option" onclick="location.href='budgeting.php';"><h2 class="option-text">Budgeting</h2></button>
-            <button class="school-option" onclick="location.href='retirement.php';"><h2 class="option-text">Retirement</h2></button>
-            <button class="school-option" onclick="location.href='investing.php';"><h2 class="option-text">Investing</h2></button>
-            <button class="school-option" onclick="location.href='saving.php';"><h2 class="option-text">Saving</h2></button>
-            <button class="school-option" onclick="location.href='isas.php';"><h2 class="option-text">ISAs</h2></button>
-            <button class="school-option" onclick="location.href='crypto.php';"><h2 class="option-text">Cryptocurrency</h2></button>
-            <button class="school-option" onclick="location.href='mortgages.php';"><h2 class="option-text">Mortgages</h2></button>
-            <button class="school-option" onclick="location.href='loans.php';"><h2 class="option-text">Loans</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/budgeting.php';"><h2 class="option-text">Budgeting</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/retirement.php';"><h2 class="option-text">Retirement</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/investing.php';"><h2 class="option-text">Investing</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/saving.php';"><h2 class="option-text">Saving</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/isas.php';"><h2 class="option-text">ISAs</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/crypto.php';"><h2 class="option-text">Cryptocurrency</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/mortgages.php';"><h2 class="option-text">Mortgages</h2></button>
+            <button class="school-option" onclick="location.href='schoolPages/loans.php';"><h2 class="option-text">Loans</h2></button>
+        </div>
+    </div>  
+    <h2 style="text-align: center;">Quizzes</h2>
+    <div class="page-container">
+        <div class="grid-layout1">
+            <button class="school-option" onclick="location.href='quizzes/budgeting_quiz.php';"><h2 class="option-text">Budgeting</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/retirement_quiz.php';"><h2 class="option-text">Retirement</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/investing_quiz.php';"><h2 class="option-text">Investing</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/saving_quiz.php';"><h2 class="option-text">Saving</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/isas_quiz.php';"><h2 class="option-text">ISAs</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/crypto_quiz.php';"><h2 class="option-text">Cryptocurrency</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/mortgages_quiz.php';"><h2 class="option-text">Mortgages</h2></button>
+            <button class="school-option" onclick="location.href='quizzes/loans_quiz.php';"><h2 class="option-text">Loans</h2></button>
         </div>
     </div>  
     <footer>

@@ -61,7 +61,11 @@ $username = $_SESSION['username'];
         <div class="box">
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
-            <?php echo '<pre>' . htmlspecialchars($auth_url) . '</pre>'; ?>
+            <?php echo '<pre>';
+            echo 'Client ID: [' . TL_CLIENT_ID . "]\n";
+            echo 'Redirect URI: [' . TL_REDIRECT_URI . "]\n";
+            echo 'Auth URL: ' . htmlspecialchars($auth_url) . "\n";
+            echo '</pre>';?>
             <a href="<?= $auth_url ?>">Connect Bank</a>
         </div>
         <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>

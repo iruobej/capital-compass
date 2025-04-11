@@ -56,6 +56,6 @@
     </form>
 
     <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
-    <script src="../scripts/quiz.js"></script>
+    <script src="quiz.js"></script>
 </body>
 </html>

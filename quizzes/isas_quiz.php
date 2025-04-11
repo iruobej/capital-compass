@@ -52,10 +52,9 @@
             <label><input type="radio" name="q7" value="wrong">You lose the full amount</label><br>
             <label><input type="radio" name="q7" value="wrong">There are no penalties</label><br>
         </div>
+        <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
         <button type="submit">Submit Quiz</button>
     </form>
-
-    <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
     <script src="quiz.js"></script>
 </body>
 </html>

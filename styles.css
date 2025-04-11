@@ -292,3 +292,7 @@ button, .dropdown-content a, .box a {
 .dropdown-content li:last-child {
   margin-bottom: 0;
 }
+
+.quizForm {
+  text-align: center;
+}

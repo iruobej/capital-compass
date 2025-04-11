@@ -293,6 +293,6 @@ button, .dropdown-content a, .box a {
   margin-bottom: 0;
 }
 
-.quizForm {
+#quizForm {
   text-align: center;
 }

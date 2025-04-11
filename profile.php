@@ -44,16 +44,17 @@ $username = $_SESSION['username'];
         $state = bin2hex(random_bytes(8));
         $nonce = bin2hex(random_bytes(8));
 
-        $auth_url = "https://auth.truelayer.com/?" . http_build_query ([
-            'response_type' => 'code',
-            'client_id' => TL_CLIENT_ID,
-            'redirect_uri' => 'https://console.truelayer.com/redirect-page',
-            'scope' => 'info accounts balance transactions offline_access',
-            'providers' => 'uk-cs-mock uk-ob-all',
-            'state' => $state,
-            'nonce' => $nonce
-        ]);
-        echo $auth_url;
+        // $auth_url = "https://auth.truelayer.com/?" . http_build_query ([
+        //     'response_type' => 'code',
+        //     'client_id' => TL_CLIENT_ID,
+        //     'redirect_uri' => 'https://console.truelayer.com/redirect-page',
+        //     'scope' => 'info accounts balance transactions offline_access',
+        //     'providers' => 'uk-cs-mock uk-ob-all',
+        //     'state' => $state,
+        //     'nonce' => $nonce
+        // ]);
+        $auth_url = 'https://auth.truelayer-sandbox.com/?response_type=code&client_id=sandbox-capitalcompass-9d49f5&scope=info%20accounts%20balance%20cards%20transactions%20direct_debits%20standing_orders%20offline_access&redirect_uri=https://console.truelayer.com/redirect-page&providers=uk-cs-mock%20uk-ob-all%20uk-oauth-all';
+        //echo $auth_url;
         ?>
         <div class="box">
             <h2>Connect Banks</h2>

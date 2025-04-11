@@ -293,6 +293,15 @@ button, .dropdown-content a, .box a {
   margin-bottom: 0;
 }
 
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto; /* Center horizontally */
+  padding: 2rem;
+  background-color: #fff; /* Optional: white background */
+  border-radius: 8px;      /* Optional: rounded edges */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: light shadow */
+}
+
 #quizForm {
-  text-align: center;
+  text-align: left; /* Align form contents to the left */
 }

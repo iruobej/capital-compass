@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1 style="text-align:center;">Mortgages Quiz</h1>
+    <div class="quiz-container">
     <form id="quizForm">
         <div class="question">
             <p>1. What is a mortgage?</p>
@@ -55,6 +56,7 @@
         <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
         <button type="submit">Submit Quiz</button>
     </form>
+    </div>
     <script src="quiz.js"></script>
 </body>
 </html>

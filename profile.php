@@ -45,7 +45,7 @@ $username = $_SESSION['username'];
         $state = bin2hex(random_bytes(8));
         $nonce = bin2hex(random_bytes(8));
 
-        $auth_url = "https://auth.truelayer.com/?" . http_build_query([
+        $auth_url = "https://auth.truelayer-sandbox.com/?" . http_build_query([
             'response_type' => 'code',
             'client_id' => getenv('TL_CLIENT_ID'),
             'redirect_uri' => getenv('TL_REDIRECT_URI'),

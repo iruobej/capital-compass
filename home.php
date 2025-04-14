@@ -24,17 +24,38 @@ require_once 'config.php';
         <?php if (isset($_SESSION['accounts']['results']) && is_array($_SESSION['accounts']['results'])): ?>
             <?php foreach ($_SESSION['accounts']['results'] as $account): ?>
                 <div class="box">
-                    <h2><?= htmlspecialchars($account['display_name'] ?? 'Account') ?></h2>
-                    <p>Type: <?= htmlspecialchars($account['account_type'] ?? 'N/A') ?></p>
-                    <p>Currency: <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
-                    <p>Account Number: <?= htmlspecialchars($account['account_number']['number'] ?? 'N/A') ?></p>
-                    <p>Sort Code: <?= htmlspecialchars($account['account_number']['sort_code'] ?? 'N/A') ?></p>
-                    <p>IBAN: <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
-                    <p>Bank: <?= htmlspecialchars($account['provider']['display_name'] ?? 'N/A') ?></p>
-                    <?php if (!empty($account['provider']['logo_uri'])): ?>
-                        <img src="<?= htmlspecialchars($account['provider']['logo_uri']) ?>" alt="Bank Logo" width="100">
-                    <?php endif; ?>
+                    <h2>Recent Transactions</h2>
+
+                    <input type="text" id="txSearch" onkeyup="filterTransactions()" placeholder="Search by date, category, or amount..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+
+                    <div style="max-height: 300px; overflow-y: auto;">
+                        <table id="txTable">
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                            </tr>
+                            <?php if (isset($_SESSION['transactions'])): ?>
+                                <?php foreach ($_SESSION['transactions'] as $tx): ?>
+                                    <?php
+                                        $timestamp = $tx['timestamp'] ?? 'N/A';
+                                        $category = $tx['transaction_category'] ?? 'N/A';
+                                        $amountVal = $tx['amount']['value'] ?? null;
+                                        $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
+                                    ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($timestamp) ?></td>
+                                        <td><?= htmlspecialchars($category) ?></td>
+                                        <td>£<?= $amount ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr><td colspan="3">No transactions available.</td></tr>
+                            <?php endif; ?>
+                        </table>
+                    </div>
                 </div>
+
             <?php endforeach; ?>
         <?php else: ?>
             <p>No account data available. Try <a href="<?= $auth_url ?>">connecting/reconnecting your bank.</a></p>
@@ -53,6 +74,7 @@ require_once 'config.php';
                     <p>Goal 2: £0.00</p>
                     <p>Goal 3: £0.00</p>
             </div>
+            <!--Displaying the user's transactions-->
             <div class="box">
                 <h2>Recent Transactions</h2>
                 <table>
@@ -82,6 +104,6 @@ require_once 'config.php';
     <footer>
         <p>&copy; 2025 Capital Compass</p>
     </footer>
-
+    <script src="home.js"></script>
 </body>
 </html>

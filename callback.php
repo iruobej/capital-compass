@@ -28,7 +28,7 @@ $context = stream_context_create([
     ]
 ]);
 
-$response = file_get_contents("https://auth.truelayer.com/connect/token", false, $context);
+$response = file_get_contents("https://auth.truelayer-sandbox.com/connect/token", false, $context);
 
 if ($response === false) {
     die("Failed to retrieve access token. Check your request or credentials.");

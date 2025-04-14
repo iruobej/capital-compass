@@ -21,6 +21,9 @@ require_once 'config.php';
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <div class="page-container">
+            echo '<pre>';
+            print_r($_SESSION['accounts']);
+            echo '</pre>';
             <!--Displaying accounts-->
             <?php if (isset($_SESSION['accounts']['results']) && is_array($_SESSION['accounts']['results'])): ?>
             <?php foreach ($_SESSION['accounts']['results'] as $account): ?>
@@ -53,8 +56,9 @@ require_once 'config.php';
             <p>Checking: £1,356.79</p>
             <p>Savings: £3,452.00</p>
         </div>
+
         <div class="grid-layout">
-            <div class="box"><h2>Budget Line Graph</h2></div>
+            <div class="box"><h2>Balance Amount Line Graph</h2></div>
             <div class="box">
                 <h2>Financial Goals</h2>
                     <p>Goal 1: £0.00</p>

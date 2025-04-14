@@ -21,45 +21,32 @@ require_once 'config.php';
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <div class="page-container">
-        <?php if (isset($_SESSION['accounts']['results']) && is_array($_SESSION['accounts']['results'])): ?>
+            <!--Displaying accounts-->
+            <?php if (isset($_SESSION['accounts']['results']) && is_array($_SESSION['accounts']['results'])): ?>
             <?php foreach ($_SESSION['accounts']['results'] as $account): ?>
                 <div class="box">
-                    <h2>Recent Transactions</h2>
+                    <h2><?= htmlspecialchars($account['display_name'] ?? 'Account') ?></h2>
+                    <p><strong>Type:</strong> <?= htmlspecialchars($account['account_type'] ?? 'N/A') ?></p>
+                    <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
 
-                    <input type="text" id="txSearch" onkeyup="filterTransactions()" placeholder="Search by date, category, or amount..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                    <?php if (isset($account['account_number'])): ?>
+                        <p><strong>Account Number:</strong> <?= htmlspecialchars($account['account_number']['number'] ?? 'N/A') ?></p>
+                        <p><strong>Sort Code:</strong> <?= htmlspecialchars($account['account_number']['sort_code'] ?? 'N/A') ?></p>
+                        <p><strong>IBAN:</strong> <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
+                    <?php endif; ?>
 
-                    <div style="max-height: 300px; overflow-y: auto;">
-                        <table id="txTable">
-                            <tr>
-                                <th>Date</th>
-                                <th>Category</th>
-                                <th>Amount</th>
-                            </tr>
-                            <?php if (isset($_SESSION['transactions'])): ?>
-                                <?php foreach ($_SESSION['transactions'] as $tx): ?>
-                                    <?php
-                                        $timestamp = $tx['timestamp'] ?? 'N/A';
-                                        $category = $tx['transaction_category'] ?? 'N/A';
-                                        $amountVal = $tx['amount']['value'] ?? null;
-                                        $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
-                                    ?>
-                                    <tr>
-                                        <td><?= htmlspecialchars($timestamp) ?></td>
-                                        <td><?= htmlspecialchars($category) ?></td>
-                                        <td>£<?= $amount ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr><td colspan="3">No transactions available.</td></tr>
-                            <?php endif; ?>
-                        </table>
-                    </div>
+                    <?php if (isset($account['provider'])): ?>
+                        <p><strong>Bank:</strong> <?= htmlspecialchars($account['provider']['display_name'] ?? 'N/A') ?></p>
+                        <?php if (!empty($account['provider']['logo_uri'])): ?>
+                            <img src="<?= htmlspecialchars($account['provider']['logo_uri']) ?>" alt="Bank Logo" width="100">
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
-
             <?php endforeach; ?>
         <?php else: ?>
             <p>No account data available. Try <a href="<?= $auth_url ?>">connecting/reconnecting your bank.</a></p>
         <?php endif; ?>
+
         <!-- Balances -->
         <div class="box">
             <h2>Balances</h2>
@@ -77,19 +64,35 @@ require_once 'config.php';
             <!--Displaying the user's transactions-->
             <div class="box">
                 <h2>Recent Transactions</h2>
-                <table>
-                    <?php if (isset($_SESSION['transactions'])): ?>
-                        <?php foreach ($_SESSION['transactions'] as $tx): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($tx['timestamp']) ?></td>
-                                <td><?= htmlspecialchars($tx['transaction_category']) ?></td>
-                                <td>£<?= number_format($tx['amount']['value'], 2) ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <tr><td colspan="3">No transactions available.</td></tr>
-                    <?php endif; ?>
-                </table>
+
+                <input type="text" id="txSearch" onkeyup="filterTransactions()" placeholder="Search by date, category, or amount..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+
+                <div style="max-height: 300px; overflow-y: auto;">
+                    <table id="txTable">
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                        <?php if (isset($_SESSION['transactions'])): ?>
+                            <?php foreach ($_SESSION['transactions'] as $tx): ?>
+                                <?php
+                                    $timestamp = $tx['timestamp'] ?? 'N/A';
+                                    $category = $tx['transaction_category'] ?? 'N/A';
+                                    $amountVal = $tx['amount']['value'] ?? null;
+                                    $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
+                                ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($timestamp) ?></td>
+                                    <td><?= htmlspecialchars($category) ?></td>
+                                    <td>£<?= $amount ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr><td colspan="3">No transactions available.</td></tr>
+                        <?php endif; ?>
+                    </table>
+                </div>
             </div>
             <div class="box">
                 <h2>Suggested Actions</h2>

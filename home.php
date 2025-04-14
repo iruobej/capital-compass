@@ -21,7 +21,24 @@ require_once 'config.php';
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <div class="page-container">
-        <pre><?php print_r($_SESSION['accounts']); ?></pre>
+        <?php if (isset($_SESSION['accounts']['results']) && is_array($_SESSION['accounts']['results'])): ?>
+            <?php foreach ($_SESSION['accounts']['results'] as $account): ?>
+                <div class="box">
+                    <h2><?= htmlspecialchars($account['display_name'] ?? 'Account') ?></h2>
+                    <p>Type: <?= htmlspecialchars($account['account_type'] ?? 'N/A') ?></p>
+                    <p>Currency: <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
+                    <p>Account Number: <?= htmlspecialchars($account['account_number']['number'] ?? 'N/A') ?></p>
+                    <p>Sort Code: <?= htmlspecialchars($account['account_number']['sort_code'] ?? 'N/A') ?></p>
+                    <p>IBAN: <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
+                    <p>Bank: <?= htmlspecialchars($account['provider']['display_name'] ?? 'N/A') ?></p>
+                    <?php if (!empty($account['provider']['logo_uri'])): ?>
+                        <img src="<?= htmlspecialchars($account['provider']['logo_uri']) ?>" alt="Bank Logo" width="100">
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No account data available. Try reconnecting your bank.</p>
+        <?php endif; ?>
         <!-- Balances -->
         <div class="box">
             <h2>Balances</h2>
@@ -72,4 +89,3 @@ require_once 'config.php';
 
 </body>
 </html>
-?>

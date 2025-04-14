@@ -34,7 +34,7 @@
             exit();
         } else {
             //Invalid credentials
-            header("Location: login.html?error=" . urlencode("Invalid username or password"));
+            header("Location: index.html?error=" . urlencode("Invalid username or password"));
         }
         
 

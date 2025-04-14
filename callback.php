@@ -55,7 +55,7 @@ $context = stream_context_create([
 ]);
 
 // Calling the TrueLayer accounts endpoint
-$accounts = file_get_contents("https://api.truelayer.com/data/v1/accounts", false, $context);
+$accounts = file_get_contents("https://api.truelayer-sandbox.com/data/v1/accounts", false, $context);
 $accounts = json_decode($accounts, true);
 
 //Redirecting user back to homepage after fetching accounts

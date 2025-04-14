@@ -21,14 +21,14 @@ require_once 'config.php';
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <div class="page-container">
-            <?php
+            <!-- <?php
             echo '<pre>';
             print_r($_SESSION['accounts']);
             echo '</pre>';
-            ?>
+            ?> -->
             <!--Displaying accounts-->
-            <?php if (isset($_SESSION['accounts']['results']) && is_array($_SESSION['accounts']['results'])): ?>
-            <?php foreach ($_SESSION['accounts']['results'] as $account): ?>
+            <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
+            <?php foreach ($_SESSION['accounts'] as $account): ?>
                 <div class="box">
                     <h2><?= htmlspecialchars($account['display_name'] ?? 'Account') ?></h2>
                     <p><strong>Type:</strong> <?= htmlspecialchars($account['account_type'] ?? 'N/A') ?></p>

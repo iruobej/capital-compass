@@ -21,6 +21,7 @@ require_once 'config.php';
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <div class="page-container">
+        <pre><?php print_r($_SESSION['accounts']); ?></pre>
         <!-- Balances -->
         <div class="box">
             <h2>Balances</h2>
@@ -71,3 +72,4 @@ require_once 'config.php';
 
 </body>
 </html>
+?>

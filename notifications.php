@@ -1,11 +1,11 @@
 <?php
+session_start();
 include 'navbar.php';
 include 'config.php'; 
-session_start();
 
 $user_id = $_SESSION['user_id'] ?? 1; // fallback for testing
 
-// Fetch notifications
+// Fetching notifications from database
 $stmt = $conn->prepare("SELECT * FROM notifications WHERE user_id = ? ORDER BY created_at DESC");
 $stmt->execute([$user_id]);
 $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);

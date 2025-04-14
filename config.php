@@ -16,8 +16,8 @@ $user = getenv('DB_USER');
 $pass = getenv('DB_PASS');
 $port = getenv('DB_PORT');
 
-$dsn = "pgsql:host=$host;port=$port;dbname=$db";
-$pdo = new PDO($dsn, $user, $pass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require";
+$conn = new PDO($dsn, $user, $pass);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 ?>

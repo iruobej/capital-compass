@@ -37,7 +37,7 @@ require_once 'config.php';
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>No account data available. Try reconnecting your bank.</p>
+            <p>No account data available. Try <a href="<?= $auth_url ?>">connecting/reconnecting your bank.</a></p>
         <?php endif; ?>
         <!-- Balances -->
         <div class="box">
@@ -56,21 +56,17 @@ require_once 'config.php';
             <div class="box">
                 <h2>Recent Transactions</h2>
                 <table>
-                    <tr>
-                        <th>Date</th>
-                        <th>Category</th>
-                        <th>Amount</th>
-                    </tr>
-                    <tr>
-                        <td>01/01/2021</td>
-                        <td>Income</td>
-                        <td>$100.00</td>
-                    </tr>
-                    <tr>
-                        <td>01/02/2021</td>
-                        <td>Expense</td>
-                        <td>$50.00</td>
-                    </tr>
+                    <?php if (isset($_SESSION['transactions'])): ?>
+                        <?php foreach ($_SESSION['transactions'] as $tx): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($tx['timestamp']) ?></td>
+                                <td><?= htmlspecialchars($tx['transaction_category']) ?></td>
+                                <td>£<?= number_format($tx['amount']['value'], 2) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr><td colspan="3">No transactions available.</td></tr>
+                    <?php endif; ?>
                 </table>
             </div>
             <div class="box">

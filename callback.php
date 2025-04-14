@@ -1,4 +1,5 @@
 <?php
+//For dealing with user's bank data
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -58,8 +59,32 @@ $context = stream_context_create([
 $accounts = file_get_contents("https://api.truelayer-sandbox.com/data/v1/accounts", false, $context);
 $accounts = json_decode($accounts, true);
 
-//Redirecting user back to homepage after fetching accounts
+//Saving to the session
 $_SESSION['accounts'] = $accounts;
+
+$allTransactions = [];
+
+foreach ($accounts as $account) {
+    $accountId = $account['account_id'];
+    $transactionsUrl = "https://api.truelayer-sandbox.com/data/v1/accounts/$accountId/transactions";
+
+    $transactionsResponse = file_get_contents($transactionsUrl, false, stream_context_create([
+        "http" => [
+            "method" => "GET",
+            "header" => "Authorization: Bearer $access_token"
+        ]
+    ]));
+
+    $transactionData = json_decode($transactionsResponse, true);
+
+    if (isset($transactionData['results'])) {
+        $allTransactions = array_merge($allTransactions, $transactionData['results']);
+    }
+}
+
+$_SESSION['transactions'] = $allTransactions;
+
+//Redirecting user back to homepage after fetching accounts
 header("Location: home.php");
 exit;
 ?>

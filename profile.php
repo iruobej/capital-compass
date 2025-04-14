@@ -45,11 +45,11 @@ $username = $_SESSION['username'];
         $state = bin2hex(random_bytes(8));
         $nonce = bin2hex(random_bytes(8));
 
-        $auth_url = "https://auth.truelayer.com/?" . http_build_query([
+        $auth_url = "https://auth.truelayer-sandbox.com/?" . http_build_query([
             'response_type' => 'code',
-            'client_id' => TL_CLIENT_ID,
-            'redirect_uri' => TL_REDIRECT_URI,
-            'scope' => 'info accounts balance cards transactions direct_debits standing_orders offline_access',
+            'client_id' => getenv('TL_CLIENT_ID'),
+            'redirect_uri' => getenv('TL_REDIRECT_URI'),
+            'scope' => 'info accounts balance cards identity',
             'providers' => 'uk-cs-mock uk-ob-all uk-oauth-all',
             'state' => $state,
             'nonce' => $nonce
@@ -62,7 +62,7 @@ $username = $_SESSION['username'];
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
             <?php echo '<pre>';
-            echo 'Client ID: [' . TL_CLIENT_ID . "]\n";
+            echo 'Client ID: [' . getenv('TL_CLIENT_ID') . "]\n";
             echo 'Redirect URI: [' . TL_REDIRECT_URI . "]\n";
             echo 'Auth URL: ' . htmlspecialchars($auth_url) . "\n";
             echo '</pre>';?>

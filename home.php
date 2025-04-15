@@ -51,12 +51,28 @@ require_once 'config.php';
         <?php else: ?>
             <p>No account data available. Try <a href="<?= $auth_url ?>">connecting/reconnecting your bank.</a></p>
         <?php endif; ?>
+        
+        <?php
+        $standardTotal = 0;
+        $savingsTotal = 0;
+        foreach ($_SESSION['accounts'] as $account) {
+            $type = strtolower($account['account_type'] ?? '');
+            $balance = $account['balance'] ?? 0;
+
+            if ($type === 'transaction' || $type === 'standard') {
+                $standardTotal += $balance;
+            } elseif ($type === 'savings') {
+                $savingsTotal += $balance;
+            }
+        }
+        ?>
+
 
         <!-- Balances -->
         <div class="box">
             <h2>Balances</h2>
-            <p>Checking: £1,356.79</p>
-            <p>Savings: £3,452.00</p>
+            <p>Standard (Checking): £<?= number_format($standardTotal, 2) ?></p>
+            <p>Savings: £<?= number_format($savingsTotal, 2) ?></p>
         </div>
 
         <div class="grid-layout">

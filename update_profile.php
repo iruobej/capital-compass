@@ -8,8 +8,9 @@ $data = json_decode(file_get_contents('php://input'), true);
 $field = $data['field'] ?? '';
 $value = $data['value'] ?? '';
 $success = false;
+$error = null;
 
-// Making sure user is logged in
+// Make sure user is logged in
 if (!isset($_SESSION['username'])) {
     echo json_encode(['success' => false, 'error' => 'User not logged in']);
     exit;
@@ -22,12 +23,15 @@ try {
         case 'full_name':
             $first = trim($data['first_name'] ?? '');
             $last = trim($data['last_name'] ?? '');
+
             if ($first && $last) {
                 $_SESSION['firstname'] = $first;
                 $_SESSION['lastname'] = $last;
 
                 $stmt = $conn->prepare("UPDATE users SET firstname = ?, lastname = ? WHERE username = ?");
                 $success = $stmt->execute([$first, $last, $current_username]);
+            } else {
+                $error = "First or last name missing.";
             }
             break;
 
@@ -39,6 +43,8 @@ try {
                     $_SESSION['username'] = $new_username;
                     $success = true;
                 }
+            } else {
+                $error = "Username cannot be empty.";
             }
             break;
 
@@ -47,6 +53,8 @@ try {
                 $_SESSION['email'] = $value;
                 $stmt = $conn->prepare("UPDATE users SET email = ? WHERE username = ?");
                 $success = $stmt->execute([$value, $current_username]);
+            } else {
+                $error = "Invalid email address.";
             }
             break;
 
@@ -56,16 +64,20 @@ try {
                 $_SESSION['budget_alert'] = $budget_val;
                 $stmt = $conn->prepare("UPDATE users SET budget_alert = ? WHERE username = ?");
                 $success = $stmt->execute([$budget_val, $current_username]);
+            } else {
+                $error = "Budget must be a positive number.";
             }
             break;
 
         default:
-            $success = false;
+            $error = "Unknown field: $field";
             break;
     }
 
-    echo json_encode(['success' => $success]);
-
+    echo json_encode([
+        'success' => $success,
+        'error' => $success ? null : ($error ?? 'Database update failed')
+    ]);
 } catch (Exception $e) {
     echo json_encode([
         'success' => false,

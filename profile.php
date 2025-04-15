@@ -36,8 +36,7 @@ $budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display: none;">Save</button>
             </p>
-        </div>
-        <div class="box">
+        
             <p>
                 User Name:
                 <span class="display-value"><?php echo htmlspecialchars($username); ?></span>
@@ -45,8 +44,7 @@ $budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display:none;">Save</button>
             </p>
-        </div>
-        <div class="box">
+        
             <p>
                 Email:
                 <span class="display-value"><?php echo htmlspecialchars($email); ?></span>

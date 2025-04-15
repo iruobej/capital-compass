@@ -1,3 +1,28 @@
+// For handling the user clicking on the 'edit' button
+document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
+    editBtn.addEventListener('click', function() {
+        const parent = this.parentElement;
+
+        // Hiding the display value
+        const displayValue = parent.querySelector('.display-value');
+        if (displayValue) displayValue.style.display = 'none';
+
+        // Showing the input(s)
+        const inputContainer = parent.querySelector('.edit-inputs');
+        if (inputContainer) {
+            inputContainer.style.display = 'inline';
+        } else {
+            parent.querySelectorAll('.edit-input').forEach(input => input.style.display = 'inline');
+        }
+
+        // Toggle buttons
+        this.style.display = 'none';
+        const saveBtn = parent.querySelector('.save-btn');
+        if (saveBtn) saveBtn.style.display = 'inline';
+    });
+});
+
+// For saving the new values
 document.querySelectorAll('.save-btn').forEach(function(saveBtn) {
     saveBtn.addEventListener('click', function() {
         const parent = this.parentElement;

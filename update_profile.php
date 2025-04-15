@@ -74,6 +74,12 @@ try {
             break;
     }
 
+    // Debugging
+    if (!$success && isset($error)) {
+        echo json_encode(['success' => false, 'error' => $error]);
+        exit;
+    }    
+
     echo json_encode([
         'success' => $success,
         'error' => $success ? null : ($error ?? 'Database update failed')

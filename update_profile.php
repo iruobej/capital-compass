@@ -9,7 +9,7 @@ $field = $data['field'] ?? '';
 $value = $data['value'] ?? '';
 $success = false;
 
-// Make sure user is logged in
+// Making sure user is logged in
 if (!isset($_SESSION['username'])) {
     echo json_encode(['success' => false, 'error' => 'User not logged in']);
     exit;

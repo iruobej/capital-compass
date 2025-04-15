@@ -8,6 +8,7 @@ $firstname = $_SESSION['firstname'];
 $email = $_SESSION['email'];
 $lastname = $_SESSION['lastname'];
 $username = $_SESSION['username'];
+$budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
 ?>
 <head>
     <meta charset="UTF-8">
@@ -22,19 +23,47 @@ $username = $_SESSION['username'];
 <body>
     <?php include 'navbar.php'; include 'config.php'; ?>
     <h1 id="header" style="text-align: center;">Profile</h1>
-    <!-- <?php echo 'CLIENT_ID: ' . TL_CLIENT_ID . '<br>';
-    echo 'CLIENT_SECRET: ' . TL_CLIENT_SECRET . '<br>';
-    echo 'REDIRECT_URI: ' . TL_REDIRECT_URI . '<br>';?> -->
     <div class="notifications" style="text-align: center;">
         <div class="box">
             <h2>User Information</h2>
-            <p>Full Name: <?php echo htmlspecialchars($firstname . ' ' . $lastname); ?><button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> 
-            <p>User Name: <?php echo htmlspecialchars($username); ?><button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> 
-            <p>Email: <?php echo htmlspecialchars($email); ?><button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> 
+            <p>
+                Full Name:
+                <span class="display-value"><?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></span>
+                <span class="edit-inputs" style="display: none;">
+                    <input type="text" class="edit-input first-name" value="<?php echo htmlspecialchars($firstname); ?>" placeholder="First Name">
+                    <input type="text" class="edit-input last-name" value="<?php echo htmlspecialchars($lastname); ?>" placeholder="Last Name">
+                </span>
+                <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                <button class="save-btn" style="display: none;">Save</button>
+            </p>
         </div>
         <div class="box">
+            <p>
+                User Name:
+                <span class="display-value"><?php echo htmlspecialchars($username); ?></span>
+                <input class="edit-input" type="text" value="<?php echo htmlspecialchars($username); ?>" style="display:none;">
+                <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                <button class="save-btn" style="display:none;">Save</button>
+            </p>
+        </div>
+        <div class="box">
+            <p>
+                Email:
+                <span class="display-value"><?php echo htmlspecialchars($email); ?></span>
+                <input class="edit-input" type="text" value="<?php echo htmlspecialchars($email); ?>" style="display:none;">
+                <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                <button class="save-btn" style="display:none;">Save</button>
+            </p>
+        </div>  
+        <div class="box">
             <h2>Budgeting</h2>
-            <p>I want an alert set if my balance falls below: £100 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button></p> </p> 
+            <p>
+                I want an alert set if my balance falls below: 
+                <span class="display-value">£<?php echo htmlspecialchars($budget_alert); ?></span>
+                <input class="edit-input" type="number" min="0" value="<?php echo htmlspecialchars($budget_alert); ?>" style="display:none;">
+                <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                <button class="save-btn" style="display:none;">Save</button>
+            </p>
         </div>
         <div class="box">
             <h2>Badges and Achievments</h2>
@@ -54,20 +83,13 @@ $username = $_SESSION['username'];
             'state' => $state,
             'nonce' => $nonce
         ]);
-        echo '<pre>';
-        var_dump(TL_CLIENT_ID);
-        echo '</pre>';
         ?>
         <div class="box">
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
-            <?php echo '<pre>';
-            echo 'Client ID: [' . getenv('TL_CLIENT_ID') . "]\n";
-            echo 'Redirect URI: [' . TL_REDIRECT_URI . "]\n";
-            echo 'Auth URL: ' . htmlspecialchars($auth_url) . "\n";
-            echo '</pre>';?>
             <a href="<?= $auth_url ?>">Connect Bank</a>
         </div>
         <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>
+        <script src="profile.js"></script>
     </div>
 </body>

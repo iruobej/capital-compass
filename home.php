@@ -21,11 +21,6 @@ require_once 'config.php';
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <div class="page-container">
-            <!-- <?php
-            echo '<pre>';
-            print_r($_SESSION['accounts']);
-            echo '</pre>';
-            ?> -->
             <!--Displaying accounts-->
             <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
             <?php foreach ($_SESSION['accounts'] as $account): ?>
@@ -68,7 +63,7 @@ require_once 'config.php';
         ?>
 
 
-        <!-- Balances -->
+        <!-- Total Balance -->
         <div class="box">
             <h2>Balances</h2>
             <p>Standard (Checking): £<?= number_format($standardTotal, 2) ?></p>

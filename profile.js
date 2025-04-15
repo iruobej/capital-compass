@@ -36,7 +36,7 @@ document.querySelectorAll('.save-btn').forEach(function(saveBtn) {
             };
         } else {
             payload = {
-                field: parent.textContent.split(":")[0].trim().toLowerCase().replace(/\s/g, "_"),
+                field: parent.dataset.field,
                 value: parent.querySelector('.edit-input').value
             };
         }

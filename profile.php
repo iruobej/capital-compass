@@ -52,28 +52,29 @@ $budget_alert = $_SESSION['budget_alert']
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display:none;">Save</button>
             </p>
-            <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;">
+            <!-- Password change form (submits to change_password.php) -->
+            <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;"> 
                 <p data-field="change_password">
                     Password:
                     <span class="display-value">********</span>
 
+                    <!-- Hidden inputs for password change -->
                     <span class="edit-inputs" style="display: none;">
-                    <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
-                    <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
-                    <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
+                        <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
+                        <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
+                        <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
                     </span>
 
+                    <!-- Pencil icon to trigger input display -->
                     <button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+
+                    <!-- Error message display -->
                     <div id="error-message" style="color: red; margin-top: 10px;"></div>
-                    <button class="save-btn" type="submit" style="display: none;">Save</button>
+
+                    <!-- Save button (will be shown via JS using inline-block for layout) -->
+                    <button class="save-btn" type="submit" style="display: none; display: inline-block;">Save</button>
                 </p>
             </form>
-
-
-
-
-
-
         </div>  
         <div class="box">
             <h2>Budgeting</h2>

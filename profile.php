@@ -72,7 +72,7 @@ $budget_alert = $_SESSION['budget_alert']
                     <div id="error-message" style="color: red; margin-top: 10px;"></div>
 
                     <!-- Save button (will be shown via JS using inline-block for layout) -->
-                    <button class="save-btn" type="submit" style="display: none !important; display: inline-block;">Save</button>
+                    <button class="save-btn" type="submit" style="display: none; display: inline-block;">Save</button>
                 </p>
             </form>
         </div>  

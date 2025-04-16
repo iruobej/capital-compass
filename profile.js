@@ -7,30 +7,34 @@ document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
         const inputContainer = parent.querySelector('.edit-inputs');
         const saveBtn = parent.querySelector('.save-btn');
 
-        // Toggle visibility
         const isVisible = inputContainer && inputContainer.style.display !== 'none';
 
         if (isVisible) {
-            // Hide everything again
+            // Hide everything
             if (displayValue) displayValue.style.display = 'inline';
             if (inputContainer) inputContainer.style.display = 'none';
             if (saveBtn) saveBtn.style.display = 'none';
-            this.style.display = 'inline'; // show edit icon
+            this.style.display = 'inline'; // show edit again
         } else {
-            // Show input fields
+            // Show fields + save
             if (displayValue) displayValue.style.display = 'none';
             if (inputContainer) {
                 inputContainer.style.display = fieldName === 'change_password' ? 'block' : 'inline';
                 inputContainer.setAttribute('aria-hidden', 'false');
-                // Make sure inputs are required if it's the password section
+
                 if (fieldName === 'change_password') {
                     inputContainer.querySelectorAll('input').forEach(input => {
                         input.setAttribute('required', 'required');
                     });
                 }
             }
-            if (saveBtn) saveBtn.style.display = 'inline-block';
-            this.style.display = 'none'; // hide edit icon
+
+            // ✅ Make sure saveBtn shows properly
+            if (saveBtn) {
+                saveBtn.style.display = 'inline-block';
+            }
+
+            this.style.display = 'none'; // hide pencil
         }
     });
 });

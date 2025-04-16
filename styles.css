@@ -307,5 +307,5 @@ button, .dropdown-content a, .box a {
 }
 
 .save-btn {
-  display: none;
+  display: none !important;
 }

@@ -82,3 +82,4 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Password updated successfully!");
     }
 });
+console.log("Field:", fieldName);

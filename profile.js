@@ -1,41 +1,15 @@
 // For handling the user clicking on the 'edit' button
-document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
-    editBtn.addEventListener('click', function () {
+document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
+    editBtn.addEventListener('click', function() {
         const parent = this.parentElement;
-        const fieldName = parent.dataset.field;
         const displayValue = parent.querySelector('.display-value');
         const inputContainer = parent.querySelector('.edit-inputs');
         const saveBtn = parent.querySelector('.save-btn');
 
-        const isVisible = inputContainer && inputContainer.style.display !== 'none';
-
-        if (isVisible) {
-            // Hide everything
-            if (displayValue) displayValue.style.display = 'inline';
-            if (inputContainer) inputContainer.style.display = 'none';
-            if (saveBtn) saveBtn.style.display = 'none';
-            this.style.display = 'inline'; // show edit again
-        } else {
-            // Show fields + save
-            if (displayValue) displayValue.style.display = 'none';
-            if (inputContainer) {
-                inputContainer.style.display = fieldName === 'change_password' ? 'block' : 'inline';
-                inputContainer.setAttribute('aria-hidden', 'false');
-
-                if (fieldName === 'change_password') {
-                    inputContainer.querySelectorAll('input').forEach(input => {
-                        input.setAttribute('required', 'required');
-                    });
-                }
-            }
-
-            // ✅ Make sure saveBtn shows properly
-            if (saveBtn) {
-                saveBtn.style.display = 'inline-block';
-            }
-
-            this.style.display = 'none'; // hide pencil
-        }
+        if (displayValue) displayValue.style.display = 'none';
+        if (inputContainer) inputContainer.style.display = 'inline';
+        this.style.display = 'none';
+        if (saveBtn) saveBtn.style.display = 'inline';
     });
 });
 

@@ -55,6 +55,7 @@ $budget_alert = $_SESSION['budget_alert']
             <!-- Password change form (submits to change_password.php) -->
             <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;">
                 <p data-field="change_password">
+                    Password:
                     <span class="display-value">********</span>
 
                     <span class="edit-inputs" style="display: none;">

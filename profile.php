@@ -45,7 +45,7 @@ $budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
                 <button class="save-btn" style="display:none;">Save</button>
             </p>
         
-            <p>
+            <p data-field="email">
                 Email:
                 <span class="display-value"><?php echo htmlspecialchars($email); ?></span>
                 <input class="edit-input" type="text" value="<?php echo htmlspecialchars($email); ?>" style="display:none;">

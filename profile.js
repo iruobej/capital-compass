@@ -66,3 +66,18 @@ document.querySelectorAll('.save-btn').forEach(function(saveBtn) {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const passwordError = urlParams.get('password_error');
+    const passwordSuccess = urlParams.get('password_success');
+    const errorDiv = document.getElementById('error-message');
+
+    if (passwordError && errorDiv) {
+        errorDiv.textContent = decodeURIComponent(passwordError);
+    }
+
+    if (passwordSuccess) {
+        alert("Password updated successfully!");
+    }
+});

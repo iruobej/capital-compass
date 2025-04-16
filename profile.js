@@ -10,7 +10,8 @@ document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
         // Showing the input(s)
         const inputContainer = parent.querySelector('.edit-inputs');
         if (inputContainer) {
-            inputContainer.style.display = 'inline';
+            const fieldName = parent.dataset.field;
+            inputContainer.style.display = fieldName === 'change_password' ? 'block' : 'inline';
         } else {
             parent.querySelectorAll('.edit-input').forEach(input => input.style.display = 'inline');
         }

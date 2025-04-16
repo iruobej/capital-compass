@@ -8,7 +8,7 @@ $firstname = $_SESSION['firstname'];
 $email = $_SESSION['email'];
 $lastname = $_SESSION['lastname'];
 $username = $_SESSION['username'];
-$budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
+$budget_alert = $_SESSION['budget_alert'] 
 ?>
 <head>
     <meta charset="UTF-8">
@@ -52,6 +52,21 @@ $budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display:none;">Save</button>
             </p>
+            <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;">
+                <p data-field="change_password">
+                    <span class="display-value">********</span>
+
+                    <span class="edit-inputs" style="display: none;">
+                        <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
+                        <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
+                        <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
+                    </span>
+
+                    <button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="save-btn" type="submit" style="display: none;">Save</button>
+                </p>
+            </form>
+
         </div>  
         <div class="box">
             <h2>Budgeting</h2>

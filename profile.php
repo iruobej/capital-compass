@@ -54,19 +54,25 @@ $budget_alert = $_SESSION['budget_alert']
             </p>
             <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;">
                 <p data-field="change_password">
-                    Password: 
+                    Password:
                     <span class="display-value">********</span>
 
                     <span class="edit-inputs" style="display: none;">
-                        <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
-                        <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
-                        <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
+                    <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
+                    <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
+                    <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
                     </span>
-                    <span><button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button></span>
+
+                    <button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                     <div id="error-message" style="color: red; margin-top: 10px;"></div>
                     <button class="save-btn" type="submit" style="display: none;">Save</button>
                 </p>
             </form>
+
+
+
+
+
 
         </div>  
         <div class="box">

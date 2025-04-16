@@ -57,11 +57,11 @@ $budget_alert = $_SESSION['budget_alert']
                     Password: 
                     <span class="display-value">********</span>
 
-                    <div class="edit-inputs" style="display: none;">
+                    <span class="edit-inputs" style="display: none;">
                         <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
                         <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
                         <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
-                    </div>
+                    </span>
                     <span><button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button></span>
                     <div id="error-message" style="color: red; margin-top: 10px;"></div>
                     <button class="save-btn" type="submit" style="display: none;">Save</button>

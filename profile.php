@@ -54,6 +54,7 @@ $budget_alert = $_SESSION['budget_alert']
             </p>
             <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;">
                 <p data-field="change_password">
+                    Password: 
                     <span class="display-value">********</span>
 
                     <span class="edit-inputs" style="display: none;">
@@ -63,6 +64,7 @@ $budget_alert = $_SESSION['budget_alert']
                     </span>
 
                     <button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                    <div id="error-message" style="color: red; margin-top: 10px;"></div>
                     <button class="save-btn" type="submit" style="display: none;">Save</button>
                 </p>
             </form>

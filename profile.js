@@ -3,6 +3,9 @@ document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
     editBtn.addEventListener('click', function() {
         const parent = this.parentElement;
 
+        // Getting the field name for conditional display logic
+        const fieldName = parent.dataset.field;
+
         // Hiding the display value
         const displayValue = parent.querySelector('.display-value');
         if (displayValue) displayValue.style.display = 'none';
@@ -10,8 +13,9 @@ document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
         // Showing the input(s)
         const inputContainer = parent.querySelector('.edit-inputs');
         if (inputContainer) {
-            const fieldName = parent.dataset.field;
+            // Password section uses 'block', others stay 'inline'
             inputContainer.style.display = fieldName === 'change_password' ? 'block' : 'inline';
+            inputContainer.setAttribute('aria-hidden', 'false');
         } else {
             parent.querySelectorAll('.edit-input').forEach(input => input.style.display = 'inline');
         }
@@ -19,7 +23,7 @@ document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
         // Toggle buttons
         this.style.display = 'none';
         const saveBtn = parent.querySelector('.save-btn');
-        if (saveBtn) saveBtn.style.display = 'inline';
+        if (saveBtn) saveBtn.style.display = 'inline-block';
     });
 });
 

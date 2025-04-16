@@ -305,3 +305,7 @@ button, .dropdown-content a, .box a {
 #quizForm {
   text-align: left; /* Align form contents to the left */
 }
+
+.save-btn {
+  display: none;
+}

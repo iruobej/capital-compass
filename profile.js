@@ -1,31 +1,40 @@
 // For handling the user clicking on the 'edit' button
-document.querySelectorAll('.edit-btn').forEach(function(editBtn) {
-    editBtn.addEventListener('click', function() {
+document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
+    editBtn.addEventListener('click', function () {
         const parent = this.parentElement;
-
-        // Getting the field name for conditional display logic
         const fieldName = parent.dataset.field;
-
-        // Hiding the display value
         const displayValue = parent.querySelector('.display-value');
-        if (displayValue) displayValue.style.display = 'none';
-
-        // Showing the input(s)
         const inputContainer = parent.querySelector('.edit-inputs');
-        if (inputContainer) {
-            // Password section uses 'block', others stay 'inline'
-            inputContainer.style.display = fieldName === 'change_password' ? 'block' : 'inline';
-            inputContainer.setAttribute('aria-hidden', 'false');
-        } else {
-            parent.querySelectorAll('.edit-input').forEach(input => input.style.display = 'inline');
-        }
-
-        // Toggle buttons
-        this.style.display = 'none';
         const saveBtn = parent.querySelector('.save-btn');
-        if (saveBtn) saveBtn.style.display = 'inline-block';
+
+        // Toggle visibility
+        const isVisible = inputContainer && inputContainer.style.display !== 'none';
+
+        if (isVisible) {
+            // Hide everything again
+            if (displayValue) displayValue.style.display = 'inline';
+            if (inputContainer) inputContainer.style.display = 'none';
+            if (saveBtn) saveBtn.style.display = 'none';
+            this.style.display = 'inline'; // show edit icon
+        } else {
+            // Show input fields
+            if (displayValue) displayValue.style.display = 'none';
+            if (inputContainer) {
+                inputContainer.style.display = fieldName === 'change_password' ? 'block' : 'inline';
+                inputContainer.setAttribute('aria-hidden', 'false');
+                // Make sure inputs are required if it's the password section
+                if (fieldName === 'change_password') {
+                    inputContainer.querySelectorAll('input').forEach(input => {
+                        input.setAttribute('required', 'required');
+                    });
+                }
+            }
+            if (saveBtn) saveBtn.style.display = 'inline-block';
+            this.style.display = 'none'; // hide edit icon
+        }
     });
 });
+
 
 // For saving the new values
 document.querySelectorAll('.save-btn').forEach(function(saveBtn) {

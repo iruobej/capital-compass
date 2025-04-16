@@ -35,7 +35,7 @@ try {
             }
             break;
 
-        case 'user_name':
+        case 'username':
             $new_username = trim($value);
             if ($new_username) {
                 $stmt = $conn->prepare("UPDATE users SET username = ? WHERE username = ?");

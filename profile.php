@@ -56,8 +56,8 @@ $budget_alert = $_SESSION['budget_alert'] ?? 100; // defaulting to £100
         <div class="box">
             <h2>Budgeting</h2>
             <p data-field="budget">
-                I want an alert set if my balance falls below: 
-                <span class="display-value">£<?php echo htmlspecialchars($budget_alert); ?></span>
+                I want an alert set if my balance falls below: £
+                <span class="display-value"><?php echo htmlspecialchars($budget_alert); ?></span>
                 <input class="edit-input" type="number" min="0" value="<?php echo htmlspecialchars($budget_alert); ?>" style="display:none;">
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display:none;">Save</button>

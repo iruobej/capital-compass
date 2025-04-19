@@ -2,8 +2,7 @@
     session_start();
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    //require 'database.php'; //File to connect to database
-
+    
     $host = getenv('DB_HOST');
     $db = getenv('DB_NAME');
     $user = getenv('DB_USER');

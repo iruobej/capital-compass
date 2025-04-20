@@ -25,7 +25,7 @@ $badge = getBadgeLevel($transactions);
 <body >
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
-    <h2>Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
+    <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
     <div class="page-container">
             <!--Displaying accounts-->
             <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>

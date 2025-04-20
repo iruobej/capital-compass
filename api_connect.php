@@ -1,5 +1,5 @@
 <?php
-function generateTrueLayerAuthURL() {
+function generateAuthURL() {
     $state = bin2hex(random_bytes(8));
     $nonce = bin2hex(random_bytes(8));
 

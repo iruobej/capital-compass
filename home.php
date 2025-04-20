@@ -7,6 +7,9 @@ if(!isset($_SESSION['username'])){
 require_once 'config.php';
 require_once 'api_connect.php';
 $auth_url = generateAuthURL();
+require 'badgeLogic.php';
+$transactions = $_SESSION['transactions'] ?? [];
+$badge = getBadgeLevel($transactions);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +25,7 @@ $auth_url = generateAuthURL();
 <body >
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
+    <h2>Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
     <div class="page-container">
             <!--Displaying accounts-->
             <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>

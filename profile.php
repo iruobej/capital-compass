@@ -80,6 +80,7 @@ $budget_alert = $_SESSION['budget_alert']
             </p>
         </div>
 
+        <?php
         require_once 'api_connect.php';
         $auth_url = generateAuthURL();
         require_once 'badgeLogic.php';
@@ -87,12 +88,12 @@ $budget_alert = $_SESSION['budget_alert']
         $accessToken = $_SESSION['access_token'];
         $transactions = $_SESSION['transactions'] ?? [];
 
-        $badge = determineBadgeLevel($transactions);
-        echo "<span class='badge'>$badge</span>";
+        $badge = getBadgeLevel($transactions);
+        ?>
 
         <div class="box">
             <h2>Badges and Achievments</h2>
-            <p>Current Badge: Beginner Saver</p>
+            <p>Current Badge: <?php echo "<span class='badge'>$badge</span>";?></p>
         </div>
 
         <div class="box">

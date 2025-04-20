@@ -24,5 +24,9 @@ function getBadgeLevel($transactions, $goalsCompleted = 0, $monthsUnderBudget = 
         return "Budget Explorer";
     }
 
+    if (empty($transactions)) {
+        $badge = "Beginner Saver";
+    }
+
     return "Beginner Saver";
 }

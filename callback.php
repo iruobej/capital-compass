@@ -1,86 +1,31 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-require_once 'config.php';
+require_once 'api_connect.php';
 
+// Ensuring code is received
 if (!isset($_GET['code'])) {
-    var_dump($_GET);
-    die("Authorization code not provided in the callback.");
+    die("No authorization code provided.");
 }
-
-$code = $_GET['code'];
 
 // Exchanging code for token
-$data = http_build_query([
-    'grant_type' => 'authorization_code',
-    'client_id' => TL_CLIENT_ID,
-    'client_secret' => TL_CLIENT_SECRET,
-    'redirect_uri' => TL_REDIRECT_URI,
-    'code' => $code
-]);
+$tokenData = exchangeAuthCodeForToken($_GET['code']);
+$accessToken = $tokenData['access_token'] ?? null;
 
-$context = stream_context_create([
-    'http' => [
-        'method' => 'POST',
-        'header' => "Content-Type: application/x-www-form-urlencoded",
-        'content' => $data
-    ]
-]);
-
-$response = file_get_contents("https://auth.truelayer-sandbox.com/connect/token", false, $context);
-
-if ($response === false) {
-    die("Failed to retrieve access token. Check your request or credentials.");
+if (!$accessToken) {
+    die("Failed to get access token.");
 }
 
-$tokens = json_decode($response, true);
-if (!isset($tokens['access_token'])) {
-    die("Access token not found in response. Full response: " . $response);
-}
+$_SESSION['access_token'] = $accessToken;
 
-$accessToken = $tokens['access_token'];
-$headers = [
-    "Authorization: Bearer $accessToken",
-    "Content-Type: application/json"
-];
+// Fetching accounts
+$accounts = fetchAccounts($accessToken);
+$_SESSION['accounts'] = $accounts;
 
-$httpContext = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'header' => implode("\r\n", $headers)
-    ]
-]);
+// Fetching transactions
+$transactions = fetchAllTransactions($accessToken, $accounts);
+$_SESSION['transactions'] = $transactions;
 
-// Fetching Accounts
-$accountResponse = file_get_contents("https://api.truelayer-sandbox.com/data/v1/accounts", false, $httpContext);
-$accountData = json_decode($accountResponse, true);
-
-if (!isset($accountData['results'])) {
-    die("Accounts not found in response.");
-}
-
-$_SESSION['accounts'] = $accountData['results'];
-
-// Fetching Transactions
-$allTransactions = [];
-
-foreach ($accountData['results'] as $account) {
-    $accountId = $account['account_id'];
-    $transactionsUrl = "https://api.truelayer-sandbox.com/data/v1/accounts/$accountId/transactions";
-
-    $transactionResponse = file_get_contents($transactionsUrl, false, $httpContext);
-    $transactionData = json_decode($transactionResponse, true);
-
-    if (isset($transactionData['results'])) {
-        $allTransactions = array_merge($allTransactions, $transactionData['results']);
-    }
-}
-
-$_SESSION['transactions'] = $allTransactions;
-
-// Redirecting to home page once done
-header("Location: home.php");
+// Redirecting to profile once done
+header("Location: profile.php");
 exit;
 ?>

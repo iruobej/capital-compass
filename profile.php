@@ -79,25 +79,22 @@ $budget_alert = $_SESSION['budget_alert']
                 <button class="save-btn" style="display:none;">Save</button>
             </p>
         </div>
+
+        require_once 'api_connect.php';
+        $auth_url = generateAuthURL();
+        require_once 'badgeLogic.php';
+
+        $accessToken = $_SESSION['access_token'];
+        $transactions = $_SESSION['transactions'] ?? [];
+
+        $badge = determineBadgeLevel($transactions);
+        echo "<span class='badge'>$badge</span>";
+
         <div class="box">
             <h2>Badges and Achievments</h2>
             <p>Current Badge: Beginner Saver</p>
         </div>
 
-        <?php
-        $state = bin2hex(random_bytes(8));
-        $nonce = bin2hex(random_bytes(8));
-
-        $auth_url = "https://auth.truelayer-sandbox.com/?" . http_build_query([
-            'response_type' => 'code',
-            'client_id' => getenv('TL_CLIENT_ID'),
-            'redirect_uri' => getenv('TL_REDIRECT_URI'),
-            'scope' => 'info accounts balance cards transactions direct_debits standing_orders offline_access',
-            'providers' => 'uk-cs-mock uk-ob-all uk-oauth-all',
-            'state' => $state,
-            'nonce' => $nonce
-        ]);
-        ?>
         <div class="box">
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>

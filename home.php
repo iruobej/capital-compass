@@ -5,6 +5,8 @@ if(!isset($_SESSION['username'])){
     exit();
 }
 require_once 'config.php';
+require_once 'api_connect.php';
+$auth_url = generateAuthURL();
 ?>
 <!DOCTYPE html>
 <html lang="en">

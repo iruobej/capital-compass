@@ -1,13 +1,16 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 //Connecting to database 
-$host = 'localhost';
-$db = 'financial_app';
-$user = 'root';
-$pass = '';
+$host = getenv('DB_HOST');
+$db = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
+$port = getenv('DB_PORT');
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $port, $pass, $db);
 
 //Checking connection
 if($conn->connect_error){

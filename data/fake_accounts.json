@@ -1,30 +1,54 @@
 [
   {
     "account_id": "acc_001",
+    "account_number": {
+      "number": "39845739",
+      "sort_code": "23-25-43",
+      "iban": "GB00BANK39845739232543"
+    },
     "name": "Main Current Account",
     "type": "current",
     "currency": "GBP",
+    "bank": "Barclays",
     "balance": 1345.78
   },
   {
     "account_id": "acc_002",
+    "account_number": {
+      "number": "29452875",
+      "sort_code": "23-25-43",
+      "iban": "GB00BANK29452875232543"
+    },
     "name": "Savings Account",
     "type": "savings",
     "currency": "GBP",
+    "bank": "Barclays",
     "balance": 5023.45
   },
   {
     "account_id": "acc_003",
+    "account_number": {
+      "number": "23749283",
+      "sort_code": "23-25-43",
+      "iban": "GB00BANK23749283232543"
+    },
     "name": "Joint Account",
     "type": "joint",
     "currency": "GBP",
+    "bank": "Barclays",
     "balance": 2450.0
   },
   {
     "account_id": "acc_004",
+    "account_number": {
+      "number": "23479834",
+      "sort_code": "23-25-43",
+      "iban": "GB00BANK23479834232543"
+    },
     "name": "Student Account",
     "type": "student",
     "currency": "GBP",
+    "bank": "Barclays",
     "balance": 327.65
   }
 ]

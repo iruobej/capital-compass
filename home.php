@@ -38,8 +38,8 @@ $badge = getBadgeLevel($transactions);
             <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
             <?php foreach ($_SESSION['accounts'] as $account): ?>
                 <div class="box">
-                    <h2><?= htmlspecialchars($account['display_name'] ?? 'Account') ?></h2>
-                    <p><strong>Type:</strong> <?= htmlspecialchars($account['account_type'] ?? 'N/A') ?></p>
+                    <h2><?= htmlspecialchars($account['name'] ?? 'Account') ?></h2>
+                    <p><strong>Type:</strong> <?= htmlspecialchars($account['type'] ?? 'N/A') ?></p>
                     <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
 
                     <?php if (isset($account['account_number'])): ?>
@@ -48,29 +48,26 @@ $badge = getBadgeLevel($transactions);
                         <p><strong>IBAN:</strong> <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
                     <?php endif; ?>
 
-                    <?php if (isset($account['provider'])): ?>
-                        <p><strong>Bank:</strong> <?= htmlspecialchars($account['provider']['display_name'] ?? 'N/A') ?></p>
-                        <?php if (!empty($account['provider']['logo_uri'])): ?>
-                            <img src="<?= htmlspecialchars($account['provider']['logo_uri']) ?>" alt="Bank Logo" width="100">
-                        <?php endif; ?>
+                    <?php if (isset($account['bank_name'])): ?>
+                        <p><strong>Bank:</strong> <?= htmlspecialchars($account['bank_name'] ?? 'N/A') ?></p>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>No account data available. Try <a href="<?= $auth_url ?>">connecting/reconnecting your bank.</a></p>
+            <p>No account data available. </p>
         <?php endif; ?>
         
         <?php
         $standardTotal = 0;
         $savingsTotal = 0;
         foreach ($_SESSION['accounts'] as $account) {
-            $type = strtolower($account['account_type'] ?? '');
+            $type = strtolower($account['type'] ?? '');
             $balance = $account['balance'] ?? 0;
 
-            if ($type === 'transaction' || $type === 'standard') {
-                $standardTotal += $balance;
-            } elseif ($type === 'savings') {
+            if ($type === 'savings') {
                 $savingsTotal += $balance;
+            } else {
+                $standardTotal += $balance;
             }
         }
         ?>
@@ -108,7 +105,7 @@ $badge = getBadgeLevel($transactions);
                             <?php foreach ($_SESSION['transactions'] as $tx): ?>
                                 <?php
                                     $timestamp = $tx['timestamp'] ?? 'N/A';
-                                    $category = $tx['transaction_category'] ?? 'N/A';
+                                    $category = $tx['transaction_type'] ?? 'N/A';
                                     $amountVal = $tx['amount']['value'] ?? null;
                                     $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
                                 ?>

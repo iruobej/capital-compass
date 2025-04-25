@@ -82,7 +82,7 @@ $badge = getBadgeLevel($transactions);
 
         <div class="grid-layout">
             <div class="box">
-                <h2>Balance Amount Line Graph</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
+                <h2>Net Cash Flow (Across Accounts)</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
                 <?php
                 $transactions = json_decode(file_get_contents('data/fake_transactions.json'), true);
                 $daily_totals = [];
@@ -178,11 +178,6 @@ $badge = getBadgeLevel($transactions);
         options: {
             responsive: true,
             plugins: {
-                title: {
-                    display: true,
-                    text: 'Daily Net Cash Flow',
-                    font: { size: 18 }
-                },
                 tooltip: {
                     mode: 'index',
                     intersect: false,
@@ -198,7 +193,7 @@ $badge = getBadgeLevel($transactions);
                 y: {
                     title: {
                         display: true,
-                        text: 'GBP'
+                        text: 'GBP (£)'
                     },
                     beginAtZero: false
                 }

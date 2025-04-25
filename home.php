@@ -81,7 +81,8 @@ $badge = getBadgeLevel($transactions);
         </div>
 
         <div class="grid-layout">
-            <div class="box"><h2>Balance Amount Line Graph</h2></div>
+            <div class="box"><h2>Balance Amount Line Graph</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
+            </div>
             <div class="box">
                 <h2>Financial Goals</h2>
                     <p>Goal 1: £0.00</p>
@@ -135,5 +136,56 @@ $badge = getBadgeLevel($transactions);
         <p>&copy; 2025 Capital Compass</p>
     </footer>
     <script src="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const ctx = document.getElementById('cashFlowChart').getContext('2d');
+
+    const cashFlowChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: <?php echo $dates; ?>,
+            datasets: [{
+                label: 'Net Cash Flow (GBP)',
+                data: <?php echo $amounts; ?>,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Daily Net Cash Flow',
+                    font: { size: 18 }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'GBP'
+                    },
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+    </script>
+
 </body>
 </html>

@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])){
 }
 require_once 'config.php';
 require_once 'api_connect.php';
-$auth_url = generateAuthURL();
+//$auth_url = generateAuthURL();
 require 'badgeLogic.php';
 $transactions = $_SESSION['transactions'] ?? [];
 $badge = getBadgeLevel($transactions);

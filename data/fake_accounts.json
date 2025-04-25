@@ -1,0 +1,30 @@
+[
+  {
+    "account_id": "acc_001",
+    "name": "Main Current Account",
+    "type": "current",
+    "currency": "GBP",
+    "balance": 1345.78
+  },
+  {
+    "account_id": "acc_002",
+    "name": "Savings Account",
+    "type": "savings",
+    "currency": "GBP",
+    "balance": 5023.45
+  },
+  {
+    "account_id": "acc_003",
+    "name": "Joint Account",
+    "type": "joint",
+    "currency": "GBP",
+    "balance": 2450.0
+  },
+  {
+    "account_id": "acc_004",
+    "name": "Student Account",
+    "type": "student",
+    "currency": "GBP",
+    "balance": 327.65
+  }
+]

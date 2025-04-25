@@ -1,0 +1,332 @@
+[
+  {
+    "transaction_id": "txn_001",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-07T19:00:00Z",
+    "description": "Transfer to Savings",
+    "transaction_type": "PURCHASE",
+    "amount": {
+      "currency": "GBP",
+      "value": -182.76
+    }
+  },
+  {
+    "transaction_id": "txn_002",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-01T17:00:00Z",
+    "description": "Gym Membership",
+    "transaction_type": "REFUND",
+    "amount": {
+      "currency": "GBP",
+      "value": 155.04
+    }
+  },
+  {
+    "transaction_id": "txn_003",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-15T17:00:00Z",
+    "description": "Restaurant",
+    "transaction_type": "REFUND",
+    "amount": {
+      "currency": "GBP",
+      "value": 143.42
+    }
+  },
+  {
+    "transaction_id": "txn_004",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-07T07:00:00Z",
+    "description": "Netflix Subscription",
+    "transaction_type": "CREDIT",
+    "amount": {
+      "currency": "GBP",
+      "value": 183.63
+    }
+  },
+  {
+    "transaction_id": "txn_005",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-10T01:00:00Z",
+    "description": "Sainsbury's",
+    "transaction_type": "BILL_PAYMENT",
+    "amount": {
+      "currency": "GBP",
+      "value": -99.55
+    }
+  },
+  {
+    "transaction_id": "txn_006",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-02T03:00:00Z",
+    "description": "Tesco Grocery",
+    "transaction_type": "CREDIT",
+    "amount": {
+      "currency": "GBP",
+      "value": 162.41
+    }
+  },
+  {
+    "transaction_id": "txn_007",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-12T13:00:00Z",
+    "description": "Credit Card Payment",
+    "transaction_type": "PURCHASE",
+    "amount": {
+      "currency": "GBP",
+      "value": -178.17
+    }
+  },
+  {
+    "transaction_id": "txn_008",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-14T07:00:00Z",
+    "description": "ASOS Refund",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -6.48
+    }
+  },
+  {
+    "transaction_id": "txn_009",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-18T00:00:00Z",
+    "description": "Credit Card Payment",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -172.16
+    }
+  },
+  {
+    "transaction_id": "txn_010",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-19T06:00:00Z",
+    "description": "Uber Ride",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -102.27
+    }
+  },
+  {
+    "transaction_id": "txn_011",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-15T02:00:00Z",
+    "description": "Uber Ride",
+    "transaction_type": "PURCHASE",
+    "amount": {
+      "currency": "GBP",
+      "value": -183.3
+    }
+  },
+  {
+    "transaction_id": "txn_012",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-07T21:00:00Z",
+    "description": "Starbucks",
+    "transaction_type": "PURCHASE",
+    "amount": {
+      "currency": "GBP",
+      "value": -170.98
+    }
+  },
+  {
+    "transaction_id": "txn_013",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-02T23:00:00Z",
+    "description": "Amazon Purchase",
+    "transaction_type": "REFUND",
+    "amount": {
+      "currency": "GBP",
+      "value": 26.63
+    }
+  },
+  {
+    "transaction_id": "txn_014",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-03T09:00:00Z",
+    "description": "Electricity Bill",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -28.39
+    }
+  },
+  {
+    "transaction_id": "txn_015",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-20T20:00:00Z",
+    "description": "Starbucks",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -108.24
+    }
+  },
+  {
+    "transaction_id": "txn_016",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-20T08:00:00Z",
+    "description": "Sainsbury's",
+    "transaction_type": "PURCHASE",
+    "amount": {
+      "currency": "GBP",
+      "value": -237.83
+    }
+  },
+  {
+    "transaction_id": "txn_017",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-02T02:00:00Z",
+    "description": "Water Bill",
+    "transaction_type": "BILL_PAYMENT",
+    "amount": {
+      "currency": "GBP",
+      "value": -42.49
+    }
+  },
+  {
+    "transaction_id": "txn_018",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-22T23:00:00Z",
+    "description": "ASOS Refund",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -93.84
+    }
+  },
+  {
+    "transaction_id": "txn_019",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-03T21:00:00Z",
+    "description": "Council Tax",
+    "transaction_type": "BILL_PAYMENT",
+    "amount": {
+      "currency": "GBP",
+      "value": -57.05
+    }
+  },
+  {
+    "transaction_id": "txn_020",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-10T22:00:00Z",
+    "description": "PayPal Transfer",
+    "transaction_type": "REFUND",
+    "amount": {
+      "currency": "GBP",
+      "value": 31.27
+    }
+  },
+  {
+    "transaction_id": "txn_021",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-03T04:00:00Z",
+    "description": "PayPal Transfer",
+    "transaction_type": "BILL_PAYMENT",
+    "amount": {
+      "currency": "GBP",
+      "value": -246.35
+    }
+  },
+  {
+    "transaction_id": "txn_022",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-18T11:00:00Z",
+    "description": "Credit Card Payment",
+    "transaction_type": "BILL_PAYMENT",
+    "amount": {
+      "currency": "GBP",
+      "value": -153.73
+    }
+  },
+  {
+    "transaction_id": "txn_023",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-16T06:00:00Z",
+    "description": "Spotify",
+    "transaction_type": "REFUND",
+    "amount": {
+      "currency": "GBP",
+      "value": 48.67
+    }
+  },
+  {
+    "transaction_id": "txn_024",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-09T20:00:00Z",
+    "description": "Salary Payment",
+    "transaction_type": "REFUND",
+    "amount": {
+      "currency": "GBP",
+      "value": 249.09
+    }
+  },
+  {
+    "transaction_id": "txn_025",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-02T13:00:00Z",
+    "description": "Starbucks",
+    "transaction_type": "CREDIT",
+    "amount": {
+      "currency": "GBP",
+      "value": 44.06
+    }
+  },
+  {
+    "transaction_id": "txn_026",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-09T08:00:00Z",
+    "description": "Water Bill",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -7.19
+    }
+  },
+  {
+    "transaction_id": "txn_027",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-12T08:00:00Z",
+    "description": "Netflix Subscription",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -217.3
+    }
+  },
+  {
+    "transaction_id": "txn_028",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-20T04:00:00Z",
+    "description": "Gym Membership",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -102.6
+    }
+  },
+  {
+    "transaction_id": "txn_029",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-18T12:00:00Z",
+    "description": "Amazon Purchase",
+    "transaction_type": "TRANSFER",
+    "amount": {
+      "currency": "GBP",
+      "value": -198.21
+    }
+  },
+  {
+    "transaction_id": "txn_030",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-22T08:00:00Z",
+    "description": "Netflix Subscription",
+    "transaction_type": "PURCHASE",
+    "amount": {
+      "currency": "GBP",
+      "value": -138.43
+    }
+  }
+]

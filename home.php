@@ -22,7 +22,7 @@ $transactions = $txJson['transactions'] ?? [];
     </style>
 </head>
 <body>
-    <?php include navbar.php; ?>
+    <?php include 'navbar.php'; ?>
 
     <div class="container">
         <h1 class="header">Welcome, Joshua Iruobe</h1>

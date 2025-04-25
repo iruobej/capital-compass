@@ -37,20 +37,22 @@ $badge = getBadgeLevel($transactions);
             <!--Displaying accounts-->
             <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
             <?php foreach ($_SESSION['accounts'] as $account): ?>
-                <div class="box">
-                    <h2><?= htmlspecialchars($account['name'] ?? 'Account') ?></h2>
-                    <p><strong>Balance: </strong>£<?= htmlspecialchars($account['balance'] ?? 'N/A') ?></p>
-                    <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
+                <div class="account-scroll-container">
+                    <div class="account-box">
+                        <h2><?= htmlspecialchars($account['name'] ?? 'Account') ?></h2>
+                        <p><strong>Balance: </strong>£<?= htmlspecialchars($account['balance'] ?? 'N/A') ?></p>
+                        <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
 
-                    <?php if (isset($account['account_number'])): ?>
-                        <p><strong>Account Number:</strong> <?= htmlspecialchars($account['account_number']['number'] ?? 'N/A') ?></p>
-                        <p><strong>Sort Code:</strong> <?= htmlspecialchars($account['account_number']['sort_code'] ?? 'N/A') ?></p>
-                        <p><strong>IBAN:</strong> <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
-                    <?php endif; ?>
+                        <?php if (isset($account['account_number'])): ?>
+                            <p><strong>Account Number:</strong> <?= htmlspecialchars($account['account_number']['number'] ?? 'N/A') ?></p>
+                            <p><strong>Sort Code:</strong> <?= htmlspecialchars($account['account_number']['sort_code'] ?? 'N/A') ?></p>
+                            <p><strong>IBAN:</strong> <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
+                        <?php endif; ?>
 
-                    <?php if (isset($account['bank_name'])): ?>
-                        <p><strong>Bank:</strong> <?= htmlspecialchars($account['bank_name'] ?? 'N/A') ?></p>
-                    <?php endif; ?>
+                        <?php if (isset($account['bank_name'])): ?>
+                            <p><strong>Bank:</strong> <?= htmlspecialchars($account['bank_name'] ?? 'N/A') ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>

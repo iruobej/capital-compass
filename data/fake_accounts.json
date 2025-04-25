@@ -9,7 +9,7 @@
     "name": "Main Current Account",
     "type": "current",
     "currency": "GBP",
-    "bank": "Barclays",
+    "bank_name": "Barclays",
     "balance": 1345.78
   },
   {
@@ -22,7 +22,7 @@
     "name": "Savings Account",
     "type": "savings",
     "currency": "GBP",
-    "bank": "Barclays",
+    "bank_name": "Barclays",
     "balance": 5023.45
   },
   {
@@ -35,7 +35,7 @@
     "name": "Joint Account",
     "type": "joint",
     "currency": "GBP",
-    "bank": "Barclays",
+    "bank_name": "Barclays",
     "balance": 2450.0
   },
   {
@@ -48,7 +48,7 @@
     "name": "Student Account",
     "type": "student",
     "currency": "GBP",
-    "bank": "Barclays",
+    "bank_name": "Barclays",
     "balance": 327.65
   }
 ]

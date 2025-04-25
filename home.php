@@ -1,75 +1,142 @@
 <?php
-// Safely fetch accounts
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: index.html");
+    exit();
+}
+// Mock fallback for accounts and transactions using local API
 $accData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=accounts');
 $accJson = json_decode($accData, true);
-$accounts = $accJson['accounts'] ?? [];
+$_SESSION['accounts'] = $accJson['accounts'] ?? [];
 
-// Safely fetch transactions
 $txData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=transactions');
 $txJson = json_decode($txData, true);
-$transactions = $txJson['transactions'] ?? [];
-?>
+$_SESSION['transactions'] = $txJson['transactions'] ?? [];
 
+require 'badgeLogic.php';
+$transactions = $_SESSION['transactions'];
+$badge = getBadgeLevel($transactions);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome, <?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></title>
+    <title>Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></title>
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-    </style>
+        </style>
 </head>
-<body>
+<body >
     <?php include 'navbar.php'; ?>
+    <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
+    <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
+    <div class="page-container">
+            <!--Displaying accounts-->
+            <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
+            <?php foreach ($_SESSION['accounts'] as $account): ?>
+                <div class="box">
+                    <h2><?= htmlspecialchars($account['display_name'] ?? 'Account') ?></h2>
+                    <p><strong>Type:</strong> <?= htmlspecialchars($account['account_type'] ?? 'N/A') ?></p>
+                    <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
 
-    <div class="container">
-        <h1 class="header">Welcome, <?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></h1>
-        <h2 style="text-align: center;">Your Badge Level: <span class='badge'>Beginner Saver</span></h2>
+                    <?php if (isset($account['account_number'])): ?>
+                        <p><strong>Account Number:</strong> <?= htmlspecialchars($account['account_number']['number'] ?? 'N/A') ?></p>
+                        <p><strong>Sort Code:</strong> <?= htmlspecialchars($account['account_number']['sort_code'] ?? 'N/A') ?></p>
+                        <p><strong>IBAN:</strong> <?= htmlspecialchars($account['account_number']['iban'] ?? 'N/A') ?></p>
+                    <?php endif; ?>
 
-        <section>
-            <h3>- Displaying account data -</h3>
-            <?php if (!empty($accounts)): ?>
-                <ul>
-                    <?php foreach ($accounts as $account): ?>
-                        <li>
-                            <?= htmlspecialchars($account['name']) ?> (<?= $account['type'] ?>) – £<?= number_format($account['balance'], 2) ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php else: ?>
-                <p>No account data available. Try reloading or check your connection.</p>
-            <?php endif; ?>
-        </section>
+                    <?php if (isset($account['provider'])): ?>
+                        <p><strong>Bank:</strong> <?= htmlspecialchars($account['provider']['display_name'] ?? 'N/A') ?></p>
+                        <?php if (!empty($account['provider']['logo_uri'])): ?>
+                            <img src="<?= htmlspecialchars($account['provider']['logo_uri']) ?>" alt="Bank Logo" width="100">
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No account data available. Try <a href="<?= $auth_url ?>">connecting/reconnecting your bank.</a></p>
+        <?php endif; ?>
+        
+        <?php
+        $standardTotal = 0;
+        $savingsTotal = 0;
+        foreach ($_SESSION['accounts'] as $account) {
+            $type = strtolower($account['account_type'] ?? '');
+            $balance = $account['balance'] ?? 0;
 
-        <section>
-            <h3>- Displaying transactions -</h3>
-            <?php if (!empty($transactions)): ?>
-                <table id="txTable">
-                    <thead>
+            if ($type === 'transaction' || $type === 'standard') {
+                $standardTotal += $balance;
+            } elseif ($type === 'savings') {
+                $savingsTotal += $balance;
+            }
+        }
+        ?>
+
+
+        <!-- Total Balance -->
+        <div class="box">
+            <h2>Balances</h2>
+            <p>Standard (Checking): £<?= number_format($standardTotal, 2) ?></p>
+            <p>Savings: £<?= number_format($savingsTotal, 2) ?></p>
+        </div>
+
+        <div class="grid-layout">
+            <div class="box"><h2>Balance Amount Line Graph</h2></div>
+            <div class="box">
+                <h2>Financial Goals</h2>
+                    <p>Goal 1: £0.00</p>
+                    <p>Goal 2: £0.00</p>
+                    <p>Goal 3: £0.00</p>
+            </div>
+            <!--Displaying the user's transactions-->
+            <div class="box">
+                <h2>Recent Transactions</h2>
+
+                <input type="text" id="txSearch" onkeyup="filterTransactions()" placeholder="Search by date, category, or amount..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+
+                <div style="max-height: 300px; overflow-y: auto;">
+                    <table id="txTable">
                         <tr>
                             <th>Date</th>
-                            <th>Description</th>
-                            <th>Type</th>
+                            <th>Category</th>
                             <th>Amount</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($transactions as $tx): ?>
-                            <tr>
-                                <td><?= date("Y-m-d", strtotime($tx['timestamp'])) ?></td>
-                                <td><?= htmlspecialchars($tx['description']) ?></td>
-                                <td><?= $tx['transaction_type'] ?></td>
-                                <td>£<?= number_format($tx['amount']['value'], 2) ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php else: ?>
-                <p>No transactions available.</p>
-            <?php endif; ?>
-        </section>
-    </div>
+                        <?php if (isset($_SESSION['transactions'])): ?>
+                            <?php foreach ($_SESSION['transactions'] as $tx): ?>
+                                <?php
+                                    $timestamp = $tx['timestamp'] ?? 'N/A';
+                                    $category = $tx['transaction_category'] ?? 'N/A';
+                                    $amountVal = $tx['amount']['value'] ?? null;
+                                    $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
+                                ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($timestamp) ?></td>
+                                    <td><?= htmlspecialchars($category) ?></td>
+                                    <td>£<?= $amount ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr><td colspan="3">No transactions available.</td></tr>
+                        <?php endif; ?>
+                    </table>
+                </div>
+            </div>
+            <div class="box">
+                <h2>Suggested Actions</h2>
+                <ul>
+                    <li>Set up a budget</li>
+                    <li>Set up a savings goal</li>
+                    <li>Review recent transactions</li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+    <footer>
+        <p>&copy; 2025 Capital Compass</p>
+    </footer>
+    <script src="home.js"></script>
 </body>
 </html>

@@ -81,7 +81,27 @@ $badge = getBadgeLevel($transactions);
         </div>
 
         <div class="grid-layout">
-            <div class="box"><h2>Balance Amount Line Graph</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
+            <div class="box">
+                <h2>Balance Amount Line Graph</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
+                <?php
+                $transactions = json_decode(file_get_contents('fake_transactions.json'), true);
+                $daily_totals = [];
+
+                foreach ($transactions as $txn) {
+                    $date = substr($txn['timestamp'], 0, 10);
+                    $amount = $txn['amount']['value'];
+
+                    if (!isset($daily_totals[$date])) {
+                        $daily_totals[$date] = 0;
+                    }
+
+                    $daily_totals[$date] += $amount;
+                }
+
+                ksort($daily_totals);
+                $dates = json_encode(array_keys($daily_totals));
+                $amounts = json_encode(array_values($daily_totals));
+                ?>
             </div>
             <div class="box">
                 <h2>Financial Goals</h2>

@@ -39,7 +39,7 @@ $badge = getBadgeLevel($transactions);
             <?php foreach ($_SESSION['accounts'] as $account): ?>
                 <div class="box">
                     <h2><?= htmlspecialchars($account['name'] ?? 'Account') ?></h2>
-                    <p><strong>Type:</strong> <?= htmlspecialchars($account['balance'] ?? 'N/A') ?></p>
+                    <p><strong>Balance: </strong>£<?= htmlspecialchars($account['balance'] ?? 'N/A') ?></p>
                     <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
 
                     <?php if (isset($account['account_number'])): ?>

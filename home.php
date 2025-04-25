@@ -1,11 +1,11 @@
 <?php
 // Safely fetch accounts
-$accData = file_get_contents('api_connect.php?type=accounts');
+$accData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=accounts');
 $accJson = json_decode($accData, true);
 $accounts = $accJson['accounts'] ?? [];
 
 // Safely fetch transactions
-$txData = file_get_contents('api_connect.php?type=transactions');
+$txData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=transactions');
 $txJson = json_decode($txData, true);
 $transactions = $txJson['transactions'] ?? [];
 ?>
@@ -15,7 +15,7 @@ $transactions = $txJson['transactions'] ?? [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome, Joshua Iruobe</title>
+    <title>Welcome, <?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></title>
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
@@ -25,7 +25,7 @@ $transactions = $txJson['transactions'] ?? [];
     <?php include 'navbar.php'; ?>
 
     <div class="container">
-        <h1 class="header">Welcome, Joshua Iruobe</h1>
+        <h1 class="header">Welcome, <?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></h1>
         <h2 style="text-align: center;">Your Badge Level: <span class='badge'>Beginner Saver</span></h2>
 
         <section>

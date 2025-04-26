@@ -34,13 +34,13 @@ $badge = getBadgeLevel($transactions);
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
     <div class="page-container">
-            <!--Displaying accounts-->
-            <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
-            <?php foreach ($_SESSION['accounts'] as $account): ?>
-                <div class="account-scroll-container">
+        <!--Displaying accounts-->
+        <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
+            <div class="account-scroll-container">
+                <?php foreach ($_SESSION['accounts'] as $account): ?>
                     <div class="account-box">
                         <h2><?= htmlspecialchars($account['name'] ?? 'Account') ?></h2>
-                        <p><strong>Balance: </strong>£<?= htmlspecialchars($account['balance'] ?? 'N/A') ?></p>
+                        <p><strong>Balance:</strong> £<?= htmlspecialchars($account['balance'] ?? 'N/A') ?></p>
                         <p><strong>Currency:</strong> <?= htmlspecialchars($account['currency'] ?? 'N/A') ?></p>
 
                         <?php if (isset($account['account_number'])): ?>
@@ -53,10 +53,10 @@ $badge = getBadgeLevel($transactions);
                             <p><strong>Bank:</strong> <?= htmlspecialchars($account['bank_name'] ?? 'N/A') ?></p>
                         <?php endif; ?>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         <?php else: ?>
-            <p>No account data available. </p>
+            <p>No account data available.</p>
         <?php endif; ?>
         
         <?php

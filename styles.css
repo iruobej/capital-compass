@@ -322,7 +322,7 @@ button, .dropdown-content a, .box a {
 
 .account-box {
   flex: 0 0 auto;
-  width: 250px; 
+  width: 350px;
   min-height: 150px;
   background-color: var(--white);
   border-radius: 8px;

@@ -36,7 +36,7 @@ $badge = getBadgeLevel($transactions);
     <div class="page-container">
         <!--Displaying accounts-->
         <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
-            <div class="account-scroll-container">
+            <div class="account-scroll-container" style="outline: 2px solid red !important;">
                 <?php foreach ($_SESSION['accounts'] as $account): ?>
                     <div class="account-box">
                         <h2><?= htmlspecialchars($account['name'] ?? 'Account') ?></h2>

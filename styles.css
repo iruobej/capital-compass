@@ -322,13 +322,14 @@ button, .dropdown-content a, .box a {
 
 .account-box {
   flex: 0 0 auto;
-  width: 350px;
+  width: 450px;
   min-height: 150px;
   background-color: var(--white);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   padding: 1rem;
+  margin: 20px 0;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;

@@ -317,6 +317,7 @@ button, .dropdown-content a, .box a {
   gap: 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
 }
 
 .account-box {
@@ -324,8 +325,9 @@ button, .dropdown-content a, .box a {
   width: 250px; 
   min-height: 150px;
   background-color: var(--white);
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   padding: 1rem;
   scroll-snap-align: start;
   display: flex;

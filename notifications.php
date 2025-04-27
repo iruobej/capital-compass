@@ -37,6 +37,25 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ':message' => $message
         ]);
     }
+
+    
+    function deleteNotification(PDO $pdo, int $id): bool {
+        try {
+            $stmt = $pdo->prepare("DELETE FROM notifications WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            // You can log the error if needed
+            return false;
+        }
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_notification') {
+        $id = intval($_POST['id']);
+        echo deleteNotification($pdo, $id) ? 'success' : 'error';
+        exit;
+    }
+
     ?>
     <div class="notifications">
         <?php if (empty($notifications)): ?>
@@ -47,9 +66,11 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <h3><?= htmlspecialchars($note['title']) ?></h3>
                     <p><?= htmlspecialchars($note['message']) ?></p>
                     <small><?= date('j M Y, g:i a', strtotime($note['created_at'])) ?></small>
+                    <button class="dismiss-btn" data-id="<?php echo $notification['id']; ?>">Dismiss</button>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
+<script src="notifications.js"></script>
 </body>
 </html>

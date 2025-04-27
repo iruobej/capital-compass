@@ -24,6 +24,20 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1 id="header" style="text-align: center;">Notifications</h1>
+    <?php
+    function createNotification($userId, $title, $message) {
+            $stmt = $pdo->prepare("
+            INSERT INTO notifications (user_id, title, message, created_at) 
+            VALUES (:user_id, :title, :message, NOW())
+        ");
+
+        $stmt->execute([
+            ':user_id' => $userId,
+            ':title'   => $title,
+            ':message' => $message
+        ]);
+    }
+    ?>
     <div class="notifications">
         <?php if (empty($notifications)): ?>
             <p style="text-align:center;">You have no notifications at the moment.</p>

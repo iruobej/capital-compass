@@ -76,7 +76,11 @@ try {
     ]);
 
     if ($success) {
-        $_SESSION['username'] = $firstname . ' ' . $lastname;
+        $_SESSION['username'] = $username;
+        $_SESSION['firstname'] = $user['firstname'];
+        $_SESSION['lastname'] = $user['lastname'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['budget_alert'] = $user['budget_alert'];
         header("Location: home.php");
         exit();
     } else {

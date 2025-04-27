@@ -35,7 +35,7 @@ $badge = getBadgeLevel($transactions);
     <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
     <div class="page-container">
         <!--Displaying accounts-->
-        <h2>Your accounts: </h2>
+        <h2>Your Accounts: </h2>
         <?php if (isset($_SESSION['accounts']) && is_array($_SESSION['accounts'])): ?>
             <div class="account-scroll-container" >
                 <?php foreach ($_SESSION['accounts'] as $account): ?>

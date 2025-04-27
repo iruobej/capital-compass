@@ -10,6 +10,7 @@ $field = $data['field'] ?? '';
 $value = $data['value'] ?? '';
 $success = false;
 $error = null;
+$message = null;
 
 // Make sure user is logged in
 if (!isset($_SESSION['username'])) {
@@ -19,7 +20,7 @@ if (!isset($_SESSION['username'])) {
 
 $current_username = $_SESSION['username'];
 
-$userId = $_SESSION('user_id');
+$userId = $_SESSION['user_id'];
 
 try {
     switch ($field) {
@@ -33,6 +34,7 @@ try {
 
                 $stmt = $conn->prepare("UPDATE users SET firstname = ?, lastname = ? WHERE username = ?");
                 $success = $stmt->execute([$first, $last, $current_username]);
+                $fullName = "$first $last";
                 $message = "Your full name has been changed to $fullName.";
             } else {
                 $error = "First or last name missing.";
@@ -69,6 +71,7 @@ try {
             if ($budget_val >= 0) {
                 $_SESSION['budget_alert'] = $budget_val;
                 $stmt = $conn->prepare("UPDATE users SET budget_alert = ? WHERE username = ?");
+                $message = "Your budget alert has been updated to £$budget_val.";
                 $success = $stmt->execute([$budget_val, $current_username]);
             } else {
                 $error = "Budget must be a positive number.";

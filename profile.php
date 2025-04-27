@@ -102,6 +102,6 @@ $budget_alert = $_SESSION['budget_alert']
             <a href="<?= $auth_url ?>">Connect Bank</a>
         </div>
         <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>
-        <script src="profile.js"></script>
     </div>
+<script src="profile.js"></script>
 </body>

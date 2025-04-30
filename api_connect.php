@@ -1,5 +1,5 @@
 <?php
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 
 // Helper to load and decode JSON from file
 function load_json($filename) {

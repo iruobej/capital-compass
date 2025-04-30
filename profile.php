@@ -49,24 +49,25 @@ $budget_alert = $_SESSION['budget_alert']
         
             <p data-field="email">
                 Email:
-                <span class="display-value"><?php echo htmlspecialchars($email); ?>
-                    <input class="edit-input" type="text" value="<?php echo htmlspecialchars($email); ?>" style="display:none;">
+                <span class="display-value"><?php echo htmlspecialchars($email); ?></span>
+                <span class="edit-inputs" style="display: none;">
+                    <input type="text" class="edit-input first-name" value="<?php echo htmlspecialchars($email); ?>" placeholder="Email">
                 </span>
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
-                <button class="save-btn" style="display:none;">Save</button>
+                <button class="save-btn" style="display: none;">Save</button>
             </p>
             <!-- Password change form (submits to change_password.php) -->
             <form action="change_password.php" method="POST" class="password-form" style="text-align: left; display: inline-block;">
                 <p data-field="change_password">
                     Password:
-                    <span class="display-value" style="display: none;">********
+                    <span class="display-value">*******</span>
+                    <span class="edit-inputs" style="display: none;">
                         <input class="edit-input" type="password" name="current_password" placeholder="Current Password" required><br><br>
                         <input class="edit-input" type="password" name="new_password" placeholder="New Password" required><br><br>
                         <input class="edit-input" type="password" name="confirm_password" placeholder="Confirm New Password" required><br><br>
                     </span>
-
                     <button type="button" class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
-                    <button class="save-btn" type="submit" style="display: none;">Save</button>
+                    <button class="save-btn" type="submit" style="display: none;">Save</button>   
                 </p>
             </form>
         </div>  

@@ -83,8 +83,6 @@ $budget_alert = $_SESSION['budget_alert']
         <?php
         require_once 'api_connect.php';
         require_once 'badgeLogic.php';
-
-        $accessToken = $_SESSION['access_token'];
         $transactions = $_SESSION['transactions'] ?? [];
 
         $badge = getBadgeLevel($transactions);

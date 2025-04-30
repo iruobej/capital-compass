@@ -99,7 +99,6 @@ $budget_alert = $_SESSION['budget_alert']
         <div class="box">
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
-            <a href="<?= $auth_url ?>">Connect Bank</a>
         </div>
         <button style="background-color: red;" onclick="location.href='logout.php';">Logout</button>
     </div>

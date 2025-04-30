@@ -13,4 +13,18 @@ function load_json($filename) {
     $content = file_get_contents($file_path);
     return json_decode($content, true);
 }
+
+// Route based on GET param
+$type = $_GET['type'] ?? 'transactions';
+
+if ($type === 'accounts') {
+    $accounts = load_json('fake_accounts.json');
+    echo json_encode(["accounts" => $accounts]);
+} elseif ($type === 'transactions') {
+    $transactions = load_json('fake_transactions.json');
+    echo json_encode(["transactions" => $transactions]);
+} else {
+    http_response_code(400);
+    echo json_encode(["error" => "Invalid type"]);
+}
 ?>

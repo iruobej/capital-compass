@@ -82,7 +82,6 @@ $budget_alert = $_SESSION['budget_alert']
 
         <?php
         require_once 'api_connect.php';
-        $auth_url = generateAuthURL();
         require_once 'badgeLogic.php';
 
         $accessToken = $_SESSION['access_token'];

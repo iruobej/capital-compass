@@ -39,11 +39,12 @@ $budget_alert = $_SESSION['budget_alert']
         
             <p data-field="username">
                 User Name:
-                <span class="display-value"><?php echo htmlspecialchars($username); ?>
-                    <input class="edit-input" type="text" value="<?php echo htmlspecialchars($username); ?>" style="display:none;">
+                <span class="display-value"><?php echo htmlspecialchars($username); ?></span>
+                <span class="edit-inputs" style="display: none;">
+                    <input type="text" class="edit-input first-name" value="<?php echo htmlspecialchars($username); ?>" placeholder="Username">
                 </span>
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
-                <button class="save-btn" style="display:none;">Save</button>
+                <button class="save-btn" style="display: none;">Save</button>
             </p>
         
             <p data-field="email">

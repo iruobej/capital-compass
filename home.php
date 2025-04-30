@@ -17,6 +17,10 @@ require 'badgeLogic.php';
 $transactions = $_SESSION['transactions'];
 $badge = getBadgeLevel($transactions);
 
+//Logic for goals table in the db
+$stmt = $pdo->prepare("SELECT * FROM goals WHERE user_id = ?");
+$stmt->execute([$_SESSION['user_id']]);
+$goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,13 +110,24 @@ $badge = getBadgeLevel($transactions);
                 $amounts = json_encode(array_values($daily_totals));
                 ?>
             </div>
+
             <div class="box">
                 <h2>Financial Goals</h2>
-                    <p>Goal 1: £0.00</p>
-                    <p>Goal 2: £0.00</p>
-                    <p>Goal 3: £0.00</p>
+                <?php foreach ($goals as $goal): ?>
+                    <div class="goal-item" data-goal-id="<?= $goal['goal_id'] ?>" data-field="description">
+                        <span class="display-value"><?= htmlspecialchars($goal['description']) ?></span>
+                        <span class="edit-inputs" style="display:none;">
+                            <input type="text" class="edit-input" value="<?= htmlspecialchars($goal['description']) ?>" />
+                        </span>
+                        <button class="edit-btn">Edit</button>
+                        <button class="save-btn" style="display:none;">Save</button>
+                    </div>
+                <?php endforeach; ?>
+                <!-- Add button -->
+                <button id="add-goal-btn">+ Add Goal</button>
+                <div id="new-goal-container"></div>
             </div>
-            <!--Displaying the user's transactions-->
+
             <div class="box">
                 <h2>Recent Transactions</h2>
 

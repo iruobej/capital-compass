@@ -1,4 +1,4 @@
-<?php
+<?php 
 header('Content-Type: application/json');
 session_start();
 include 'config.php';
@@ -13,13 +13,12 @@ $error = null;
 $message = null;
 
 // Make sure user is logged in
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'error' => 'User not logged in']);
     exit;
 }
 
 $current_username = $_SESSION['username'];
-
 $userId = $_SESSION['user_id'];
 
 try {
@@ -78,24 +77,42 @@ try {
             }
             break;
 
+        case 'goal_update':
+            $goal_id = $data['goal_id'] ?? null;
+            if ($goal_id && $value) {
+                $stmt = $conn->prepare("UPDATE goals SET description = ? WHERE goal_id = ? AND user_id = ?");
+                $success = $stmt->execute([$value, $goal_id, $userId]);
+                $message = "Goal #$goal_id updated to: \"$value\".";
+            } else {
+                $error = "Missing goal ID or new description.";
+            }
+            break;
+
+        case 'add_goal':
+            $description = trim($data['description'] ?? '');
+            if ($description) {
+                $stmt = $conn->prepare("INSERT INTO goals (user_id, description) VALUES (?, ?)");
+                $success = $stmt->execute([$userId, $description]);
+                $message = "New goal added: \"$description\".";
+            } else {
+                $error = "Goal description cannot be empty.";
+            }
+            break;
+
         default:
             $error = "Unknown field: $field";
             break;
     }
 
-    createNotification($userId, "Profile Updated", $message);
-
-
-    // Debugging
-    if (!$success && isset($error)) {
-        echo json_encode(['success' => false, 'error' => $error]);
-        exit;
-    }    
+    if ($message && $success) {
+        createNotification($userId, "Profile Updated", $message);
+    }
 
     echo json_encode([
         'success' => $success,
         'error' => $success ? null : ($error ?? 'Database update failed')
     ]);
+
 } catch (Exception $e) {
     echo json_encode([
         'success' => false,

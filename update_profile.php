@@ -1,6 +1,6 @@
 <?php
-session_start();
 header('Content-Type: application/json');
+session_start();
 include 'config.php';
 require_once 'notifications.php'; 
 

@@ -50,3 +50,45 @@ document.getElementById('add-goal-btn').addEventListener('click', function () {
         });
     });
 });
+// Handle goal editing
+document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
+    editBtn.addEventListener('click', function () {
+        const parent = this.parentElement;
+        parent.querySelector('.display-value').style.display = 'none';
+        parent.querySelector('.edit-inputs').style.display = 'inline';
+        this.style.display = 'none';
+        parent.querySelector('.save-btn').style.display = 'inline';
+    });
+});
+
+// Handle goal saving
+document.querySelectorAll('.save-btn').forEach(function (saveBtn) {
+    saveBtn.addEventListener('click', function () {
+        const parent = this.parentElement;
+        const goal_id = parent.dataset.goalId;
+        const value = parent.querySelector('.edit-input').value;
+
+        fetch('update_profile.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                field: 'goal_update',
+                goal_id: goal_id,
+                value: value
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                parent.querySelector('.display-value').textContent = value;
+            } else {
+                alert('Failed to update goal');
+            }
+
+            parent.querySelector('.display-value').style.display = 'inline';
+            parent.querySelector('.edit-inputs').style.display = 'none';
+            parent.querySelector('.edit-btn').style.display = 'inline';
+            saveBtn.style.display = 'none';
+        });
+    });
+});

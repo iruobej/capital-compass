@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(res => res.json())
             .then(data => {
+                console.log('Goal response:', data); // add this line
                 if (data.success) {
-                    console.log('Server new goal response:', data); 
-                    location.reload(); // Or re-render the goal list dynamically
+                    location.reload();
                 } else {
                     alert('Failed to add goal');
                 }
@@ -80,15 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     value: value
                 })
             })
-            .then(res => res.text()) // TEMPORARILY read as text
-            .then(text => {
-                console.log('Raw response:', text); // See the actual error
-                const data = JSON.parse(text); // Manually parse to catch HTML
+            .then(res => res.json())
+            .then(data => {
+                console.log('Goal response:', data); // add this line
                 if (data.success) {
-                    console.log('Server response:', data);
-                    parent.querySelector('.display-value').textContent = value;
+                    location.reload();
                 } else {
-                    alert('Update failed');
+                    alert('Failed to add goal');
                 }
             });
         });

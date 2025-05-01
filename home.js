@@ -80,19 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     value: value
                 })
             })
-            .then(res => res.json())
-            .then(data => {
+            .then(res => res.text()) // TEMPORARILY read as text
+            .then(text => {
+                console.log('Raw response:', text); // See the actual error
+                const data = JSON.parse(text); // Manually parse to catch HTML
                 if (data.success) {
-                    console.log('Server response:', data); 
+                    console.log('Server response:', data);
                     parent.querySelector('.display-value').textContent = value;
                 } else {
-                    alert('Failed to update goal');
+                    alert('Update failed');
                 }
-
-                parent.querySelector('.display-value').style.display = 'inline';
-                parent.querySelector('.edit-inputs').style.display = 'none';
-                parent.querySelector('.edit-btn').style.display = 'inline';
-                saveBtn.style.display = 'none';
             });
         });
     });

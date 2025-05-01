@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
+                    console.log('Server new goal response:', data); 
                     location.reload(); // Or re-render the goal list dynamically
                 } else {
                     alert('Failed to add goal');
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
+                    console.log('Server response:', data); 
                     parent.querySelector('.display-value').textContent = value;
                 } else {
                     alert('Failed to update goal');

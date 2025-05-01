@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch('update_profile.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
                 body: JSON.stringify({
                     field: 'goal_update',
                     goal_id: goal_id,

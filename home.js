@@ -19,76 +19,79 @@ function filterTransactions() {
         row.style.display = match ? "" : "none";
     }
 }
-document.getElementById('add-goal-btn').addEventListener('click', function () {
-    const container = document.getElementById('new-goal-container');
-    const div = document.createElement('div');
-    div.innerHTML = `
-        <input type="text" id="new-goal-input" placeholder="Enter goal description" />
-        <button id="save-new-goal">Save</button>
-    `;
-    container.innerHTML = ''; // prevent multiple inputs at once
-    container.appendChild(div);
 
-    document.getElementById('save-new-goal').addEventListener('click', function () {
-        const description = document.getElementById('new-goal-input').value;
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('add-goal-btn').addEventListener('click', function () {
+        const container = document.getElementById('new-goal-container');
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <input type="text" id="new-goal-input" placeholder="Enter goal description" />
+            <button id="save-new-goal">Save</button>
+        `;
+        container.innerHTML = ''; // prevent multiple inputs at once
+        container.appendChild(div);
 
-        fetch('update_profile.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                type: 'add_goal',
-                description: description
+        document.getElementById('save-new-goal').addEventListener('click', function () {
+            const description = document.getElementById('new-goal-input').value;
+
+            fetch('update_profile.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'add_goal',
+                    description: description
+                })
             })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                location.reload(); // Or re-render the goal list dynamically
-            } else {
-                alert('Failed to add goal');
-            }
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload(); // Or re-render the goal list dynamically
+                } else {
+                    alert('Failed to add goal');
+                }
+            });
         });
     });
-});
-// Handle goal editing
-document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
-    editBtn.addEventListener('click', function () {
-        const parent = this.parentElement;
-        parent.querySelector('.display-value').style.display = 'none';
-        parent.querySelector('.edit-inputs').style.display = 'inline';
-        this.style.display = 'none';
-        parent.querySelector('.save-btn').style.display = 'inline';
+    // Handle goal editing
+    document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
+        editBtn.addEventListener('click', function () {
+            const parent = this.parentElement;
+            parent.querySelector('.display-value').style.display = 'none';
+            parent.querySelector('.edit-inputs').style.display = 'inline';
+            this.style.display = 'none';
+            parent.querySelector('.save-btn').style.display = 'inline';
+        });
     });
-});
 
-// Handle goal saving
-document.querySelectorAll('.save-btn').forEach(function (saveBtn) {
-    saveBtn.addEventListener('click', function () {
-        const parent = this.parentElement;
-        const goal_id = parent.dataset.goalId;
-        const value = parent.querySelector('.edit-input').value;
+    // Handle goal saving
+    document.querySelectorAll('.save-btn').forEach(function (saveBtn) {
+        saveBtn.addEventListener('click', function () {
+            const parent = this.parentElement;
+            const goal_id = parent.dataset.goalId;
+            const value = parent.querySelector('.edit-input').value;
 
-        fetch('update_profile.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                field: 'goal_update',
-                goal_id: goal_id,
-                value: value
+            fetch('update_profile.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    field: 'goal_update',
+                    goal_id: goal_id,
+                    value: value
+                })
             })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                parent.querySelector('.display-value').textContent = value;
-            } else {
-                alert('Failed to update goal');
-            }
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    parent.querySelector('.display-value').textContent = value;
+                } else {
+                    alert('Failed to update goal');
+                }
 
-            parent.querySelector('.display-value').style.display = 'inline';
-            parent.querySelector('.edit-inputs').style.display = 'none';
-            parent.querySelector('.edit-btn').style.display = 'inline';
-            saveBtn.style.display = 'none';
+                parent.querySelector('.display-value').style.display = 'inline';
+                parent.querySelector('.edit-inputs').style.display = 'none';
+                parent.querySelector('.edit-btn').style.display = 'inline';
+                saveBtn.style.display = 'none';
+            });
         });
     });
 });

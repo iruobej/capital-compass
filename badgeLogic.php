@@ -1,5 +1,5 @@
 <?php
-function getBadgeLevel($transactions, $goalsCompleted = 0, $monthsUnderBudget = 0, $customCategoriesTracked = 0) {
+function getBadgeLevel($transactions) {
     $expenseCount = 0;
 
     foreach ($transactions as $txn) {
@@ -9,24 +9,24 @@ function getBadgeLevel($transactions, $goalsCompleted = 0, $monthsUnderBudget = 
     }
 
     if ($expenseCount >= 100) {
-        return "Lvl 5/5 - Diamond";
+        return "5/5 - Diamond";
     }
 
     if ($expenseCount >= 50) {
-        return "Lvl 4/5 - Platinum";
+        return "4/5 - Platinum";
     }
 
     if ($expenseCount >= 20) {
-        return "Lvl 3/5 - Gold";
+        return "3/5 - Gold";
     }
 
     if ($expenseCount >= 5) {
-        return "Lvl 2/5 - Silver";
+        return "2/5 - Silver";
     }
 
     if (empty($transactions)) {
-        $badge = "Lvl 1/5 - Bronze";
+        $badge = "1/5 - Bronze";
     }
 
-    return "Lvl 1/5 - Bronze";
+    return "1/5 - Bronze";
 }

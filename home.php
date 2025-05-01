@@ -2,11 +2,11 @@
 session_start();
 if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
     require_once 'config.php';
-    $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
     $stmt->execute([$_SESSION['username']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user) {
-        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_id'] = $user['user_id'];
     }
 }
 if(!isset($_SESSION['username'])){

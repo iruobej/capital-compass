@@ -164,7 +164,7 @@ $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
                                 ?>
                                 <tr>
-                                    <td><?= htmlspecialchars($timestamp) ?></td>
+                                    <td><?= htmlspecialchars($formattedDate) ?></td>
                                     <td><?= htmlspecialchars($category) ?></td>
                                     <td>£<?= $amount ?></td>
                                 </tr>

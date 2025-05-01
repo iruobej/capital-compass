@@ -4,7 +4,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-13T00:00:00Z",
     "description": "Monthly Rent",
-    "category": "rent",
+    "category": "Rent",
     "amount": {
       "currency": "GBP",
       "value": -14.16
@@ -15,7 +15,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-01-04T00:00:00Z",
     "description": "Lidl",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -35.0
@@ -26,7 +26,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-01-21T00:00:00Z",
     "description": "Sainsbury's",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -13.27
@@ -37,7 +37,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-03-11T00:00:00Z",
     "description": "Steam",
-    "category": "gaming",
+    "category": "Gaming",
     "amount": {
       "currency": "GBP",
       "value": -71.68
@@ -48,7 +48,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-02-21T00:00:00Z",
     "description": "McDonald's",
-    "category": "restaurants",
+    "category": "Restaurants",
     "amount": {
       "currency": "GBP",
       "value": -37.57
@@ -59,7 +59,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-02-21T00:00:00Z",
     "description": "Freelance Project",
-    "category": "freelance",
+    "category": "Freelance",
     "amount": {
       "currency": "GBP",
       "value": 269.85
@@ -70,7 +70,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-14T00:00:00Z",
     "description": "Cinema",
-    "category": "entertainment",
+    "category": "Entertainment",
     "amount": {
       "currency": "GBP",
       "value": -162.2
@@ -81,7 +81,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-16T00:00:00Z",
     "description": "Xbox Store",
-    "category": "gaming",
+    "category": "Gaming",
     "amount": {
       "currency": "GBP",
       "value": -165.6
@@ -92,7 +92,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-17T00:00:00Z",
     "description": "Xbox Store",
-    "category": "gaming",
+    "category": "Gaming",
     "amount": {
       "currency": "GBP",
       "value": -12.08
@@ -103,7 +103,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-04-08T00:00:00Z",
     "description": "Adobe",
-    "category": "subscriptions",
+    "category": "Subscriptions",
     "amount": {
       "currency": "GBP",
       "value": -175.3
@@ -114,7 +114,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-01-20T00:00:00Z",
     "description": "Sainsbury's",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -130.0
@@ -125,7 +125,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-04-08T00:00:00Z",
     "description": "Lidl",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -103.42
@@ -136,7 +136,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-02-03T00:00:00Z",
     "description": "Disney+",
-    "category": "subscriptions",
+    "category": "Subscriptions",
     "amount": {
       "currency": "GBP",
       "value": -114.67
@@ -147,7 +147,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-17T00:00:00Z",
     "description": "Monthly Rent",
-    "category": "rent",
+    "category": "Rent",
     "amount": {
       "currency": "GBP",
       "value": -159.05
@@ -158,7 +158,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-02-24T00:00:00Z",
     "description": "GP Visit",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -67.46
@@ -169,7 +169,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-26T00:00:00Z",
     "description": "Gift from Mum",
-    "category": "gift",
+    "category": "Gift",
     "amount": {
       "currency": "GBP",
       "value": 81.46
@@ -180,7 +180,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-22T00:00:00Z",
     "description": "Pub",
-    "category": "alcohol",
+    "category": "Alcohol",
     "amount": {
       "currency": "GBP",
       "value": -91.05
@@ -191,7 +191,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-04-26T00:00:00Z",
     "description": "Travel Reimbursement",
-    "category": "reimbursement",
+    "category": "Reimbursement",
     "amount": {
       "currency": "GBP",
       "value": 92.13
@@ -202,7 +202,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-29T00:00:00Z",
     "description": "Paycheck",
-    "category": "salary",
+    "category": "Salary",
     "amount": {
       "currency": "GBP",
       "value": 1188.89
@@ -213,7 +213,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-02-22T00:00:00Z",
     "description": "Gas Bill",
-    "category": "utilities",
+    "category": "Utilities",
     "amount": {
       "currency": "GBP",
       "value": -75.57
@@ -224,7 +224,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-19T00:00:00Z",
     "description": "Pub",
-    "category": "alcohol",
+    "category": "Alcohol",
     "amount": {
       "currency": "GBP",
       "value": -72.21
@@ -235,7 +235,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-02-03T00:00:00Z",
     "description": "Pharmacy",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -158.79
@@ -246,7 +246,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-03-27T00:00:00Z",
     "description": "Work Expenses",
-    "category": "reimbursement",
+    "category": "Reimbursement",
     "amount": {
       "currency": "GBP",
       "value": 1275.9
@@ -257,7 +257,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-29T00:00:00Z",
     "description": "HBO Max",
-    "category": "subscriptions",
+    "category": "Subscriptions",
     "amount": {
       "currency": "GBP",
       "value": -152.51
@@ -268,7 +268,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-01-24T00:00:00Z",
     "description": "Health Insurance",
-    "category": "insurance",
+    "category": "Insurance",
     "amount": {
       "currency": "GBP",
       "value": -197.33
@@ -279,7 +279,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-01-02T00:00:00Z",
     "description": "McDonald's",
-    "category": "restaurants",
+    "category": "Restaurants",
     "amount": {
       "currency": "GBP",
       "value": -92.56
@@ -290,7 +290,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-27T00:00:00Z",
     "description": "Nando's",
-    "category": "restaurants",
+    "category": "Restaurants",
     "amount": {
       "currency": "GBP",
       "value": -140.7
@@ -301,7 +301,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-02-01T00:00:00Z",
     "description": "Pharmacy",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -20.45
@@ -312,7 +312,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-01-28T00:00:00Z",
     "description": "ASOS",
-    "category": "shopping",
+    "category": "Shopping",
     "amount": {
       "currency": "GBP",
       "value": -20.13
@@ -323,7 +323,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-02-22T00:00:00Z",
     "description": "Amazon",
-    "category": "shopping",
+    "category": "Shopping",
     "amount": {
       "currency": "GBP",
       "value": -42.79
@@ -334,7 +334,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-03-24T00:00:00Z",
     "description": "Disney+",
-    "category": "subscriptions",
+    "category": "Subscriptions",
     "amount": {
       "currency": "GBP",
       "value": -50.76
@@ -345,7 +345,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-11T00:00:00Z",
     "description": "GP Visit",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -78.25
@@ -356,7 +356,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-27T00:00:00Z",
     "description": "Electricity Bill",
-    "category": "utilities",
+    "category": "Utilities",
     "amount": {
       "currency": "GBP",
       "value": -81.04
@@ -367,7 +367,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-02-04T00:00:00Z",
     "description": "Pharmacy",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -74.57
@@ -378,7 +378,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-23T00:00:00Z",
     "description": "GP Visit",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -193.62
@@ -389,7 +389,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-04-23T00:00:00Z",
     "description": "Monthly Rent",
-    "category": "rent",
+    "category": "Rent",
     "amount": {
       "currency": "GBP",
       "value": -172.3
@@ -400,7 +400,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-05-01T00:00:00Z",
     "description": "Car Insurance",
-    "category": "insurance",
+    "category": "Insurance",
     "amount": {
       "currency": "GBP",
       "value": -185.47
@@ -411,7 +411,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-09T00:00:00Z",
     "description": "Friend Transfer",
-    "category": "gift",
+    "category": "Gift",
     "amount": {
       "currency": "GBP",
       "value": 184.87
@@ -422,7 +422,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-01-08T00:00:00Z",
     "description": "Pizza Express",
-    "category": "restaurants",
+    "category": "Restaurants",
     "amount": {
       "currency": "GBP",
       "value": -164.87
@@ -433,7 +433,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-03T00:00:00Z",
     "description": "Spotify",
-    "category": "entertainment",
+    "category": "Entertainment",
     "amount": {
       "currency": "GBP",
       "value": -65.13
@@ -444,7 +444,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-08T00:00:00Z",
     "description": "Electricity Bill",
-    "category": "utilities",
+    "category": "Utilities",
     "amount": {
       "currency": "GBP",
       "value": -56.31
@@ -455,7 +455,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-04-14T00:00:00Z",
     "description": "Spotify",
-    "category": "entertainment",
+    "category": "Entertainment",
     "amount": {
       "currency": "GBP",
       "value": -19.46
@@ -466,7 +466,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-04-09T00:00:00Z",
     "description": "Car Insurance",
-    "category": "insurance",
+    "category": "Insurance",
     "amount": {
       "currency": "GBP",
       "value": -63.27
@@ -477,7 +477,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-26T00:00:00Z",
     "description": "Birthday Gift",
-    "category": "gift",
+    "category": "Gift",
     "amount": {
       "currency": "GBP",
       "value": 1485.83
@@ -488,7 +488,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-10T00:00:00Z",
     "description": "Pizza Express",
-    "category": "restaurants",
+    "category": "Restaurants",
     "amount": {
       "currency": "GBP",
       "value": -23.56
@@ -499,7 +499,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-04-24T00:00:00Z",
     "description": "Tesco",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -157.37
@@ -510,7 +510,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-04-28T00:00:00Z",
     "description": "Train Fare",
-    "category": "transport",
+    "category": "Transport",
     "amount": {
       "currency": "GBP",
       "value": -95.0
@@ -521,7 +521,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-03-13T00:00:00Z",
     "description": "Pharmacy",
-    "category": "health",
+    "category": "Health",
     "amount": {
       "currency": "GBP",
       "value": -168.3
@@ -532,7 +532,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-03-24T00:00:00Z",
     "description": "Steam",
-    "category": "gaming",
+    "category": "Gaming",
     "amount": {
       "currency": "GBP",
       "value": -142.76
@@ -543,7 +543,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-02-11T00:00:00Z",
     "description": "Pizza Express",
-    "category": "restaurants",
+    "category": "Restaurants",
     "amount": {
       "currency": "GBP",
       "value": -112.27
@@ -554,7 +554,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-04-21T00:00:00Z",
     "description": "Amazon Refund",
-    "category": "refund",
+    "category": "Refund",
     "amount": {
       "currency": "GBP",
       "value": 351.23
@@ -565,7 +565,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-22T00:00:00Z",
     "description": "Car Insurance",
-    "category": "insurance",
+    "category": "Insurance",
     "amount": {
       "currency": "GBP",
       "value": -141.43
@@ -576,7 +576,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-02T00:00:00Z",
     "description": "Wine Store",
-    "category": "alcohol",
+    "category": "Alcohol",
     "amount": {
       "currency": "GBP",
       "value": -55.43
@@ -587,7 +587,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-25T00:00:00Z",
     "description": "Zara",
-    "category": "shopping",
+    "category": "Shopping",
     "amount": {
       "currency": "GBP",
       "value": -82.26
@@ -598,7 +598,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-02-27T00:00:00Z",
     "description": "Steam",
-    "category": "gaming",
+    "category": "Gaming",
     "amount": {
       "currency": "GBP",
       "value": -189.16
@@ -609,7 +609,7 @@
     "account_id": "acc_003",
     "timestamp": "2025-02-02T00:00:00Z",
     "description": "ASOS Return",
-    "category": "refund",
+    "category": "Refund",
     "amount": {
       "currency": "GBP",
       "value": 1887.67
@@ -620,7 +620,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-03-27T00:00:00Z",
     "description": "Travel Reimbursement",
-    "category": "reimbursement",
+    "category": "Reimbursement",
     "amount": {
       "currency": "GBP",
       "value": 1556.28
@@ -631,7 +631,7 @@
     "account_id": "acc_002",
     "timestamp": "2025-01-09T00:00:00Z",
     "description": "Monthly Salary",
-    "category": "salary",
+    "category": "Salary",
     "amount": {
       "currency": "GBP",
       "value": 239.14
@@ -642,7 +642,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-04-09T00:00:00Z",
     "description": "Lidl",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -107.87
@@ -653,7 +653,7 @@
     "account_id": "acc_001",
     "timestamp": "2025-02-27T00:00:00Z",
     "description": "Aldi",
-    "category": "groceries",
+    "category": "Groceries",
     "amount": {
       "currency": "GBP",
       "value": -165.02

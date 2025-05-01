@@ -4,6 +4,7 @@ if(!isset($_SESSION['username'])){
     header("Location: index.html");
     exit();
 }
+require_once 'config.php';
 // Mock fallback for accounts and transactions using local API
 $accData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=accounts');
 $accJson = json_decode($accData, true);

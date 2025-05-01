@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch('update_profile.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
                 body: JSON.stringify({
                     field: 'add_goal',
                     description: description

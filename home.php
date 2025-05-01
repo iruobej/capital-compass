@@ -18,7 +18,7 @@ $transactions = $_SESSION['transactions'];
 $badge = getBadgeLevel($transactions);
 
 //Logic for goals table in the db
-$stmt = $pdo->prepare("SELECT * FROM goals WHERE user_id = ?");
+$stmt = $conn->prepare("SELECT * FROM goals WHERE user_id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

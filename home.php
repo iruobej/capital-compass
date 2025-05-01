@@ -154,7 +154,7 @@ $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($_SESSION['transactions'] as $tx): ?>
                                 <?php
                                     $timestamp = $tx['timestamp'] ?? 'N/A';
-                                    $category = $tx['transaction_type'] ?? 'N/A';
+                                    $category = $tx['category'] ?? 'N/A';
                                     $amountVal = $tx['amount']['value'] ?? null;
                                     $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
                                 ?>

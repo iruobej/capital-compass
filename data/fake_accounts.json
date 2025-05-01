@@ -36,7 +36,7 @@
     "type": "joint",
     "currency": "GBP",
     "bank_name": "Barclays",
-    "balance": 2450.0
+    "balance": 2450.00
   },
   {
     "account_id": "acc_004",

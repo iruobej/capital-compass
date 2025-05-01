@@ -1,332 +1,662 @@
 [
   {
-    "transaction_id": "txn_001",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-07T19:00:00Z",
-    "description": "Transfer to Savings",
-    "transaction_type": "PURCHASE",
-    "amount": {
-      "currency": "GBP",
-      "value": -182.76
-    }
-  },
-  {
-    "transaction_id": "txn_002",
+    "transaction_id": "txn_expense_046",
     "account_id": "acc_001",
-    "timestamp": "2025-04-01T17:00:00Z",
-    "description": "Gym Membership",
-    "transaction_type": "REFUND",
+    "timestamp": "2025-04-13T00:00:00Z",
+    "description": "Monthly Rent",
+    "category": "rent",
     "amount": {
       "currency": "GBP",
-      "value": 155.04
+      "value": -14.16
     }
   },
   {
-    "transaction_id": "txn_003",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-15T17:00:00Z",
-    "description": "Restaurant",
-    "transaction_type": "REFUND",
-    "amount": {
-      "currency": "GBP",
-      "value": 143.42
-    }
-  },
-  {
-    "transaction_id": "txn_004",
+    "transaction_id": "txn_expense_048",
     "account_id": "acc_001",
-    "timestamp": "2025-04-07T07:00:00Z",
-    "description": "Netflix Subscription",
-    "transaction_type": "CREDIT",
+    "timestamp": "2025-01-04T00:00:00Z",
+    "description": "Lidl",
+    "category": "groceries",
     "amount": {
       "currency": "GBP",
-      "value": 183.63
+      "value": -35.0
     }
   },
   {
-    "transaction_id": "txn_005",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-10T01:00:00Z",
+    "transaction_id": "txn_expense_034",
+    "account_id": "acc_003",
+    "timestamp": "2025-01-21T00:00:00Z",
     "description": "Sainsbury's",
-    "transaction_type": "BILL_PAYMENT",
+    "category": "groceries",
     "amount": {
       "currency": "GBP",
-      "value": -99.55
+      "value": -13.27
     }
   },
   {
-    "transaction_id": "txn_006",
+    "transaction_id": "txn_expense_049",
+    "account_id": "acc_003",
+    "timestamp": "2025-03-11T00:00:00Z",
+    "description": "Steam",
+    "category": "gaming",
+    "amount": {
+      "currency": "GBP",
+      "value": -71.68
+    }
+  },
+  {
+    "transaction_id": "txn_expense_037",
     "account_id": "acc_002",
-    "timestamp": "2025-04-02T03:00:00Z",
-    "description": "Tesco Grocery",
-    "transaction_type": "CREDIT",
+    "timestamp": "2025-02-21T00:00:00Z",
+    "description": "McDonald's",
+    "category": "restaurants",
     "amount": {
       "currency": "GBP",
-      "value": 162.41
+      "value": -37.57
     }
   },
   {
-    "transaction_id": "txn_007",
+    "transaction_id": "txn_income_007",
+    "account_id": "acc_001",
+    "timestamp": "2025-02-21T00:00:00Z",
+    "description": "Freelance Project",
+    "category": "freelance",
+    "amount": {
+      "currency": "GBP",
+      "value": 269.85
+    }
+  },
+  {
+    "transaction_id": "txn_expense_010",
+    "account_id": "acc_001",
+    "timestamp": "2025-03-14T00:00:00Z",
+    "description": "Cinema",
+    "category": "entertainment",
+    "amount": {
+      "currency": "GBP",
+      "value": -162.2
+    }
+  },
+  {
+    "transaction_id": "txn_expense_028",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-16T00:00:00Z",
+    "description": "Xbox Store",
+    "category": "gaming",
+    "amount": {
+      "currency": "GBP",
+      "value": -165.6
+    }
+  },
+  {
+    "transaction_id": "txn_expense_016",
     "account_id": "acc_002",
-    "timestamp": "2025-04-12T13:00:00Z",
-    "description": "Credit Card Payment",
-    "transaction_type": "PURCHASE",
+    "timestamp": "2025-01-17T00:00:00Z",
+    "description": "Xbox Store",
+    "category": "gaming",
     "amount": {
       "currency": "GBP",
-      "value": -178.17
+      "value": -12.08
     }
   },
   {
-    "transaction_id": "txn_008",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-14T07:00:00Z",
-    "description": "ASOS Refund",
-    "transaction_type": "TRANSFER",
-    "amount": {
-      "currency": "GBP",
-      "value": -6.48
-    }
-  },
-  {
-    "transaction_id": "txn_009",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-18T00:00:00Z",
-    "description": "Credit Card Payment",
-    "transaction_type": "TRANSFER",
-    "amount": {
-      "currency": "GBP",
-      "value": -172.16
-    }
-  },
-  {
-    "transaction_id": "txn_010",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-19T06:00:00Z",
-    "description": "Uber Ride",
-    "transaction_type": "TRANSFER",
-    "amount": {
-      "currency": "GBP",
-      "value": -102.27
-    }
-  },
-  {
-    "transaction_id": "txn_011",
+    "transaction_id": "txn_expense_038",
     "account_id": "acc_002",
-    "timestamp": "2025-04-15T02:00:00Z",
-    "description": "Uber Ride",
-    "transaction_type": "PURCHASE",
+    "timestamp": "2025-04-08T00:00:00Z",
+    "description": "Adobe",
+    "category": "subscriptions",
     "amount": {
       "currency": "GBP",
-      "value": -183.3
+      "value": -175.3
     }
   },
   {
-    "transaction_id": "txn_012",
+    "transaction_id": "txn_expense_013",
+    "account_id": "acc_003",
+    "timestamp": "2025-01-20T00:00:00Z",
+    "description": "Sainsbury's",
+    "category": "groceries",
+    "amount": {
+      "currency": "GBP",
+      "value": -130.0
+    }
+  },
+  {
+    "transaction_id": "txn_expense_029",
+    "account_id": "acc_003",
+    "timestamp": "2025-04-08T00:00:00Z",
+    "description": "Lidl",
+    "category": "groceries",
+    "amount": {
+      "currency": "GBP",
+      "value": -103.42
+    }
+  },
+  {
+    "transaction_id": "txn_expense_041",
+    "account_id": "acc_003",
+    "timestamp": "2025-02-03T00:00:00Z",
+    "description": "Disney+",
+    "category": "subscriptions",
+    "amount": {
+      "currency": "GBP",
+      "value": -114.67
+    }
+  },
+  {
+    "transaction_id": "txn_expense_045",
     "account_id": "acc_001",
-    "timestamp": "2025-04-07T21:00:00Z",
-    "description": "Starbucks",
-    "transaction_type": "PURCHASE",
+    "timestamp": "2025-03-17T00:00:00Z",
+    "description": "Monthly Rent",
+    "category": "rent",
     "amount": {
       "currency": "GBP",
-      "value": -170.98
+      "value": -159.05
     }
   },
   {
-    "transaction_id": "txn_013",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-02T23:00:00Z",
-    "description": "Amazon Purchase",
-    "transaction_type": "REFUND",
-    "amount": {
-      "currency": "GBP",
-      "value": 26.63
-    }
-  },
-  {
-    "transaction_id": "txn_014",
+    "transaction_id": "txn_expense_033",
     "account_id": "acc_002",
-    "timestamp": "2025-04-03T09:00:00Z",
+    "timestamp": "2025-02-24T00:00:00Z",
+    "description": "GP Visit",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -67.46
+    }
+  },
+  {
+    "transaction_id": "txn_income_008",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-26T00:00:00Z",
+    "description": "Gift from Mum",
+    "category": "gift",
+    "amount": {
+      "currency": "GBP",
+      "value": 81.46
+    }
+  },
+  {
+    "transaction_id": "txn_expense_044",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-22T00:00:00Z",
+    "description": "Pub",
+    "category": "alcohol",
+    "amount": {
+      "currency": "GBP",
+      "value": -91.05
+    }
+  },
+  {
+    "transaction_id": "txn_income_003",
+    "account_id": "acc_003",
+    "timestamp": "2025-04-26T00:00:00Z",
+    "description": "Travel Reimbursement",
+    "category": "reimbursement",
+    "amount": {
+      "currency": "GBP",
+      "value": 92.13
+    }
+  },
+  {
+    "transaction_id": "txn_income_004",
+    "account_id": "acc_001",
+    "timestamp": "2025-03-29T00:00:00Z",
+    "description": "Paycheck",
+    "category": "salary",
+    "amount": {
+      "currency": "GBP",
+      "value": 1188.89
+    }
+  },
+  {
+    "transaction_id": "txn_expense_019",
+    "account_id": "acc_001",
+    "timestamp": "2025-02-22T00:00:00Z",
+    "description": "Gas Bill",
+    "category": "utilities",
+    "amount": {
+      "currency": "GBP",
+      "value": -75.57
+    }
+  },
+  {
+    "transaction_id": "txn_expense_003",
+    "account_id": "acc_001",
+    "timestamp": "2025-03-19T00:00:00Z",
+    "description": "Pub",
+    "category": "alcohol",
+    "amount": {
+      "currency": "GBP",
+      "value": -72.21
+    }
+  },
+  {
+    "transaction_id": "txn_expense_017",
+    "account_id": "acc_001",
+    "timestamp": "2025-02-03T00:00:00Z",
+    "description": "Pharmacy",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -158.79
+    }
+  },
+  {
+    "transaction_id": "txn_income_010",
+    "account_id": "acc_002",
+    "timestamp": "2025-03-27T00:00:00Z",
+    "description": "Work Expenses",
+    "category": "reimbursement",
+    "amount": {
+      "currency": "GBP",
+      "value": 1275.9
+    }
+  },
+  {
+    "transaction_id": "txn_expense_035",
+    "account_id": "acc_001",
+    "timestamp": "2025-03-29T00:00:00Z",
+    "description": "HBO Max",
+    "category": "subscriptions",
+    "amount": {
+      "currency": "GBP",
+      "value": -152.51
+    }
+  },
+  {
+    "transaction_id": "txn_expense_043",
+    "account_id": "acc_003",
+    "timestamp": "2025-01-24T00:00:00Z",
+    "description": "Health Insurance",
+    "category": "insurance",
+    "amount": {
+      "currency": "GBP",
+      "value": -197.33
+    }
+  },
+  {
+    "transaction_id": "txn_expense_007",
+    "account_id": "acc_003",
+    "timestamp": "2025-01-02T00:00:00Z",
+    "description": "McDonald's",
+    "category": "restaurants",
+    "amount": {
+      "currency": "GBP",
+      "value": -92.56
+    }
+  },
+  {
+    "transaction_id": "txn_expense_020",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-27T00:00:00Z",
+    "description": "Nando's",
+    "category": "restaurants",
+    "amount": {
+      "currency": "GBP",
+      "value": -140.7
+    }
+  },
+  {
+    "transaction_id": "txn_expense_032",
+    "account_id": "acc_002",
+    "timestamp": "2025-02-01T00:00:00Z",
+    "description": "Pharmacy",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -20.45
+    }
+  },
+  {
+    "transaction_id": "txn_expense_023",
+    "account_id": "acc_001",
+    "timestamp": "2025-01-28T00:00:00Z",
+    "description": "ASOS",
+    "category": "shopping",
+    "amount": {
+      "currency": "GBP",
+      "value": -20.13
+    }
+  },
+  {
+    "transaction_id": "txn_expense_025",
+    "account_id": "acc_001",
+    "timestamp": "2025-02-22T00:00:00Z",
+    "description": "Amazon",
+    "category": "shopping",
+    "amount": {
+      "currency": "GBP",
+      "value": -42.79
+    }
+  },
+  {
+    "transaction_id": "txn_expense_014",
+    "account_id": "acc_002",
+    "timestamp": "2025-03-24T00:00:00Z",
+    "description": "Disney+",
+    "category": "subscriptions",
+    "amount": {
+      "currency": "GBP",
+      "value": -50.76
+    }
+  },
+  {
+    "transaction_id": "txn_expense_026",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-11T00:00:00Z",
+    "description": "GP Visit",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -78.25
+    }
+  },
+  {
+    "transaction_id": "txn_expense_012",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-27T00:00:00Z",
     "description": "Electricity Bill",
-    "transaction_type": "TRANSFER",
+    "category": "utilities",
     "amount": {
       "currency": "GBP",
-      "value": -28.39
+      "value": -81.04
     }
   },
   {
-    "transaction_id": "txn_015",
+    "transaction_id": "txn_expense_004",
+    "account_id": "acc_003",
+    "timestamp": "2025-02-04T00:00:00Z",
+    "description": "Pharmacy",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -74.57
+    }
+  },
+  {
+    "transaction_id": "txn_expense_040",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-23T00:00:00Z",
+    "description": "GP Visit",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -193.62
+    }
+  },
+  {
+    "transaction_id": "txn_expense_047",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-23T00:00:00Z",
+    "description": "Monthly Rent",
+    "category": "rent",
+    "amount": {
+      "currency": "GBP",
+      "value": -172.3
+    }
+  },
+  {
+    "transaction_id": "txn_expense_039",
+    "account_id": "acc_002",
+    "timestamp": "2025-05-01T00:00:00Z",
+    "description": "Car Insurance",
+    "category": "insurance",
+    "amount": {
+      "currency": "GBP",
+      "value": -185.47
+    }
+  },
+  {
+    "transaction_id": "txn_income_009",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-09T00:00:00Z",
+    "description": "Friend Transfer",
+    "category": "gift",
+    "amount": {
+      "currency": "GBP",
+      "value": 184.87
+    }
+  },
+  {
+    "transaction_id": "txn_expense_015",
+    "account_id": "acc_003",
+    "timestamp": "2025-01-08T00:00:00Z",
+    "description": "Pizza Express",
+    "category": "restaurants",
+    "amount": {
+      "currency": "GBP",
+      "value": -164.87
+    }
+  },
+  {
+    "transaction_id": "txn_expense_021",
     "account_id": "acc_001",
-    "timestamp": "2025-04-20T20:00:00Z",
-    "description": "Starbucks",
-    "transaction_type": "TRANSFER",
-    "amount": {
-      "currency": "GBP",
-      "value": -108.24
-    }
-  },
-  {
-    "transaction_id": "txn_016",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-20T08:00:00Z",
-    "description": "Sainsbury's",
-    "transaction_type": "PURCHASE",
-    "amount": {
-      "currency": "GBP",
-      "value": -237.83
-    }
-  },
-  {
-    "transaction_id": "txn_017",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-02T02:00:00Z",
-    "description": "Water Bill",
-    "transaction_type": "BILL_PAYMENT",
-    "amount": {
-      "currency": "GBP",
-      "value": -42.49
-    }
-  },
-  {
-    "transaction_id": "txn_018",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-22T23:00:00Z",
-    "description": "ASOS Refund",
-    "transaction_type": "TRANSFER",
-    "amount": {
-      "currency": "GBP",
-      "value": -93.84
-    }
-  },
-  {
-    "transaction_id": "txn_019",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-03T21:00:00Z",
-    "description": "Council Tax",
-    "transaction_type": "BILL_PAYMENT",
-    "amount": {
-      "currency": "GBP",
-      "value": -57.05
-    }
-  },
-  {
-    "transaction_id": "txn_020",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-10T22:00:00Z",
-    "description": "PayPal Transfer",
-    "transaction_type": "REFUND",
-    "amount": {
-      "currency": "GBP",
-      "value": 31.27
-    }
-  },
-  {
-    "transaction_id": "txn_021",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-03T04:00:00Z",
-    "description": "PayPal Transfer",
-    "transaction_type": "BILL_PAYMENT",
-    "amount": {
-      "currency": "GBP",
-      "value": -246.35
-    }
-  },
-  {
-    "transaction_id": "txn_022",
-    "account_id": "acc_001",
-    "timestamp": "2025-04-18T11:00:00Z",
-    "description": "Credit Card Payment",
-    "transaction_type": "BILL_PAYMENT",
-    "amount": {
-      "currency": "GBP",
-      "value": -153.73
-    }
-  },
-  {
-    "transaction_id": "txn_023",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-16T06:00:00Z",
+    "timestamp": "2025-03-03T00:00:00Z",
     "description": "Spotify",
-    "transaction_type": "REFUND",
+    "category": "entertainment",
     "amount": {
       "currency": "GBP",
-      "value": 48.67
+      "value": -65.13
     }
   },
   {
-    "transaction_id": "txn_024",
+    "transaction_id": "txn_expense_018",
     "account_id": "acc_002",
-    "timestamp": "2025-04-09T20:00:00Z",
-    "description": "Salary Payment",
-    "transaction_type": "REFUND",
+    "timestamp": "2025-01-08T00:00:00Z",
+    "description": "Electricity Bill",
+    "category": "utilities",
     "amount": {
       "currency": "GBP",
-      "value": 249.09
+      "value": -56.31
     }
   },
   {
-    "transaction_id": "txn_025",
+    "transaction_id": "txn_expense_001",
     "account_id": "acc_002",
-    "timestamp": "2025-04-02T13:00:00Z",
-    "description": "Starbucks",
-    "transaction_type": "CREDIT",
+    "timestamp": "2025-04-14T00:00:00Z",
+    "description": "Spotify",
+    "category": "entertainment",
     "amount": {
       "currency": "GBP",
-      "value": 44.06
+      "value": -19.46
     }
   },
   {
-    "transaction_id": "txn_026",
+    "transaction_id": "txn_expense_030",
+    "account_id": "acc_003",
+    "timestamp": "2025-04-09T00:00:00Z",
+    "description": "Car Insurance",
+    "category": "insurance",
+    "amount": {
+      "currency": "GBP",
+      "value": -63.27
+    }
+  },
+  {
+    "transaction_id": "txn_income_002",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-26T00:00:00Z",
+    "description": "Birthday Gift",
+    "category": "gift",
+    "amount": {
+      "currency": "GBP",
+      "value": 1485.83
+    }
+  },
+  {
+    "transaction_id": "txn_expense_031",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-10T00:00:00Z",
+    "description": "Pizza Express",
+    "category": "restaurants",
+    "amount": {
+      "currency": "GBP",
+      "value": -23.56
+    }
+  },
+  {
+    "transaction_id": "txn_expense_024",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-24T00:00:00Z",
+    "description": "Tesco",
+    "category": "groceries",
+    "amount": {
+      "currency": "GBP",
+      "value": -157.37
+    }
+  },
+  {
+    "transaction_id": "txn_expense_027",
+    "account_id": "acc_003",
+    "timestamp": "2025-04-28T00:00:00Z",
+    "description": "Train Fare",
+    "category": "transport",
+    "amount": {
+      "currency": "GBP",
+      "value": -95.0
+    }
+  },
+  {
+    "transaction_id": "txn_expense_009",
+    "account_id": "acc_003",
+    "timestamp": "2025-03-13T00:00:00Z",
+    "description": "Pharmacy",
+    "category": "health",
+    "amount": {
+      "currency": "GBP",
+      "value": -168.3
+    }
+  },
+  {
+    "transaction_id": "txn_expense_036",
+    "account_id": "acc_003",
+    "timestamp": "2025-03-24T00:00:00Z",
+    "description": "Steam",
+    "category": "gaming",
+    "amount": {
+      "currency": "GBP",
+      "value": -142.76
+    }
+  },
+  {
+    "transaction_id": "txn_expense_002",
+    "account_id": "acc_002",
+    "timestamp": "2025-02-11T00:00:00Z",
+    "description": "Pizza Express",
+    "category": "restaurants",
+    "amount": {
+      "currency": "GBP",
+      "value": -112.27
+    }
+  },
+  {
+    "transaction_id": "txn_income_006",
+    "account_id": "acc_002",
+    "timestamp": "2025-04-21T00:00:00Z",
+    "description": "Amazon Refund",
+    "category": "refund",
+    "amount": {
+      "currency": "GBP",
+      "value": 351.23
+    }
+  },
+  {
+    "transaction_id": "txn_expense_008",
     "account_id": "acc_001",
-    "timestamp": "2025-04-09T08:00:00Z",
-    "description": "Water Bill",
-    "transaction_type": "TRANSFER",
+    "timestamp": "2025-03-22T00:00:00Z",
+    "description": "Car Insurance",
+    "category": "insurance",
     "amount": {
       "currency": "GBP",
-      "value": -7.19
+      "value": -141.43
     }
   },
   {
-    "transaction_id": "txn_027",
+    "transaction_id": "txn_expense_042",
     "account_id": "acc_001",
-    "timestamp": "2025-04-12T08:00:00Z",
-    "description": "Netflix Subscription",
-    "transaction_type": "TRANSFER",
+    "timestamp": "2025-04-02T00:00:00Z",
+    "description": "Wine Store",
+    "category": "alcohol",
     "amount": {
       "currency": "GBP",
-      "value": -217.3
+      "value": -55.43
     }
   },
   {
-    "transaction_id": "txn_028",
+    "transaction_id": "txn_expense_006",
     "account_id": "acc_001",
-    "timestamp": "2025-04-20T04:00:00Z",
-    "description": "Gym Membership",
-    "transaction_type": "TRANSFER",
+    "timestamp": "2025-04-25T00:00:00Z",
+    "description": "Zara",
+    "category": "shopping",
     "amount": {
       "currency": "GBP",
-      "value": -102.6
+      "value": -82.26
     }
   },
   {
-    "transaction_id": "txn_029",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-18T12:00:00Z",
-    "description": "Amazon Purchase",
-    "transaction_type": "TRANSFER",
+    "transaction_id": "txn_expense_011",
+    "account_id": "acc_003",
+    "timestamp": "2025-02-27T00:00:00Z",
+    "description": "Steam",
+    "category": "gaming",
     "amount": {
       "currency": "GBP",
-      "value": -198.21
+      "value": -189.16
     }
   },
   {
-    "transaction_id": "txn_030",
-    "account_id": "acc_002",
-    "timestamp": "2025-04-22T08:00:00Z",
-    "description": "Netflix Subscription",
-    "transaction_type": "PURCHASE",
+    "transaction_id": "txn_income_011",
+    "account_id": "acc_003",
+    "timestamp": "2025-02-02T00:00:00Z",
+    "description": "ASOS Return",
+    "category": "refund",
     "amount": {
       "currency": "GBP",
-      "value": -138.43
+      "value": 1887.67
+    }
+  },
+  {
+    "transaction_id": "txn_income_005",
+    "account_id": "acc_001",
+    "timestamp": "2025-03-27T00:00:00Z",
+    "description": "Travel Reimbursement",
+    "category": "reimbursement",
+    "amount": {
+      "currency": "GBP",
+      "value": 1556.28
+    }
+  },
+  {
+    "transaction_id": "txn_income_001",
+    "account_id": "acc_002",
+    "timestamp": "2025-01-09T00:00:00Z",
+    "description": "Monthly Salary",
+    "category": "salary",
+    "amount": {
+      "currency": "GBP",
+      "value": 239.14
+    }
+  },
+  {
+    "transaction_id": "txn_expense_005",
+    "account_id": "acc_001",
+    "timestamp": "2025-04-09T00:00:00Z",
+    "description": "Lidl",
+    "category": "groceries",
+    "amount": {
+      "currency": "GBP",
+      "value": -107.87
+    }
+  },
+  {
+    "transaction_id": "txn_expense_022",
+    "account_id": "acc_001",
+    "timestamp": "2025-02-27T00:00:00Z",
+    "description": "Aldi",
+    "category": "groceries",
+    "amount": {
+      "currency": "GBP",
+      "value": -165.02
     }
   }
 ]

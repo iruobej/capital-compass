@@ -1,32 +1,36 @@
 <?php
 function getBadgeLevel($transactions) {
-    $expenseCount = 0;
+    $totalIncome = 0;
+    $totalExpenses = 0;
 
     foreach ($transactions as $txn) {
-        if ($txn['amount'] < 0) {
-            $expenseCount++;
+        if (!isset($txn['amount']['value'])) continue;
+
+        $value = $txn['amount']['value'];
+
+        if ($value > 0) {
+            $totalIncome += $value;
+        } elseif ($value < 0) {
+            $totalExpenses += abs($value);
         }
     }
 
-    if ($expenseCount >= 100) {
-        return "5/5 - Diamond";
+    if ($totalIncome == 0) {
+        return "No Income Data";
     }
 
-    if ($expenseCount >= 50) {
-        return "4/5 - Platinum";
-    }
+    $spendingRatio = $totalExpenses / $totalIncome;
 
-    if ($expenseCount >= 20) {
-        return "3/5 - Gold";
+    if ($spendingRatio <= 0.4) {
+        return "5/5 – Diamond";
+    } elseif ($spendingRatio <= 0.6) {
+        return "4/5 – Platinum";
+    } elseif ($spendingRatio <= 0.8) {
+        return "3/5 – Gold";
+    } elseif ($spendingRatio <= 1.0) {
+        return "2/5 – Silver";
+    } else {
+        return "1/5 – Bronze";
     }
-
-    if ($expenseCount >= 5) {
-        return "2/5 - Silver";
-    }
-
-    if (empty($transactions)) {
-        $badge = "1/5 - Bronze";
-    }
-
-    return "1/5 - Bronze";
 }
+?>

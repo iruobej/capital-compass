@@ -42,13 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     description: description
                 })
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log('Goal response:', data); // add this line
-                if (data.success) {
-                    location.reload();
-                } else {
-                    alert('Failed to add goal');
+            .then(res => res.text()) // <- change to .text() to capture broken JSON
+            .then(text => {
+                console.log('Raw response:', text); // Show real error
+                try {
+                    const data = JSON.parse(text);
+                    if (data.success) {
+                        location.reload();
+                    } else {
+                        alert('Failed to add goal');
+                    }
+                } catch (e) {
+                    console.error('Invalid JSON:', e);
+                    alert('Server error (invalid response)');
                 }
             });
         });

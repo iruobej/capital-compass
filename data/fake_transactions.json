@@ -2,7 +2,7 @@
   {
     "transaction_id": "txn_expense_046",
     "account_id": "acc_001",
-    "timestamp": "2025-04-13T00:00:00Z",
+    "timestamp": "2025-04-13T17:51:06Z",
     "description": "Monthly Rent",
     "category": "Rent",
     "amount": {
@@ -13,7 +13,7 @@
   {
     "transaction_id": "txn_expense_048",
     "account_id": "acc_001",
-    "timestamp": "2025-01-04T00:00:00Z",
+    "timestamp": "2025-01-04T23:53:49Z",
     "description": "Lidl",
     "category": "Groceries",
     "amount": {
@@ -24,7 +24,7 @@
   {
     "transaction_id": "txn_expense_034",
     "account_id": "acc_003",
-    "timestamp": "2025-01-21T00:00:00Z",
+    "timestamp": "2025-01-21T00:16:36Z",
     "description": "Sainsbury's",
     "category": "Groceries",
     "amount": {
@@ -35,7 +35,7 @@
   {
     "transaction_id": "txn_expense_049",
     "account_id": "acc_003",
-    "timestamp": "2025-03-11T00:00:00Z",
+    "timestamp": "2025-03-11T13:27:35Z",
     "description": "Steam",
     "category": "Gaming",
     "amount": {
@@ -46,7 +46,7 @@
   {
     "transaction_id": "txn_expense_037",
     "account_id": "acc_002",
-    "timestamp": "2025-02-21T00:00:00Z",
+    "timestamp": "2025-02-21T05:07:55Z",
     "description": "McDonald's",
     "category": "Restaurants",
     "amount": {
@@ -57,7 +57,7 @@
   {
     "transaction_id": "txn_income_007",
     "account_id": "acc_001",
-    "timestamp": "2025-02-21T00:00:00Z",
+    "timestamp": "2025-02-21T11:27:12Z",
     "description": "Freelance Project",
     "category": "Freelance",
     "amount": {
@@ -68,7 +68,7 @@
   {
     "transaction_id": "txn_expense_010",
     "account_id": "acc_001",
-    "timestamp": "2025-03-14T00:00:00Z",
+    "timestamp": "2025-03-14T23:21:19Z",
     "description": "Cinema",
     "category": "Entertainment",
     "amount": {
@@ -79,7 +79,7 @@
   {
     "transaction_id": "txn_expense_028",
     "account_id": "acc_001",
-    "timestamp": "2025-04-16T00:00:00Z",
+    "timestamp": "2025-04-16T08:38:08Z",
     "description": "Xbox Store",
     "category": "Gaming",
     "amount": {
@@ -90,7 +90,7 @@
   {
     "transaction_id": "txn_expense_016",
     "account_id": "acc_002",
-    "timestamp": "2025-01-17T00:00:00Z",
+    "timestamp": "2025-01-17T11:39:40Z",
     "description": "Xbox Store",
     "category": "Gaming",
     "amount": {
@@ -101,7 +101,7 @@
   {
     "transaction_id": "txn_expense_038",
     "account_id": "acc_002",
-    "timestamp": "2025-04-08T00:00:00Z",
+    "timestamp": "2025-04-08T22:39:29Z",
     "description": "Adobe",
     "category": "Subscriptions",
     "amount": {
@@ -112,7 +112,7 @@
   {
     "transaction_id": "txn_expense_013",
     "account_id": "acc_003",
-    "timestamp": "2025-01-20T00:00:00Z",
+    "timestamp": "2025-01-20T06:31:25Z",
     "description": "Sainsbury's",
     "category": "Groceries",
     "amount": {
@@ -123,7 +123,7 @@
   {
     "transaction_id": "txn_expense_029",
     "account_id": "acc_003",
-    "timestamp": "2025-04-08T00:00:00Z",
+    "timestamp": "2025-04-08T15:03:49Z",
     "description": "Lidl",
     "category": "Groceries",
     "amount": {
@@ -134,7 +134,7 @@
   {
     "transaction_id": "txn_expense_041",
     "account_id": "acc_003",
-    "timestamp": "2025-02-03T00:00:00Z",
+    "timestamp": "2025-02-03T07:40:18Z",
     "description": "Disney+",
     "category": "Subscriptions",
     "amount": {
@@ -145,7 +145,7 @@
   {
     "transaction_id": "txn_expense_045",
     "account_id": "acc_001",
-    "timestamp": "2025-03-17T00:00:00Z",
+    "timestamp": "2025-03-17T06:03:52Z",
     "description": "Monthly Rent",
     "category": "Rent",
     "amount": {
@@ -156,7 +156,7 @@
   {
     "transaction_id": "txn_expense_033",
     "account_id": "acc_002",
-    "timestamp": "2025-02-24T00:00:00Z",
+    "timestamp": "2025-02-24T10:01:49Z",
     "description": "GP Visit",
     "category": "Health",
     "amount": {
@@ -167,7 +167,7 @@
   {
     "transaction_id": "txn_income_008",
     "account_id": "acc_002",
-    "timestamp": "2025-01-26T00:00:00Z",
+    "timestamp": "2025-01-26T07:45:32Z",
     "description": "Gift from Mum",
     "category": "Gift",
     "amount": {
@@ -178,7 +178,7 @@
   {
     "transaction_id": "txn_expense_044",
     "account_id": "acc_001",
-    "timestamp": "2025-04-22T00:00:00Z",
+    "timestamp": "2025-04-22T22:01:54Z",
     "description": "Pub",
     "category": "Alcohol",
     "amount": {
@@ -189,7 +189,7 @@
   {
     "transaction_id": "txn_income_003",
     "account_id": "acc_003",
-    "timestamp": "2025-04-26T00:00:00Z",
+    "timestamp": "2025-04-26T05:45:06Z",
     "description": "Travel Reimbursement",
     "category": "Reimbursement",
     "amount": {
@@ -200,7 +200,7 @@
   {
     "transaction_id": "txn_income_004",
     "account_id": "acc_001",
-    "timestamp": "2025-03-29T00:00:00Z",
+    "timestamp": "2025-03-29T20:26:32Z",
     "description": "Paycheck",
     "category": "Salary",
     "amount": {
@@ -211,7 +211,7 @@
   {
     "transaction_id": "txn_expense_019",
     "account_id": "acc_001",
-    "timestamp": "2025-02-22T00:00:00Z",
+    "timestamp": "2025-02-22T22:24:12Z",
     "description": "Gas Bill",
     "category": "Utilities",
     "amount": {
@@ -222,7 +222,7 @@
   {
     "transaction_id": "txn_expense_003",
     "account_id": "acc_001",
-    "timestamp": "2025-03-19T00:00:00Z",
+    "timestamp": "2025-03-19T19:37:06Z",
     "description": "Pub",
     "category": "Alcohol",
     "amount": {
@@ -233,7 +233,7 @@
   {
     "transaction_id": "txn_expense_017",
     "account_id": "acc_001",
-    "timestamp": "2025-02-03T00:00:00Z",
+    "timestamp": "2025-02-03T03:43:12Z",
     "description": "Pharmacy",
     "category": "Health",
     "amount": {
@@ -244,7 +244,7 @@
   {
     "transaction_id": "txn_income_010",
     "account_id": "acc_002",
-    "timestamp": "2025-03-27T00:00:00Z",
+    "timestamp": "2025-03-27T21:27:39Z",
     "description": "Work Expenses",
     "category": "Reimbursement",
     "amount": {
@@ -255,7 +255,7 @@
   {
     "transaction_id": "txn_expense_035",
     "account_id": "acc_001",
-    "timestamp": "2025-03-29T00:00:00Z",
+    "timestamp": "2025-03-29T13:09:03Z",
     "description": "HBO Max",
     "category": "Subscriptions",
     "amount": {
@@ -266,7 +266,7 @@
   {
     "transaction_id": "txn_expense_043",
     "account_id": "acc_003",
-    "timestamp": "2025-01-24T00:00:00Z",
+    "timestamp": "2025-01-24T01:06:22Z",
     "description": "Health Insurance",
     "category": "Insurance",
     "amount": {
@@ -277,7 +277,7 @@
   {
     "transaction_id": "txn_expense_007",
     "account_id": "acc_003",
-    "timestamp": "2025-01-02T00:00:00Z",
+    "timestamp": "2025-01-02T07:46:45Z",
     "description": "McDonald's",
     "category": "Restaurants",
     "amount": {
@@ -288,7 +288,7 @@
   {
     "transaction_id": "txn_expense_020",
     "account_id": "acc_002",
-    "timestamp": "2025-01-27T00:00:00Z",
+    "timestamp": "2025-01-27T17:26:51Z",
     "description": "Nando's",
     "category": "Restaurants",
     "amount": {
@@ -299,7 +299,7 @@
   {
     "transaction_id": "txn_expense_032",
     "account_id": "acc_002",
-    "timestamp": "2025-02-01T00:00:00Z",
+    "timestamp": "2025-02-01T13:57:42Z",
     "description": "Pharmacy",
     "category": "Health",
     "amount": {
@@ -310,7 +310,7 @@
   {
     "transaction_id": "txn_expense_023",
     "account_id": "acc_001",
-    "timestamp": "2025-01-28T00:00:00Z",
+    "timestamp": "2025-01-28T23:44:45Z",
     "description": "ASOS",
     "category": "Shopping",
     "amount": {
@@ -321,7 +321,7 @@
   {
     "transaction_id": "txn_expense_025",
     "account_id": "acc_001",
-    "timestamp": "2025-02-22T00:00:00Z",
+    "timestamp": "2025-02-22T19:42:20Z",
     "description": "Amazon",
     "category": "Shopping",
     "amount": {
@@ -332,7 +332,7 @@
   {
     "transaction_id": "txn_expense_014",
     "account_id": "acc_002",
-    "timestamp": "2025-03-24T00:00:00Z",
+    "timestamp": "2025-03-24T15:05:46Z",
     "description": "Disney+",
     "category": "Subscriptions",
     "amount": {
@@ -343,7 +343,7 @@
   {
     "transaction_id": "txn_expense_026",
     "account_id": "acc_001",
-    "timestamp": "2025-04-11T00:00:00Z",
+    "timestamp": "2025-04-11T17:01:36Z",
     "description": "GP Visit",
     "category": "Health",
     "amount": {
@@ -354,7 +354,7 @@
   {
     "transaction_id": "txn_expense_012",
     "account_id": "acc_001",
-    "timestamp": "2025-04-27T00:00:00Z",
+    "timestamp": "2025-04-27T22:28:56Z",
     "description": "Electricity Bill",
     "category": "Utilities",
     "amount": {
@@ -365,7 +365,7 @@
   {
     "transaction_id": "txn_expense_004",
     "account_id": "acc_003",
-    "timestamp": "2025-02-04T00:00:00Z",
+    "timestamp": "2025-02-04T20:10:24Z",
     "description": "Pharmacy",
     "category": "Health",
     "amount": {
@@ -376,7 +376,7 @@
   {
     "transaction_id": "txn_expense_040",
     "account_id": "acc_002",
-    "timestamp": "2025-01-23T00:00:00Z",
+    "timestamp": "2025-01-23T19:51:31Z",
     "description": "GP Visit",
     "category": "Health",
     "amount": {
@@ -387,7 +387,7 @@
   {
     "transaction_id": "txn_expense_047",
     "account_id": "acc_002",
-    "timestamp": "2025-04-23T00:00:00Z",
+    "timestamp": "2025-04-23T18:26:56Z",
     "description": "Monthly Rent",
     "category": "Rent",
     "amount": {
@@ -398,7 +398,7 @@
   {
     "transaction_id": "txn_expense_039",
     "account_id": "acc_002",
-    "timestamp": "2025-05-01T00:00:00Z",
+    "timestamp": "2025-05-01T17:16:07Z",
     "description": "Car Insurance",
     "category": "Insurance",
     "amount": {
@@ -409,7 +409,7 @@
   {
     "transaction_id": "txn_income_009",
     "account_id": "acc_002",
-    "timestamp": "2025-01-09T00:00:00Z",
+    "timestamp": "2025-01-09T21:03:22Z",
     "description": "Friend Transfer",
     "category": "Gift",
     "amount": {
@@ -420,7 +420,7 @@
   {
     "transaction_id": "txn_expense_015",
     "account_id": "acc_003",
-    "timestamp": "2025-01-08T00:00:00Z",
+    "timestamp": "2025-01-08T00:07:32Z",
     "description": "Pizza Express",
     "category": "Restaurants",
     "amount": {
@@ -431,7 +431,7 @@
   {
     "transaction_id": "txn_expense_021",
     "account_id": "acc_001",
-    "timestamp": "2025-03-03T00:00:00Z",
+    "timestamp": "2025-03-03T11:13:47Z",
     "description": "Spotify",
     "category": "Entertainment",
     "amount": {
@@ -442,7 +442,7 @@
   {
     "transaction_id": "txn_expense_018",
     "account_id": "acc_002",
-    "timestamp": "2025-01-08T00:00:00Z",
+    "timestamp": "2025-01-08T20:57:09Z",
     "description": "Electricity Bill",
     "category": "Utilities",
     "amount": {
@@ -453,7 +453,7 @@
   {
     "transaction_id": "txn_expense_001",
     "account_id": "acc_002",
-    "timestamp": "2025-04-14T00:00:00Z",
+    "timestamp": "2025-04-14T11:31:24Z",
     "description": "Spotify",
     "category": "Entertainment",
     "amount": {
@@ -464,7 +464,7 @@
   {
     "transaction_id": "txn_expense_030",
     "account_id": "acc_003",
-    "timestamp": "2025-04-09T00:00:00Z",
+    "timestamp": "2025-04-09T15:19:30Z",
     "description": "Car Insurance",
     "category": "Insurance",
     "amount": {
@@ -475,7 +475,7 @@
   {
     "transaction_id": "txn_income_002",
     "account_id": "acc_002",
-    "timestamp": "2025-01-26T00:00:00Z",
+    "timestamp": "2025-01-26T12:36:49Z",
     "description": "Birthday Gift",
     "category": "Gift",
     "amount": {
@@ -486,7 +486,7 @@
   {
     "transaction_id": "txn_expense_031",
     "account_id": "acc_002",
-    "timestamp": "2025-01-10T00:00:00Z",
+    "timestamp": "2025-01-10T18:01:30Z",
     "description": "Pizza Express",
     "category": "Restaurants",
     "amount": {
@@ -497,7 +497,7 @@
   {
     "transaction_id": "txn_expense_024",
     "account_id": "acc_002",
-    "timestamp": "2025-04-24T00:00:00Z",
+    "timestamp": "2025-04-24T14:16:39Z",
     "description": "Tesco",
     "category": "Groceries",
     "amount": {
@@ -508,7 +508,7 @@
   {
     "transaction_id": "txn_expense_027",
     "account_id": "acc_003",
-    "timestamp": "2025-04-28T00:00:00Z",
+    "timestamp": "2025-04-28T10:58:21Z",
     "description": "Train Fare",
     "category": "Transport",
     "amount": {
@@ -519,7 +519,7 @@
   {
     "transaction_id": "txn_expense_009",
     "account_id": "acc_003",
-    "timestamp": "2025-03-13T00:00:00Z",
+    "timestamp": "2025-03-13T18:35:18Z",
     "description": "Pharmacy",
     "category": "Health",
     "amount": {
@@ -530,7 +530,7 @@
   {
     "transaction_id": "txn_expense_036",
     "account_id": "acc_003",
-    "timestamp": "2025-03-24T00:00:00Z",
+    "timestamp": "2025-03-24T19:26:55Z",
     "description": "Steam",
     "category": "Gaming",
     "amount": {
@@ -541,7 +541,7 @@
   {
     "transaction_id": "txn_expense_002",
     "account_id": "acc_002",
-    "timestamp": "2025-02-11T00:00:00Z",
+    "timestamp": "2025-02-11T17:20:59Z",
     "description": "Pizza Express",
     "category": "Restaurants",
     "amount": {
@@ -552,7 +552,7 @@
   {
     "transaction_id": "txn_income_006",
     "account_id": "acc_002",
-    "timestamp": "2025-04-21T00:00:00Z",
+    "timestamp": "2025-04-21T00:03:56Z",
     "description": "Amazon Refund",
     "category": "Refund",
     "amount": {
@@ -563,7 +563,7 @@
   {
     "transaction_id": "txn_expense_008",
     "account_id": "acc_001",
-    "timestamp": "2025-03-22T00:00:00Z",
+    "timestamp": "2025-03-22T02:01:14Z",
     "description": "Car Insurance",
     "category": "Insurance",
     "amount": {
@@ -574,7 +574,7 @@
   {
     "transaction_id": "txn_expense_042",
     "account_id": "acc_001",
-    "timestamp": "2025-04-02T00:00:00Z",
+    "timestamp": "2025-04-02T02:55:32Z",
     "description": "Wine Store",
     "category": "Alcohol",
     "amount": {
@@ -585,7 +585,7 @@
   {
     "transaction_id": "txn_expense_006",
     "account_id": "acc_001",
-    "timestamp": "2025-04-25T00:00:00Z",
+    "timestamp": "2025-04-25T20:12:30Z",
     "description": "Zara",
     "category": "Shopping",
     "amount": {
@@ -596,7 +596,7 @@
   {
     "transaction_id": "txn_expense_011",
     "account_id": "acc_003",
-    "timestamp": "2025-02-27T00:00:00Z",
+    "timestamp": "2025-02-27T00:30:20Z",
     "description": "Steam",
     "category": "Gaming",
     "amount": {
@@ -607,7 +607,7 @@
   {
     "transaction_id": "txn_income_011",
     "account_id": "acc_003",
-    "timestamp": "2025-02-02T00:00:00Z",
+    "timestamp": "2025-02-02T15:55:42Z",
     "description": "ASOS Return",
     "category": "Refund",
     "amount": {
@@ -618,7 +618,7 @@
   {
     "transaction_id": "txn_income_005",
     "account_id": "acc_001",
-    "timestamp": "2025-03-27T00:00:00Z",
+    "timestamp": "2025-03-27T16:48:30Z",
     "description": "Travel Reimbursement",
     "category": "Reimbursement",
     "amount": {
@@ -629,7 +629,7 @@
   {
     "transaction_id": "txn_income_001",
     "account_id": "acc_002",
-    "timestamp": "2025-01-09T00:00:00Z",
+    "timestamp": "2025-01-09T02:54:11Z",
     "description": "Monthly Salary",
     "category": "Salary",
     "amount": {
@@ -640,7 +640,7 @@
   {
     "transaction_id": "txn_expense_005",
     "account_id": "acc_001",
-    "timestamp": "2025-04-09T00:00:00Z",
+    "timestamp": "2025-04-09T09:46:15Z",
     "description": "Lidl",
     "category": "Groceries",
     "amount": {
@@ -651,7 +651,7 @@
   {
     "transaction_id": "txn_expense_022",
     "account_id": "acc_001",
-    "timestamp": "2025-02-27T00:00:00Z",
+    "timestamp": "2025-02-27T02:52:50Z",
     "description": "Aldi",
     "category": "Groceries",
     "amount": {

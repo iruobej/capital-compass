@@ -153,7 +153,12 @@ $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php if (isset($_SESSION['transactions'])): ?>
                             <?php foreach ($_SESSION['transactions'] as $tx): ?>
                                 <?php
-                                    $timestamp = $tx['timestamp'] ?? 'N/A';
+                                    $timestamp = $tx['timestamp'] ?? '';
+                                    $formattedDate = 'Invalid date';
+                                    if (!empty($timestamp)) {
+                                        $dt = new DateTime($timestamp);
+                                        $formattedDate = $dt->format('d-m-Y, H:i');
+                                    }
                                     $category = $tx['category'] ?? 'N/A';
                                     $amountVal = $tx['amount']['value'] ?? null;
                                     $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';

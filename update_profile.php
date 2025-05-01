@@ -3,7 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 header('Content-Type: application/json');
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+error_log("Session data: " . json_encode($_SESSION));
 include 'config.php';
 require_once 'notifications_lib.php'; 
 

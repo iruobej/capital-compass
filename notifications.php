@@ -2,6 +2,7 @@
 session_start();
 include 'navbar.php';
 include 'config.php'; 
+include 'notifications_lib.php';
 
 $user_id = $_SESSION['user_id'] ?? 1; // fallback for testing
 
@@ -25,30 +26,6 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1 id="header" style="text-align: center;">Notifications</h1>
     <?php
-    function createNotification($userId, $title, $message) {
-            $stmt = $pdo->prepare("
-            INSERT INTO notifications (user_id, title, message, created_at) 
-            VALUES (:user_id, :title, :message, NOW())
-        ");
-
-        $stmt->execute([
-            ':user_id' => $userId,
-            ':title'   => $title,
-            ':message' => $message
-        ]);
-    }
-
-    
-    function deleteNotification(PDO $pdo, int $id): bool {
-        try {
-            $stmt = $pdo->prepare("DELETE FROM notifications WHERE id = :id");
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            // You can log the error if needed
-            return false;
-        }
-    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_notification') {
         $id = intval($_POST['id']);

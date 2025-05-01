@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 header('Content-Type: application/json');
 session_start();
 include 'config.php';
-require_once 'notifications.php'; 
+require_once 'notifications_lib.php'; 
 
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -115,10 +115,12 @@ try {
         'success' => $success,
         'error' => $success ? null : ($error ?? 'Database update failed')
     ]);
+    exit;
 
 } catch (Exception $e) {
     echo json_encode([
         'success' => false,
         'error' => $e->getMessage()
     ]);
+    exit;
 }

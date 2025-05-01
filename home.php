@@ -14,18 +14,18 @@ if(!isset($_SESSION['username'])){
     exit();
 }
 require_once 'config.php';
-// Mock fallback for accounts and transactions using local API
-$accData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=accounts');
-$accJson = json_decode($accData, true);
-$_SESSION['accounts'] = $accJson['accounts'] ?? [];
 
-$txData = file_get_contents('https://capital-compass.onrender.com/api_connect.php?type=transactions');
-$txJson = json_decode($txData, true);
-$_SESSION['transactions'] = $txJson['transactions'] ?? [];
+// Loading accounts from local JSON
+$_SESSION['accounts'] = json_decode(file_get_contents('data/fake_accounts.json'), true);
 
+// Loading transactions from local JSON
+$transactions = json_decode(file_get_contents('data/fake_transactions.json'), true);
+$_SESSION['transactions'] = $transactions;
+
+// Loading badge logic and compute badge
 require 'badgeLogic.php';
-$transactions = $_SESSION['transactions'];
 $badge = getBadgeLevel($transactions);
+
 
 //Logic for goals table in the db
 $stmt = $conn->prepare("SELECT * FROM goals WHERE user_id = ?");

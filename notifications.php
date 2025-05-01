@@ -43,7 +43,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <h3><?= htmlspecialchars($note['title']) ?></h3>
                     <p><?= htmlspecialchars($note['message']) ?></p>
                     <small><?= date('j M Y, g:i a', strtotime($note['created_at'])) ?></small>
-                    <button class="dismiss-btn" data-id="<?php echo $notification['id']; ?>">Dismiss</button>
+                    <button class="dismiss-btn" data-id="<?php echo $note['id']; ?>">Dismiss</button>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

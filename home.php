@@ -14,6 +14,7 @@ if(!isset($_SESSION['username'])){
     exit();
 }
 require_once 'config.php';
+include 'suggestedActions.php';
 
 // Loading accounts from local JSON
 $_SESSION['accounts'] = json_decode(file_get_contents('data/fake_accounts.json'), true);
@@ -25,6 +26,7 @@ $_SESSION['transactions'] = $transactions;
 // Loading badge logic and compute badge
 require 'badgeLogic.php';
 $badge = getBadgeLevel($transactions);
+$suggestions = generateSuggestedActions($transactions);
 
 
 //Logic for goals table in the db
@@ -160,17 +162,19 @@ $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         $formattedDate = $dt->format('d-m-Y, H:i');
                                     }
                                     $category = $tx['category'] ?? 'N/A';
+                                    $description = $tx['description'] ?? 'N/A';
                                     $amountVal = $tx['amount']['value'] ?? null;
                                     $amount = is_numeric($amountVal) ? number_format($amountVal, 2) : '0.00';
                                 ?>
                                 <tr>
                                     <td><?= htmlspecialchars($formattedDate) ?></td>
+                                    <td><?= htmlspecialchars($description) ?></td>
                                     <td><?= htmlspecialchars($category) ?></td>
                                     <td>£<?= $amount ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <tr><td colspan="3">No transactions available.</td></tr>
+                            <tr><td colspan="4">No transactions available.</td></tr>
                         <?php endif; ?>
                     </table>
                 </div>
@@ -178,9 +182,13 @@ $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="box">
                 <h2>Suggested Actions</h2>
                 <ul>
-                    <li>Set up a budget</li>
-                    <li>Set up a savings goal</li>
-                    <li>Review recent transactions</li>
+                    <?php if (!empty($suggestions)): ?>
+                        <?php foreach ($suggestions as $action): ?>
+                            <li><?php echo htmlspecialchars($action); ?></li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <li>No suggestions at the moment. Keep up the good work!</li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

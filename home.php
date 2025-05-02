@@ -32,7 +32,7 @@ $quizScore = $badgeData['quizScore'];
 $combinedScore = $badgeData['combinedScore'];
 
 ?>
-<?php if ($_SESSION['username'] === 'your_dev_username'): ?>
+<?php if ($_SESSION['username'] === 'j.irobz'): ?>
 <script>
     console.log("DEBUG: Spending Score = <?= $spendingScore ?>");
     console.log("DEBUG: Quiz Score = <?= $quizScore ?>");

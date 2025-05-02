@@ -46,4 +46,5 @@ $stmt->execute([
 ]);
 
 echo json_encode(['success' => true]);
+exit();
 ?>

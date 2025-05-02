@@ -33,7 +33,7 @@ document.querySelectorAll('.save-btn').forEach(function(saveBtn) {
             };
         }
 
-        fetch('update_profile.php', {
+        fetch('../update_profile.php', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)

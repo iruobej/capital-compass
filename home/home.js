@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('save-new-goal').addEventListener('click', function () {
             const description = document.getElementById('new-goal-input').value;
 
-            fetch('update_profile.php', {
+            fetch('../update_profile.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     goalDiv.querySelector('.save-btn').addEventListener('click', function () {
                         const newValue = goalDiv.querySelector('.edit-input').value;
-                        fetch('update_profile.php', {
+                        fetch('../update_profile.php', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             credentials: 'include',
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     goalDiv.querySelector('.delete-btn').addEventListener('click', function () {
                         if (!confirm("Are you sure you want to delete this goal?")) return;
 
-                        fetch('update_profile.php', {
+                        fetch('../update_profile.php', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             credentials: 'include',
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const goal_id = parent.dataset.goalId;
             const value = parent.querySelector('.edit-input').value;
 
-            fetch('update_profile.php', {
+            fetch('../update_profile.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!confirm("Are you sure you want to delete this goal?")) return;
 
-            fetch('update_profile.php', {
+            fetch('../update_profile.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',

@@ -108,7 +108,7 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
             <div class="box">
                 <h2>Net Cash Flow (Across Accounts)</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
                 <?php
-                $transactions = json_decode(file_get_contents('data/fake_transactions.json'), true);
+                $transactions = json_decode(file_get_contents('../data/fake_transactions.json'), true);
                 $daily_totals = [];
 
                 foreach ($transactions as $txn) {

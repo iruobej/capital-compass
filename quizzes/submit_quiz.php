@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once __DIR__ . '/../config.php';
 
 // Get JSON data
 $data = json_decode(file_get_contents("php://input"), true);

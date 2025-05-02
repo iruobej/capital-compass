@@ -1,14 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-    require_once 'config.php';
-    $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
-    $stmt->execute([$_SESSION['username']]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($user) {
-        $_SESSION['user_id'] = $user['user_id'];
-    }
-}
 if(!isset($_SESSION['username'])){
     header("Location: index.html");
     exit();
@@ -33,7 +24,22 @@ $suggestions = generateSuggestedActions($transactions);
 $stmt = $conn->prepare("SELECT * FROM goals WHERE user_id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
+$badge = $badgeData['badge'];
+$spendingScore = $badgeData['spendingScore'];
+$quizScore = $badgeData['quizScore'];
+$combinedScore = $badgeData['combinedScore'];
+
 ?>
+<?php if ($_SESSION['username'] === 'your_dev_username'): ?>
+<script>
+    console.log("DEBUG: Spending Score = <?= $spendingScore ?>");
+    console.log("DEBUG: Quiz Score = <?= $quizScore ?>");
+    console.log("DEBUG: Combined Score = <?= $combinedScore ?>");
+</script>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +55,6 @@ $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php include 'navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
-    <h2 style="text-align: center;">Your Badge Level: <?php echo "$combinedScore";?></h2>
     <div class="page-container">
         <!--Displaying accounts-->
         <h2>Your Accounts: </h2>

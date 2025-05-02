@@ -131,12 +131,14 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
                 <h2>Financial Goals</h2>
                 <?php foreach ($goals as $goal): ?>
                     <div class="goal-item" data-goal-id="<?= $goal['goal_id'] ?>" data-field="description">
-                        <span class="display-value"><?= htmlspecialchars($goal['description']) ?></span>
-                        <span class="edit-inputs" style="display:none;">
-                            <input type="text" class="edit-input" value="<?= htmlspecialchars($goal['description']) ?>" />
-                        </span>
-                        <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
-                        <button class="delete-btn" data-goal-id="<?= $goal['goal_id'] ?>"><i class="fa-solid fa-trash"></i></button>
+                        <div class="goal-content">
+                            <span class="display-value"><?= htmlspecialchars($goal['description']) ?></span>
+                            <span class="edit-inputs" style="display:none;">
+                                <input type="text" class="edit-input" value="<?= htmlspecialchars($goal['description']) ?>" />
+                            </span>
+                            <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+                            <button class="delete-btn" data-goal-id="<?= $goal['goal_id'] ?>"><i class="fa-solid fa-trash"></i></button>
+                        </div>
                         <button class="save-btn" style="display:none;">Save</button>
                     </div>
                 <?php endforeach; ?>

@@ -88,6 +88,10 @@ try {
         $_SESSION['lastname'] = $user['lastname'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['budget_alert'] = $user['budget_alert'];
+
+        // Redirecting to home page
+        header("Location: home.php");
+        exit();
     } else {
         header("Location: register.html?error=" . urlencode("Registration failed"));
         exit();

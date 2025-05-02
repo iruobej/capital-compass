@@ -76,13 +76,18 @@ try {
     ]);
 
     if ($success) {
-        $_SESSION['username'] = $username;
+        // Now fetch the user from the DB
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->execute([':username' => $username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Set session variables using fetched data
+        $_SESSION['user_id'] = $user['user_id'];
+        $_SESSION['username'] = $user['username'];
         $_SESSION['firstname'] = $user['firstname'];
         $_SESSION['lastname'] = $user['lastname'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['budget_alert'] = $user['budget_alert'];
-        header("Location: home.php");
-        exit();
     } else {
         header("Location: register.html?error=" . urlencode("Registration failed"));
         exit();

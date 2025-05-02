@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         .then(res => res.json())
                         .then(del => {
                             if (del.success) {
-                                goalDiv.remove();
+                                this.closest('.goal-item').remove();
                             } else {
                                 alert('Failed to delete goal');
                             }

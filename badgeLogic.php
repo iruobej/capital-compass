@@ -35,7 +35,7 @@ function getBadgeLevel($transactions, $conn, $user_id) {
     $quizPassRatio = ($row['total'] > 0) ? ($row['passed'] / $row['total']) : null;
 
     if ($quizPassRatio === null) {
-        return "No Quiz Data";
+        return 0;
     }
 
     // Normalising both ratios to a common scale

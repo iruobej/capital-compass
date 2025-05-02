@@ -11,7 +11,6 @@ $username = $_SESSION['username'];
 $budget_alert = $_SESSION['budget_alert'];
 
 require_once __DIR__ . '/../configuration/config.php';
-require_once __DIR__ . '/../apiLogic/api_connect.php';
 require_once __DIR__ . '/../badgeLogic.php';
     
 ?>

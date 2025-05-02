@@ -20,6 +20,8 @@ if(!isset($_SESSION['username'])){
 $_SESSION['accounts']     = json_decode(file_get_contents(__DIR__ . '/../data/fake_accounts.json'), true);
 $_SESSION['transactions'] = json_decode(file_get_contents(__DIR__ . '/../data/fake_transactions.json'), true);
 
+$transactions = $_SESSION['transactions'];
+
 // Loading badge logic and compute badge
 $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
 $suggestions = generateSuggestedActions($transactions);

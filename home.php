@@ -25,7 +25,7 @@ $_SESSION['transactions'] = $transactions;
 
 // Loading badge logic and compute badge
 require 'badgeLogic.php';
-$badge = getBadgeLevel($transactions);
+$badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
 $suggestions = generateSuggestedActions($transactions);
 
 

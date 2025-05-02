@@ -45,9 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(res => res.json())
             .then(data => {
-                if (data.success && data.goal) {
-                    const goalsBox = document.querySelector('.box h2').parentElement;
+                const goalsBoxes = document.querySelectorAll('.box');
+                let goalsBox = null;
+                goalsBoxes.forEach(box => {
+                    if (box.querySelector('h2')?.textContent.includes('Financial Goals')) {
+                        goalsBox = box;
+                    }
+                });
 
+                if (data.success && data.goal && goalsBox) {
                     const goalDiv = document.createElement('div');
                     goalDiv.className = 'goal-item';
                     goalDiv.setAttribute('data-goal-id', data.goal.goal_id);

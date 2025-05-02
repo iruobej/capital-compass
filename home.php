@@ -35,7 +35,6 @@ $stmt->execute([$_SESSION['user_id']]);
 $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
-$badge = $badgeData['badge'];
 $spendingScore = $badgeData['spendingScore'];
 $quizScore = $badgeData['quizScore'];
 $combinedScore = $badgeData['combinedScore'];

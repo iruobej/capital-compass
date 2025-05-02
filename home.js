@@ -54,12 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 if (data.success && data.goal && goalsBox) {
-                    const goalDiv = document.createElement('div');
-                    goalDiv.className = 'goal-item';
-                    goalDiv.setAttribute('data-goal-id', data.goal.goal_id);
-                    goalDiv.setAttribute('data-field', 'description');
+                    const contentWrapper = document.createElement('div');
+                    contentWrapper.className = 'goal-content';
+                    contentWrapper.style.display = 'flex';
+                    contentWrapper.style.alignItems = 'center';
+                    contentWrapper.style.gap = '10px';
 
-                    goalDiv.innerHTML = `
+                    contentWrapper.innerHTML = `
                         <span class="display-value">${data.goal.description}</span>
                         <span class="edit-inputs" style="display:none;">
                             <input type="text" class="edit-input" value="${data.goal.description}" />
@@ -68,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <button class="delete-btn" data-goal-id="${data.goal.goal_id}"><i class="fa-solid fa-trash"></i></button>
                         <button class="save-btn" style="display:none;">Save</button>
                     `;
-
+                    
+                    goalDiv.appendChild(contentWrapper);
                     goalsBox.insertBefore(goalDiv, document.getElementById('add-goal-btn'));
 
                     goalDiv.querySelector('.edit-btn').addEventListener('click', function () {

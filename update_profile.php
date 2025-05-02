@@ -6,9 +6,11 @@ header('Content-Type: application/json');
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-error_log("Session data: " . json_encode($_SESSION));
-include '../configuration/config.php';
-require_once '../notifications/notifications_lib.php'; 
+error_log("update_profile.php got field={$field}, desc={$data['description']}");
+
+// Including config & libs relative to THIS file:
+require_once __DIR__ . '/../configuration/config.php';  
+require_once __DIR__ . '/../notifications/notifications_lib.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 

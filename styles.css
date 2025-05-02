@@ -344,5 +344,12 @@ button, .dropdown-content a, .box a {
 }
 
 .delete-btn {
+  background: none;
   color: red;
+}
+
+.goal-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

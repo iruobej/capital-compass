@@ -6,7 +6,6 @@ header('Content-Type: application/json');
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-error_log("update_profile.php got field={$field}, desc={$data['description']}");
 
 // Including config & libs relative to THIS file:
 require_once __DIR__ . '/../configuration/config.php';  
@@ -16,6 +15,9 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 $field = $data['field'] ?? '';
 $value = $data['value'] ?? '';
+
+error_log("update_profile.php got field={$field}, desc={$data['description']}");
+
 $success = false;
 $error = null;
 $message = null;

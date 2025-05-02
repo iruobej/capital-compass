@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '/configuration/config.php';
+include '../configuration/config.php';
 
 $errors = [];
 $success = '';

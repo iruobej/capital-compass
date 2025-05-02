@@ -21,7 +21,7 @@ $budget_alert = $_SESSION['budget_alert']
         </style>
 </head>
 <body>
-    <?php include 'navbar.php'; include '/configuration/config.php'; ?>
+    <?php include '../navbar.php'; include '../configuration/config.php'; ?>
     <h1 id="header" style="text-align: center;">Profile</h1>
     <div class="notifications" style="text-align: center;">
         <div class="box">
@@ -83,8 +83,8 @@ $budget_alert = $_SESSION['budget_alert']
         </div>
 
         <?php
-        require_once '/apiLogic/api_connect.php';
-        require_once '/badgeLogic.php';
+        require_once '..//apiLogic/api_connect.php';
+        require_once '../badgeLogic.php';
         $transactions = $_SESSION['transactions'] ?? [];
 
         $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
@@ -99,7 +99,7 @@ $budget_alert = $_SESSION['budget_alert']
             <h2>Connect Banks</h2>
             <p>Connected Banks: Barclays, Monzo, Starling, etc</p>
         </div>
-        <button style="background-color: red;" onclick="location.href='/logout.php';">Logout</button>
+        <button style="background-color: red;" onclick="location.href='../logout.php';">Logout</button>
     </div>
 <script src="profile.js"></script>
 </body>

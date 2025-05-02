@@ -1,8 +1,8 @@
 <?php
 session_start();
-include 'navbar.php';
-include 'configuration/config.php'; 
-include 'notifications/notifications_lib.php';
+include '../navbar.php';
+include '../configuration/config.php'; 
+include 'notifications_lib.php';
 
 $user_id = $_SESSION['user_id'] ?? 1; // fallback for testing
 

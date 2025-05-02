@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-    require_once '/configuration/config.php';
+    require_once '../configuration/config.php';
     $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
     $stmt->execute([$_SESSION['username']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -13,14 +13,14 @@ if(!isset($_SESSION['username'])){
     header("Location: index.html");
     exit();
 }
-require_once '/configuration/config.php';
-include 'suggestedActions.php';
+require_once '../configuration/config.php';
+include '../suggestedActions.php';
 
 // Loading accounts from local JSON
-$_SESSION['accounts'] = json_decode(file_get_contents('data/fake_accounts.json'), true);
+$_SESSION['accounts'] = json_decode(file_get_contents('../data/fake_accounts.json'), true);
 
 // Loading transactions from local JSON
-$transactions = json_decode(file_get_contents('data/fake_transactions.json'), true);
+$transactions = json_decode(file_get_contents('../data/fake_transactions.json'), true);
 $_SESSION['transactions'] = $transactions;
 
 // Loading badge logic and compute badge
@@ -208,7 +208,7 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
         const cashFlowLabels = <?= $dates ?>;
         const cashFlowData = <?= $amounts ?>;
     </script>
-    <script src="/home/home.js"></script>
+    <script src="home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

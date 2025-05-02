@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
     }
 }
 if(!isset($_SESSION['username'])){
-    header("Location: index.html");
+    header("Location: ../index.html");
     exit();
 }
 require_once '../configuration/config.php';
@@ -44,14 +44,14 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
         </style>
 </head>
 <body >
-    <?php include 'navbar.php'; ?>
+    <?php include '../navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
     <div class="page-container">

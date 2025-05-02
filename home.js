@@ -151,3 +151,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.querySelectorAll('.delete-btn').forEach(function (deleteBtn) {
+    deleteBtn.addEventListener('click', function () {
+        const goalId = this.dataset.goalId;
+        const goalDiv = this.closest('.goal-item');
+
+        if (!confirm("Are you sure you want to delete this goal?")) return;
+
+        fetch('update_profile.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({
+                field: 'delete_goal',
+                goal_id: goalId
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                goalDiv.remove(); // Remove from DOM
+            } else {
+                alert('Failed to delete goal');
+            }
+        });
+    });
+});

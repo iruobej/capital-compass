@@ -119,6 +119,17 @@ try {
                 $error = "Goal description cannot be empty.";
             }
             break;
+            
+        case 'delete_goal':
+            $goal_id = $data['goal_id'] ?? null;
+            if ($goal_id) {
+                $stmt = $conn->prepare("DELETE FROM goals WHERE goal_id = ? AND user_id = ?");
+                $success = $stmt->execute([$goal_id, $userId]);
+                $message = "Goal #$goal_id deleted.";
+            } else {
+                $error = "Goal ID missing.";
+            }
+            break;            
 
         default:
             $error = "Unknown field: $field";

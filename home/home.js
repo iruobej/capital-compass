@@ -7,7 +7,7 @@
  * - Hides rows that don’t match the filter
  */
 function filterTransactions() {
-    // Grabbing the user’s search term and normalize to lowercase
+    // Grabbing the user’s search term and normalise to lowercase
     const input = document.getElementById("txSearch");
     const filter = input.value.toLowerCase();
 

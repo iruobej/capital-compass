@@ -4,7 +4,7 @@ require_once 'api_connect.php';
 
 // Ensuring code is received
 if (!isset($_GET['code'])) {
-    die("No authorization code provided.");
+    die("No authorisation code provided.");
 }
 
 // Exchanging code for token

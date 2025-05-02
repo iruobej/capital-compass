@@ -7,8 +7,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 error_log("Session data: " . json_encode($_SESSION));
-include '/configuration/config.php';
-require_once '/notifications/notifications_lib.php'; 
+include '../configuration/config.php';
+require_once '../notifications/notifications_lib.php'; 
 
 $data = json_decode(file_get_contents('php://input'), true);
 

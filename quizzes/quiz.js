@@ -33,11 +33,15 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
             time_taken: timeTaken,
             pass_fail: passFail
         })
-    }).then(res => res.json())
-        .then(data => {
-            console.log("Quiz submission result:", data);
-            if (!data.success) {
-                console.error("Quiz result not saved:", data.error);
-            }
-        }); 
+    }).then(res => res.text())
+    .then(text => {
+        console.log("Raw response:", text);
+        // Try parsing it as JSON manually if you want:
+        try {
+            const data = JSON.parse(text);
+            console.log("Parsed JSON:", data);
+        } catch (e) {
+            console.error("Invalid JSON response:", e);
+        }
+    });
 });

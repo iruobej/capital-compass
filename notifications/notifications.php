@@ -1,10 +1,10 @@
 <?php
 session_start();
-include '../navbar.php';
-include '../configuration/config.php'; 
-include 'notifications_lib.php';
+include_once __DIR__ . '/../navbar.php';
+require_once __DIR__ . '/../configuration/config.php';
+require_once __DIR__ . '/notifications_lib.php';
 
-$user_id = $_SESSION['user_id'] ?? 1; // fallback for testing
+$user_id = $_SESSION['user_id'];
 
 // Fetching notifications from database
 $stmt = $conn->prepare("SELECT * FROM notifications WHERE user_id = ? ORDER BY created_at DESC");

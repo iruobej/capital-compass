@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-$SESSION = array();
+$SESSION = [];
 //Stopping the session completely 
 session_destroy();
 
 //Redirecting to login page
-header("Location: index.html");
+header("Location: /index.html");
 exit();
 ?>

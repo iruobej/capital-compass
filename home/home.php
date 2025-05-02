@@ -1,7 +1,9 @@
 <?php
 session_start();
+require_once __DIR__ . '/../configuration/config.php';
+require_once __DIR__ . '/../badgeLogic.php';
+include    __DIR__ . '/suggestedActions.php'; 
 if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-    require_once '../configuration/config.php';
     $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
     $stmt->execute([$_SESSION['username']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -10,21 +12,15 @@ if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
     }
 }
 if(!isset($_SESSION['username'])){
-    header("Location: ../index.html");
+    header('Location: ' . dirname(__DIR__) . '/index.html');
     exit();
 }
-require_once '../configuration/config.php';
-include 'suggestedActions.php';
 
-// Loading accounts from local JSON
-$_SESSION['accounts'] = json_decode(file_get_contents('../data/fake_accounts.json'), true);
-
-// Loading transactions from local JSON
-$transactions = json_decode(file_get_contents('../data/fake_transactions.json'), true);
-$_SESSION['transactions'] = $transactions;
+// loading JSON data
+$_SESSION['accounts']     = json_decode(file_get_contents(__DIR__ . '/../data/fake_accounts.json'), true);
+$_SESSION['transactions'] = json_decode(file_get_contents(__DIR__ . '/../data/fake_transactions.json'), true);
 
 // Loading badge logic and compute badge
-require '../badgeLogic.php';
 $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
 $suggestions = generateSuggestedActions($transactions);
 
@@ -51,7 +47,7 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
         </style>
 </head>
 <body >
-    <?php include '../navbar.php'; ?>
+    <?php include __DIR__ . '/../navbar.php'; ?>
     <h1 id="header">Welcome, <?= htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']) ?></h1>
     <h2 style="text-align: center;">Your Badge Level: <?php echo "<span class='badge'>$badge</span>";?></h2>
     <div class="page-container">
@@ -108,7 +104,7 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
             <div class="box">
                 <h2>Net Cash Flow (Across Accounts)</h2><canvas id="cashFlowChart" width="800" height="400"></canvas>
                 <?php
-                $transactions = json_decode(file_get_contents('../data/fake_transactions.json'), true);
+                $transactions = json_decode(file_get_contents(__DIR__ . '/../data/fake_transactions.json'), true);
                 $daily_totals = [];
 
                 foreach ($transactions as $txn) {

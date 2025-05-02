@@ -8,7 +8,12 @@ $firstname = $_SESSION['firstname'];
 $email = $_SESSION['email'];
 $lastname = $_SESSION['lastname'];
 $username = $_SESSION['username'];
-$budget_alert = $_SESSION['budget_alert'] 
+$budget_alert = $_SESSION['budget_alert'];
+
+require_once __DIR__ . '/../configuration/config.php';
+require_once __DIR__ . '/../apiLogic/api_connect.php';
+require_once __DIR__ . '/../badgeLogic.php';
+    
 ?>
 <head>
     <meta charset="UTF-8">
@@ -21,7 +26,7 @@ $budget_alert = $_SESSION['budget_alert']
         </style>
 </head>
 <body>
-    <?php include '../navbar.php'; include '../configuration/config.php'; ?>
+    <?php include __DIR__ . '/../navbar.php'; ?>
     <h1 id="header" style="text-align: center;">Profile</h1>
     <div class="notifications" style="text-align: center;">
         <div class="box">
@@ -83,8 +88,6 @@ $budget_alert = $_SESSION['budget_alert']
         </div>
 
         <?php
-        require_once '..//apiLogic/api_connect.php';
-        require_once '../badgeLogic.php';
         $transactions = $_SESSION['transactions'] ?? [];
 
         $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);

@@ -26,6 +26,7 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
     // Send attempt to backend
     fetch('submit_quiz.php', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             topic: topic,

@@ -8,8 +8,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Including config & libs relative to THIS file:
-require_once __DIR__ . '/../configuration/config.php';  
-require_once __DIR__ . '/../notifications/notifications_lib.php';
+require_once __DIR__ . '/configuration/config.php';  
+require_once __DIR__ . '/notifications/notifications_lib.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 

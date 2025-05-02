@@ -14,7 +14,7 @@ if(!isset($_SESSION['username'])){
     exit();
 }
 require_once '../configuration/config.php';
-include '../suggestedActions.php';
+include 'suggestedActions.php';
 
 // Loading accounts from local JSON
 $_SESSION['accounts'] = json_decode(file_get_contents('../data/fake_accounts.json'), true);
@@ -24,7 +24,7 @@ $transactions = json_decode(file_get_contents('../data/fake_transactions.json'),
 $_SESSION['transactions'] = $transactions;
 
 // Loading badge logic and compute badge
-require 'badgeLogic.php';
+require '../badgeLogic.php';
 $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
 $suggestions = generateSuggestedActions($transactions);
 

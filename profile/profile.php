@@ -30,7 +30,7 @@ require_once __DIR__ . '/../badgeLogic.php';
     <div class="notifications" style="text-align: center;">
         <div class="box">
             <h2>User Information</h2>
-            <p>
+            <p data-field="full_name">
                 Full Name:
                 <span class="display-value"><?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></span>
                 <span class="edit-inputs" style="display: none;">
@@ -45,7 +45,7 @@ require_once __DIR__ . '/../badgeLogic.php';
                 User Name:
                 <span class="display-value"><?php echo htmlspecialchars($username); ?></span>
                 <span class="edit-inputs" style="display: none;">
-                    <input type="text" class="edit-input first-name" value="<?php echo htmlspecialchars($username); ?>" placeholder="Username">
+                    <input type="text" class="edit-input" value="<?php echo htmlspecialchars($username); ?>" placeholder="Username">
                 </span>
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display: none;">Save</button>
@@ -55,7 +55,7 @@ require_once __DIR__ . '/../badgeLogic.php';
                 Email:
                 <span class="display-value"><?php echo htmlspecialchars($email); ?></span>
                 <span class="edit-inputs" style="display: none;">
-                    <input type="text" class="edit-input first-name" value="<?php echo htmlspecialchars($email); ?>" placeholder="Email">
+                    <input type="text" class="edit-input" value="<?php echo htmlspecialchars($email); ?>" placeholder="Email">
                 </span>
                 <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                 <button class="save-btn" style="display: none;">Save</button>

@@ -90,7 +90,7 @@ try {
         $_SESSION['budget_alert'] = $user['budget_alert'];
 
         // Redirecting to home page
-        header("Location: home.php");
+        header("Location: /home/home.php");
         exit();
     } else {
         header("Location: register.html?error=" . urlencode("Registration failed"));

@@ -26,6 +26,6 @@ $transactions = fetchAllTransactions($accessToken, $accounts);
 $_SESSION['transactions'] = $transactions;
 
 // Redirecting to profile once done
-header("Location: profile.php");
+header("Location: /profile/profile.php");
 exit;
 ?>

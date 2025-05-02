@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-    require_once 'config.php';
+    require_once 'configuration/config.php';
     $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
     $stmt->execute([$_SESSION['username']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -13,7 +13,7 @@ if(!isset($_SESSION['username'])){
     header("Location: index.html");
     exit();
 }
-require_once 'config.php';
+require_once '/configuration/config.php';
 include 'suggestedActions.php';
 
 // Loading accounts from local JSON
@@ -204,52 +204,11 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
     <footer>
         <p>&copy; 2025 Capital Compass</p>
     </footer>
-    <script src="home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-    const ctx = document.getElementById('cashFlowChart').getContext('2d');
-
-    const cashFlowChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: <?php echo $dates; ?>,
-            datasets: [{
-                label: 'Net Cash Flow (GBP)',
-                data: <?php echo $amounts; ?>,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                fill: true,
-                tension: 0.3,
-                pointRadius: 5,
-                pointHoverRadius: 7,
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                tooltip: {
-                    mode: 'index',
-                    intersect: false,
-                }
-            },
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Date'
-                    }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'GBP (£)'
-                    },
-                    beginAtZero: false
-                }
-            }
-        }
-    });
+        const cashFlowLabels = <?= $dates ?>;
+        const cashFlowData = <?= $amounts ?>;
     </script>
-
+    <script src="/home/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

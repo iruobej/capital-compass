@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Cryptocurrency Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
+            <input type="hidden" name="topic" value="Cryptocurrency" />
             <div class="question">
                 <p>1. What is the underlying technology of most cryptocurrencies?</p>
                 <label><input type="radio" name="q1" value="correct">Blockchain</label><br>

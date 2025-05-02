@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Budgeting Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
+            <input type="hidden" name="topic" value="Budgeting" />
             <div class="question">
                 <p>1. What does the 50/30/20 rule suggest you spend 50% of your income on?</p>
                 <label><input type="radio" name="q1" value="correct">Needs</label><br>

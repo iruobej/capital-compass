@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Retirement Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
+            <input type="hidden" name="topic" value="Retirement" />
             <div class="question">
                 <p>1. What is the main purpose of a retirement plan?</p>
                 <label><input type="radio" name="q1" value="correct">To ensure financial security after you stop working</label><br>

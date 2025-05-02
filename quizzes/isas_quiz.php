@@ -10,7 +10,8 @@
 <body>
     <h1 id="header" style="text-align:center;">ISAs Quiz</h1>
     <div class="quiz-container">
-        <form id="quizForm">
+        <form id="quizForm">    
+            <input type="hidden" name="topic" value="ISAs" />
             <div class="question">
                 <p>1. What does ISA stand for?</p>
                 <label><input type="radio" name="q1" value="correct">Individual Savings Account</label><br>

@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Investing Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
+            <input type="hidden" name="topic" value="Investing" />
             <div class="question">
                 <p>1. What is diversification in investing?</p>
                 <label><input type="radio" name="q1" value="correct">Spreading investments across different assets</label><br>

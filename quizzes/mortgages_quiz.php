@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Mortgages Quiz</h1>
     <div class="quiz-container">
     <form id="quizForm">
+        <input type="hidden" name="topic" value="Budgeting" />
         <div class="question">
             <p>1. What is a mortgage?</p>
             <label><input type="radio" name="q1" value="correct">A loan used to purchase property</label><br>

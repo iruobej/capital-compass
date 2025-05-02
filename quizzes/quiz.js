@@ -1,8 +1,12 @@
+let quizStartTime = Date.now(); // capture quiz start
+
 document.getElementById('quizForm').addEventListener('submit', function(e) {
     e.preventDefault();
+
     const totalQuestions = 7;
     let score = 0;
 
+    // Score the quiz
     for (let i = 1; i <= totalQuestions; i++) {
         const answer = document.querySelector('input[name="q' + i + '"]:checked');
         if (answer && answer.value === "correct") {
@@ -11,11 +15,28 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
     }
 
     const result = document.getElementById("result");
-    if (score >= 5) {
-        result.innerHTML = `You passed! Score: ${score}/7`;
-        result.style.color = "green";
-    } else {
-        result.innerHTML = `You did not pass. Score: ${score}/7`;
-        result.style.color = "red";
-    }
+    const passFail = score >= 5 ? 'pass' : 'fail';
+    const timeTaken = Math.floor((Date.now() - quizStartTime) / 1000); // in seconds
+    const topic = document.querySelector('input[name="topic"]').value; // from hidden input
+
+    // Show result to user
+    result.innerHTML = `${passFail === 'pass' ? 'You passed!' : 'You did not pass.'} Score: ${score}/7`;
+    result.style.color = passFail === 'pass' ? "green" : "red";
+
+    // Send attempt to backend
+    fetch('submit_quiz.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            topic: topic,
+            score: score,
+            time_taken: timeTaken,
+            pass_fail: passFail
+        })
+    }).then(res => res.json())
+      .then(data => {
+          if (!data.success) {
+              console.error("Quiz result not saved:", data);
+          }
+      });
 });

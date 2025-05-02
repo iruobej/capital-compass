@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Loans Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
+            <input type="hidden" name="topic" value="Loans" />
             <div class="question">
                 <p>1. What is a loan?</p>
                 <label><input type="radio" name="q1" value="correct">A sum of money borrowed to be paid back with interest</label><br>

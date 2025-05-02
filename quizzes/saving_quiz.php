@@ -11,6 +11,7 @@
     <h1 id="header" style="text-align:center;">Saving Quiz</h1>
     <div class="quiz-container">
         <form id="quizForm">
+            <input type="hidden" name="topic" value="Saving" />
             <div class="question">
                 <p>1. What is an emergency fund?</p>
                 <label><input type="radio" name="q1" value="correct">Money set aside for unexpected expenses</label><br>
@@ -37,8 +38,8 @@
             </div>
             <div class="question">
                 <p>5. What’s a common savings goal?</p>
-                <label><input type="radio" name="q5" value="correct">Buying a house</label><br>
                 <label><input type="radio" name="q5" value="wrong">Paying more taxes</label><br>
+                <label><input type="radio" name="q5" value="correct">Buying a house</label><br>
                 <label><input type="radio" name="q5" value="wrong">Spending without limits</label><br>
             </div>
             <div class="question">

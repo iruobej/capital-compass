@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById('save-new-goal').addEventListener('click', function () {
             const description = document.getElementById('new-goal-input').value;
-
+        
             fetch('update_profile.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -41,24 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({
                     field: 'add_goal',
                     description: description
-                })
-            })
-            .then(res => res.text()) // <- change to .text() to capture broken JSON
-            .then(text => {
-                console.log('Raw response:', text); // Show real error
-                try {
-                    const data = JSON.parse(text);
-                    if (data.success) {
-                        location.reload();
-                    } else {
-                        alert('Failed to add goal');
-                    }
-                } catch (e) {
-                    console.error('Invalid JSON:', e);
-                    alert('Server error (invalid response)');
+                }) 
+            }) 
+            .then(res => res.json()) 
+            .then(data => { 
+                if (data.success) {
+                    location.reload(); 
+                } else {
+                    alert('Failed to add goal');
                 }
-            });
-        });
+            }); 
+        }); 
+        
     });
     // Handle goal editing
     document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
@@ -91,11 +85,68 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(res => res.json())
             .then(data => {
                 console.log('Goal response:', data); // add this line
-                if (data.success) {
-                    location.reload();
+                if (data.success && data.goal) {
+                    const goalsBox = document.querySelector('.box h2:contains("Financial Goals")')?.parentElement;
+                
+                    const goalDiv = document.createElement('div');
+                    goalDiv.className = 'goal-item';
+                    goalDiv.setAttribute('data-goal-id', data.goal.goal_id);
+                    goalDiv.setAttribute('data-field', 'description');
+                
+                    goalDiv.innerHTML = `
+                        <span class="display-value">${data.goal.description}</span>
+                        <span class="edit-inputs" style="display:none;">
+                            <input type="text" class="edit-input" value="${data.goal.description}" />
+                        </span>
+                        <button class="edit-btn">Edit</button>
+                        <button class="save-btn" style="display:none;">Save</button>
+                    `;
+                
+                    // Insert new goal above the "+ Add Goal" button
+                    const addBtn = document.getElementById('add-goal-btn');
+                    goalsBox.insertBefore(goalDiv, addBtn);
+                
+                    // Re-attach edit/save event listeners
+                    goalDiv.querySelector('.edit-btn').addEventListener('click', function () {
+                        goalDiv.querySelector('.display-value').style.display = 'none';
+                        goalDiv.querySelector('.edit-inputs').style.display = 'inline';
+                        this.style.display = 'none';
+                        goalDiv.querySelector('.save-btn').style.display = 'inline';
+                    });
+                
+                    goalDiv.querySelector('.save-btn').addEventListener('click', function () {
+                        const newValue = goalDiv.querySelector('.edit-input').value;
+                        fetch('update_profile.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            credentials: 'include',
+                            body: JSON.stringify({
+                                field: 'goal_update',
+                                goal_id: data.goal.goal_id,
+                                value: newValue
+                            })
+                        })
+                        .then(res => res.json())
+                        .then(update => {
+                            if (update.success) {
+                                goalDiv.querySelector('.display-value').textContent = newValue;
+                            } else {
+                                alert('Failed to update goal');
+                            }
+                
+                            goalDiv.querySelector('.display-value').style.display = 'inline';
+                            goalDiv.querySelector('.edit-inputs').style.display = 'none';
+                            goalDiv.querySelector('.edit-btn').style.display = 'inline';
+                            goalDiv.querySelector('.save-btn').style.display = 'none';
+                        });
+                    });
+                
+                    // Clear the new goal form
+                    document.getElementById('new-goal-input').value = '';
+                    document.getElementById('new-goal-container').innerHTML = '';
                 } else {
                     alert('Failed to add goal');
-                }
+                }                
             });
         });
     });

@@ -98,8 +98,23 @@ try {
             $description = trim($data['description'] ?? '');
             if ($description) {
                 $stmt = $conn->prepare("INSERT INTO goals (user_id, description) VALUES (?, ?)");
-                $success = $stmt->execute([$userId, $description]);
-                $message = "New goal added: \"$description\".";
+                if ($stmt->execute([$userId, $description])) {
+                    $success = true;
+                    $newId = $conn->lastInsertId();
+                    $message = "New goal added: \"$description\".";
+                    
+                    echo json_encode([
+                        'success' => true,
+                        'goal' => [
+                            'goal_id' => $newId,
+                            'description' => $description
+                        ]
+                    ]);
+                    exit;
+                } else {
+                    $error = "Failed to insert goal.";
+                }
+                
             } else {
                 $error = "Goal description cannot be empty.";
             }

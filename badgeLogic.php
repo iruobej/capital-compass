@@ -32,11 +32,7 @@ function getBadgeLevel($transactions, $conn, $user_id) {
     $stmt->execute([$user_id]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $quizPassRatio = ($row['total'] > 0) ? ($row['passed'] / $row['total']) : null;
-
-    if ($quizPassRatio === null) {
-        return 0;
-    }
+    $quizPassRatio = ($row['total'] > 0) ? ($row['passed'] / $row['total']) : 0;
 
     // Normalising both ratios to a common scale
     $spendingScore = 1 - min($spendingRatio, 1.5); // lower = better, capped

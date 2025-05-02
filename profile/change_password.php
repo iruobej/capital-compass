@@ -15,12 +15,15 @@ if (!isset($_SESSION['username'])) {
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Validation
+        // all fields must be filled
         if (!$current || !$new || !$confirm) {
             $errors[] = "All fields are required.";
+        // New passwords must match
         } elseif ($new !== $confirm) {
             $errors[] = "New passwords do not match.";
-        } elseif (strlen($new) < 6) {
-            $errors[] = "New password must be at least 6 characters long.";
+        // Enforcing a minimum length for security    
+        } elseif (strlen($new) < 12) {
+            $errors[] = "New password must be at least 12 characters long.";
         } else {
             // Checking if current password is correct
             $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");

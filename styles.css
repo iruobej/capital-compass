@@ -107,7 +107,7 @@ button, .dropdown-content a, .box a {
   }
 
 .navbar li a {
-    position: relative; /* Needed for the absolute positioning of the pseudo-element */
+    position: relative; 
     display: block;
     color: white;
     text-align: center;
@@ -272,7 +272,7 @@ button, .dropdown-content a, .box a {
   outline: none;
 }
 
-/*Content area for each dropdown*/
+/*Content area for each dropdown in the Finance School*/
 .dropdown-content {
   max-height: 200px;
   overflow-y: auto;
@@ -295,15 +295,15 @@ button, .dropdown-content a, .box a {
 
 .quiz-container {
   max-width: 600px;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto; 
   padding: 2rem;
-  background-color: #fff; /* Optional: white background */
-  border-radius: 8px;      /* Optional: rounded edges */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: light shadow */
+  background-color: #fff;
+  border-radius: 8px;      
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 #quizForm {
-  text-align: left; /* Align form contents to the left */
+  text-align: left; 
 }
 
 .save-btn {

@@ -22,8 +22,9 @@ $_SESSION['transactions'] = json_decode(file_get_contents(__DIR__ . '/../data/fa
 
 $transactions = $_SESSION['transactions'];
 
-// Loading badge logic and compute badge
+// Determining the badge level of the user
 $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
+
 $suggestions = generateSuggestedActions($transactions);
 
 

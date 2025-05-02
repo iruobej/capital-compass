@@ -7,7 +7,7 @@ function generateSuggestedActions($transactions) {
         $cat = $txn['category'];
         $amt = $txn['amount']['value'];
 
-        if ($amt < 0) {  // Only count expenses
+        if ($amt < 0) {  // Only counting expenses
             $categoryTotals[$cat] = ($categoryTotals[$cat] ?? 0) + abs($amt);
         }
     }

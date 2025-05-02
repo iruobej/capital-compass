@@ -76,12 +76,12 @@ try {
     ]);
 
     if ($success) {
-        // Now fetch the user from the DB
+        // Fetching user from the DB
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->execute([':username' => $username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Set session variables using fetched data
+        // Setting session variables using fetched data
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['firstname'] = $user['firstname'];

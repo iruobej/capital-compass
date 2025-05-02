@@ -14,7 +14,7 @@ function load_json($filename) {
     return json_decode($content, true);
 }
 
-// Route based on GET param
+// Routing based on GET param
 $type = $_GET['type'] ?? 'transactions';
 
 if ($type === 'accounts') {

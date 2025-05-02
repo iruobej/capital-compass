@@ -6,7 +6,7 @@ require_once __DIR__ . '/notifications_lib.php';
 
 $user_id = $_SESSION['user_id'];
 
-// Fetching notifications from database
+// Fetching all notifications for this user, most recent first
 $stmt = $conn->prepare("SELECT * FROM notifications WHERE user_id = ? ORDER BY created_at DESC");
 $stmt->execute([$user_id]);
 $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -26,7 +26,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1 id="header" style="text-align: center;">Notifications</h1>
     <?php
-
+    // Handling AJAX request to delete a notification
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_notification') {
         $id = intval($_POST['id']);
         echo deleteNotification($pdo, $id) ? 'success' : 'error';
@@ -39,6 +39,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p style="text-align:center;">You have no notifications at the moment.</p>
         <?php else: ?>
             <?php foreach ($notifications as $note): ?>
+                <!-- Individual notification card -->
                 <div class="notification">
                     <h3><?= htmlspecialchars($note['title']) ?></h3>
                     <p><?= htmlspecialchars($note['message']) ?></p>

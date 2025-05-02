@@ -22,7 +22,6 @@ $success = false;
 $error = null;
 $message = null;
 
-// Make sure user is logged in
 if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'error' => 'User not logged in']);
     exit;
@@ -30,9 +29,11 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
 
 $current_username = $_SESSION['username'];
 $userId = $_SESSION['user_id'];
-
+// Processing the requested update action (full name, username, email, budget, or goals), 
+// performing validation and database changes, triggering a notification on success, and returning a standardised JSON response:
 try {
     switch ($field) {
+        //Profile logic
         case 'full_name':
             $first = trim($data['first_name'] ?? '');
             $last = trim($data['last_name'] ?? '');
@@ -86,7 +87,7 @@ try {
                 $error = "Budget must be a positive number.";
             }
             break;
-
+        // Goal logic
         case 'goal_update':
             $goal_id = $data['goal_id'] ?? null;
             if ($goal_id && $value) {

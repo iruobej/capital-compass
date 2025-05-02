@@ -1,28 +1,48 @@
+/**
+ * filterTransactions()
+ *
+ * Filters the transactions table in real time based on user input.
+ * - Reads the search box value
+ * - Loops through each table row (skipping the header)
+ * - Hides rows that don’t match the filter
+ */
 function filterTransactions() {
+    // Grabbing the user’s search term and normalize to lowercase
     const input = document.getElementById("txSearch");
     const filter = input.value.toLowerCase();
+
+    // Getting all rows from the transactions table
     const table = document.getElementById("txTable");
     const tr = table.getElementsByTagName("tr");
 
+    // Starting at 1 to skip the header row
     for (let i = 1; i < tr.length; i++) {
         const row = tr[i];
         const td = row.getElementsByTagName("td");
         let match = false;
 
+        // Checking each cell in this row for the filter text
         for (let j = 0; j < td.length; j++) {
             if (td[j] && td[j].innerText.toLowerCase().indexOf(filter) > -1) {
                 match = true;
                 break;
             }
         }
-
+        // Showing or hiding the row based on match
         row.style.display = match ? "" : "none";
     }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    //
+    // 1) ADDING NEW GOAL
+    // When the “+ Add Goal” button is clicked, show an input + save button,
+    // then POST the new goal to update_profile.php and inject it into the DOM.
+    //
     document.getElementById('add-goal-btn').addEventListener('click', function () {
         const container = document.getElementById('new-goal-container');
+
+        // Creating the input + save button UI
         const div = document.createElement('div');
         div.innerHTML = `
             <input type="text" id="new-goal-input" placeholder="Enter goal description" />
@@ -31,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = '';
         container.appendChild(div);
 
+        // When “Save” is clicked, send to server
         document.getElementById('save-new-goal').addEventListener('click', function () {
             const description = document.getElementById('new-goal-input').value;
 
@@ -45,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(res => res.json())
             .then(data => {
+                // Finding the “Financial Goals” box in the DOM
                 const goalsBoxes = document.querySelectorAll('.box');
                 let goalsBox = null;
                 goalsBoxes.forEach(box => {
@@ -53,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
+                // If insert succeeded, build the new goal element
                 if (data.success && data.goal && goalsBox) {
                     const contentWrapper = document.createElement('div');
                     contentWrapper.className = 'goal-content';
@@ -69,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <button class="delete-btn" data-goal-id="${data.goal.goal_id}"><i class="fa-solid fa-trash"></i></button>
                         <button class="save-btn" style="display:none;">Save</button>
                     `;
+                    // Wrapping it in its outer container
                     const goalDiv = document.createElement('div');
                     goalDiv.className = 'goal-item';
                     goalDiv.setAttribute('data-goal-id', data.goal.goal_id);
@@ -139,8 +163,12 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-
+    //
+    // 2) EDIT / SAVE / DELETE EXISTING GOALS
+    // Factoring out into a function so I can call it for newly added items too.
+    //
     document.querySelectorAll('.edit-btn').forEach(function (editBtn) {
+        // Showing input fields
         editBtn.addEventListener('click', function () {
             const parent = this.parentElement;
             parent.querySelector('.display-value').style.display = 'none';
@@ -151,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelectorAll('.save-btn').forEach(function (saveBtn) {
+        // Saving updated description
         saveBtn.addEventListener('click', function () {
             const parent = this.parentElement;
             const goal_id = parent.dataset.goalId;
@@ -183,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelectorAll('.delete-btn').forEach(function (deleteBtn) {
+        // Deleting the given goal
         deleteBtn.addEventListener('click', function () {
             const goalId = this.dataset.goalId;
             const goalDiv = this.closest('.goal-item');
@@ -208,6 +238,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
+    //
+    // 3) RENDERING CASH FLOW CHART
+    // Uses global cashFlowLabels and cashFlowData (injected by PHP in home.php)
+    //
     const ctx = document.getElementById('cashFlowChart').getContext('2d');
 
     const cashFlowChart = new Chart(ctx, {

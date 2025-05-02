@@ -234,7 +234,7 @@ button, .dropdown-content a, .box a {
   background: none;
     border: none;
     cursor: pointer;
-    color: var(--header-blue); /* Matches the theme */
+    color: var(--header-blue); 
     font-size: 16px;
     padding-left: 10px; 
     padding-left: 10px; 
@@ -341,4 +341,8 @@ button, .dropdown-content a, .box a {
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.delete-btn {
+  color: red;
 }

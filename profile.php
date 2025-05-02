@@ -87,7 +87,7 @@ $budget_alert = $_SESSION['budget_alert']
         require_once 'badgeLogic.php';
         $transactions = $_SESSION['transactions'] ?? [];
 
-        $badge = getBadgeLevel($transactions);
+        $badge = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
         ?>
 
         <div class="box">

@@ -53,10 +53,5 @@ function getBadgeLevel($transactions, $conn, $user_id) {
     } else {
         return "1/5 – Bronze";
     }
-    return [
-        'spendingScore' => $spendingScore,
-        'quizScore' => $quizScore,
-        'combinedScore' => $combinedScore
-    ];
 }
 ?>

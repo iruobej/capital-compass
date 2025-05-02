@@ -35,18 +35,8 @@ $stmt->execute([$_SESSION['user_id']]);
 $goals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
-$spendingScore = $badgeData['spendingScore'];
-$quizScore = $badgeData['quizScore'];
-$combinedScore = $badgeData['combinedScore'];
 
 ?>
-<?php if ($_SESSION['username'] === 'j.irobz'): ?>
-<script>
-    console.log("DEBUG: Spending Score = <?= $spendingScore ?>");
-    console.log("DEBUG: Quiz Score = <?= $quizScore ?>");
-    console.log("DEBUG: Combined Score = <?= $combinedScore ?>");
-</script>
-<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">

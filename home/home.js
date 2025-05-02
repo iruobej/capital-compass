@@ -208,47 +208,47 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-});
+    const ctx = document.getElementById('cashFlowChart').getContext('2d');
 
-const ctx = document.getElementById('cashFlowChart').getContext('2d');
-
-const cashFlowChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: cashFlowLabels,
-        datasets: [{
-            label: 'Net Cash Flow (GBP)',
-            data: cashFlowData,
-            borderColor: 'rgba(75, 192, 192, 1)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            fill: true,
-            tension: 0.3,
-            pointRadius: 5,
-            pointHoverRadius: 7,
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            tooltip: {
-                mode: 'index',
-                intersect: false,
-            }
+    const cashFlowChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: cashFlowLabels,
+            datasets: [{
+                label: 'Net Cash Flow (GBP)',
+                data: cashFlowData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+            }]
         },
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: 'Date'
+        options: {
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
                 }
             },
-            y: {
-                title: {
-                    display: true,
-                    text: 'GBP (£)'
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
                 },
-                beginAtZero: false
+                y: {
+                    title: {
+                        display: true,
+                        text: 'GBP (£)'
+                    },
+                    beginAtZero: false
+                }
             }
         }
-    }
+    });
 });
+

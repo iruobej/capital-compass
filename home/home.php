@@ -208,7 +208,7 @@ $badgeData = getBadgeLevel($transactions, $conn, $_SESSION['user_id']);
         const cashFlowLabels = <?= $dates ?>;
         const cashFlowData = <?= $amounts ?>;
     </script>
-    <script src="home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>

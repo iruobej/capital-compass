@@ -5,6 +5,10 @@ require_once 'config.php';
 // Get JSON data
 $data = json_decode(file_get_contents("php://input"), true);
 
+// Debug logging
+error_log(print_r($data, true));
+error_log("SESSION USER ID: " . ($_SESSION['user_id'] ?? 'NOT SET'));
+
 // Sanity check
 if (!isset($_SESSION['user_id'], $data['topic'], $data['score'], $data['time_taken'], $data['pass_fail'])) {
     http_response_code(400);

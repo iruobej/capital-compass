@@ -14,15 +14,15 @@
             <input type="hidden" name="topic" value="Cryptocurrency" />
             <div class="question">
                 <p>1. What is the underlying technology of most cryptocurrencies?</p>
-                <label><input type="radio" name="q1" value="correct">Blockchain</label><br>
                 <label><input type="radio" name="q1" value="wrong">Cloud Storage</label><br>
                 <label><input type="radio" name="q1" value="wrong">Data Mining</label><br>
+                <label><input type="radio" name="q1" value="correct">Blockchain</label><br>
             </div>
             <div class="question">
                 <p>2. What is Bitcoin often referred to as?</p>
-                <label><input type="radio" name="q2" value="correct">Digital Gold</label><br>
                 <label><input type="radio" name="q2" value="wrong">Crypto Cash</label><br>
                 <label><input type="radio" name="q2" value="wrong">E-Stocks</label><br>
+                <label><input type="radio" name="q2" value="correct">Digital Gold</label><br>
             </div>
             <div class="question">
                 <p>3. What does "HODL" mean in the crypto community?</p>
@@ -38,14 +38,14 @@
             </div>
             <div class="question">
                 <p>5. What is a crypto wallet used for?</p>
-                <label><input type="radio" name="q5" value="correct">To store and manage private keys</label><br>
                 <label><input type="radio" name="q5" value="wrong">To generate fiat currency</label><br>
+                <label><input type="radio" name="q5" value="correct">To store and manage private keys</label><br>
                 <label><input type="radio" name="q5" value="wrong">To mine coins</label><br>
             </div>
             <div class="question">
                 <p>6. What is the purpose of mining in Bitcoin?</p>
-                <label><input type="radio" name="q6" value="correct">To validate transactions and secure the network</label><br>
                 <label><input type="radio" name="q6" value="wrong">To create NFTs</label><br>
+                <label><input type="radio" name="q6" value="correct">To validate transactions and secure the network</label><br>
                 <label><input type="radio" name="q6" value="wrong">To send emails securely</label><br>
             </div>
             <div class="question">

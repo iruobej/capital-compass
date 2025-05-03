@@ -14,9 +14,9 @@
             <input type="hidden" name="topic" value="Investing" />
             <div class="question">
                 <p>1. What is diversification in investing?</p>
-                <label><input type="radio" name="q1" value="correct">Spreading investments across different assets</label><br>
                 <label><input type="radio" name="q1" value="wrong">Investing all in one stock</label><br>
                 <label><input type="radio" name="q1" value="wrong">Avoiding all risky investments</label><br>
+                <label><input type="radio" name="q1" value="correct">Spreading investments across different assets</label><br>
             </div>
             <div class="question">
                 <p>2. What type of investment is typically considered the least risky?</p>
@@ -32,27 +32,27 @@
             </div>
             <div class="question">
                 <p>4. What is a mutual fund?</p>
-                <label><input type="radio" name="q4" value="correct">A pool of funds from many investors to buy a diversified portfolio</label><br>
                 <label><input type="radio" name="q4" value="wrong">A fund managed by one person for their own use</label><br>
+                <label><input type="radio" name="q4" value="correct">A pool of funds from many investors to buy a diversified portfolio</label><br>
                 <label><input type="radio" name="q4" value="wrong">A savings account with high interest</label><br>
             </div>
             <div class="question">
                 <p>5. What does ROI stand for?</p>
-                <label><input type="radio" name="q5" value="correct">Return on Investment</label><br>
                 <label><input type="radio" name="q5" value="wrong">Rate of Inflation</label><br>
                 <label><input type="radio" name="q5" value="wrong">Ratio of Interest</label><br>
+                <label><input type="radio" name="q5" value="correct">Return on Investment</label><br>
             </div>
             <div class="question">
                 <p>6. What is the stock market?</p>
-                <label><input type="radio" name="q6" value="correct">A place where stocks are bought and sold</label><br>
                 <label><input type="radio" name="q6" value="wrong">A bank for large investors</label><br>
                 <label><input type="radio" name="q6" value="wrong">A type of mutual fund</label><br>
+                <label><input type="radio" name="q6" value="correct">A place where stocks are bought and sold</label><br>
             </div>
             <div class="question">
                 <p>7. What does it mean to have a long-term investment strategy?</p>
-                <label><input type="radio" name="q7" value="correct">Investing with the intention of holding for several years</label><br>
                 <label><input type="radio" name="q7" value="wrong">Selling quickly after buying</label><br>
                 <label><input type="radio" name="q7" value="wrong">Avoiding all stocks</label><br>
+                <label><input type="radio" name="q7" value="correct">Investing with the intention of holding for several years</label><br>
             </div>
             <div id="result" style="text-align:center; font-size:1.2rem; margin-top:20px;"></div>
             <button type="submit">Submit Quiz</button>

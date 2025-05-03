@@ -20,9 +20,9 @@
             </div>
             <div class="question">
                 <p>2. What does "interest rate" refer to in a loan?</p>
-                <label><input type="radio" name="q2" value="correct">The cost of borrowing the money</label><br>
                 <label><input type="radio" name="q2" value="wrong">A tax on your income</label><br>
                 <label><input type="radio" name="q2" value="wrong">The value of your property</label><br>
+                <label><input type="radio" name="q2" value="correct">The cost of borrowing the money</label><br>
             </div>
             <div class="question">
                 <p>3. What is the difference between secured and unsecured loans?</p>
@@ -38,14 +38,14 @@
             </div>
             <div class="question">
                 <p>5. Which of the following is a common type of loan?</p>
-                <label><input type="radio" name="q5" value="correct">Personal loan</label><br>
                 <label><input type="radio" name="q5" value="wrong">Payroll bond</label><br>
                 <label><input type="radio" name="q5" value="wrong">Debit accrual</label><br>
+                <label><input type="radio" name="q5" value="correct">Personal loan</label><br>
             </div>
             <div class="question">
                 <p>6. What does loan term refer to?</p>
-                <label><input type="radio" name="q6" value="correct">The length of time to repay the loan</label><br>
                 <label><input type="radio" name="q6" value="wrong">The value of the loan</label><br>
+                <label><input type="radio" name="q6" value="correct">The length of time to repay the loan</label><br>
                 <label><input type="radio" name="q6" value="wrong">The number of interest payments</label><br>
             </div>
             <div class="question">

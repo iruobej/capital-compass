@@ -44,9 +44,9 @@
             </div>
             <div class="question">
                 <p>6. What should you do first when creating a budget?</p>
-                <label><input type="radio" name="q6" value="correct">Calculate your monthly income</label><br>
                 <label><input type="radio" name="q6" value="wrong">Start cutting expenses</label><br>
                 <label><input type="radio" name="q6" value="wrong">Buy budgeting software</label><br>
+                <label><input type="radio" name="q6" value="correct">Calculate your monthly income</label><br>
             </div>
             <div class="question">
                 <p>7. Why is an emergency fund important?</p>

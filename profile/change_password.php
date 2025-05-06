@@ -38,6 +38,8 @@ if (!isset($_SESSION['username'])) {
                 $update = $conn->prepare("UPDATE users SET password = ? WHERE username = ?");
                 if ($update->execute([$newHash, $username])) {
                     $success = "Password updated successfully!";
+                    header("Location: /profile/profile.php");
+                    exit();
                 } else {
                     $errors[] = "Something went wrong. Try again.";
                 }

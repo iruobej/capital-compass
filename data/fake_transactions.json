@@ -341,6 +341,17 @@
     }
   },
   {
+    "transaction_id": "txn_income_099",
+    "account_id": "acc_002",
+    "timestamp": "2025-03-24T15:05:46Z",
+    "description": "Disney+",
+    "category": "Refund",
+    "amount": {
+      "currency": "GBP",
+      "value": 23.76
+    }
+  },
+  {
     "transaction_id": "txn_expense_026",
     "account_id": "acc_001",
     "timestamp": "2025-04-11T17:01:36Z",
